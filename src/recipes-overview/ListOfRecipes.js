@@ -1,12 +1,12 @@
 import React from 'react'
 import SingleRecipeOverview from './SingleRecipeOverview'
 
-export default function ListOfRecipes() {
+export default function ListOfRecipes({ recipesList }) {
   return (
     <div>
-      <SingleRecipeOverview />
-      <p>Rezept 2</p>
-      <p>Rezept 3</p>
+      {recipesList.map(recipe => (
+        <SingleRecipeOverview key={recipe.id} recipe={recipe} />
+      ))}
     </div>
   )
 }
