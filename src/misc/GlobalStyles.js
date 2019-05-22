@@ -9,7 +9,7 @@ export default createGlobalStyle`
     margin: 0;
     padding: 20px;
     font-family: sans-serif;
-    color: darkslategray;
-    background: papayawhip;
+    color: darkgoldenrod;
+    background: whitesmoke;
   }
 `
