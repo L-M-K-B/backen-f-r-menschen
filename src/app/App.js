@@ -22,10 +22,6 @@ export default function App() {
     setLocal('recipesList', recipesList)
   }, [recipesList])
 
-  const handleSave = notes => {
-    /* setLocal(`${id}Notes`, notes), [notes]*/
-  }
-
   return (
     <Router>
       <div>
@@ -42,7 +38,6 @@ export default function App() {
               <RecipeDetailedPage
                 recipesList={recipesList}
                 id={props.match.params.id}
-                onSave={notes => handleSave(notes)}
               />
             )}
           />

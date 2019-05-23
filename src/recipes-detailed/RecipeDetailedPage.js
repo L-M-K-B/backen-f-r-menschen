@@ -17,7 +17,7 @@ export default function RecipeDetailedPage({ recipesList, id, onSave }) {
       <RecipeStage recipe={getRecipe()} />
       <IngredientList recipe={getRecipe()} />
       <ShortDescription recipe={getRecipe()} />
-      <Notes onSave={onSave} />
+      <Notes id={id} />
     </div>
   )
 }
