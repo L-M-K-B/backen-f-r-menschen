@@ -5,6 +5,7 @@ const mockdata = {
       recipeName: 'Snicker Doodles',
       time: 38,
       difficulty: 2,
+      amount: 'approx. 22 pieces',
       ingredients: [
         [120, 'g', 'vegetable margarine'],
         [60, 'g', 'cane sugar'],
@@ -35,6 +36,7 @@ const mockdata = {
       recipeName: 'Estonian Spring Cake',
       time: 150,
       difficulty: 4,
+      amount: '1 round baking pan ∅ 28 cm',
       ingredients: [
         [250, 'g', 'wheat flour (type 550)'],
         [150, 'g', 'butter'],
@@ -68,6 +70,7 @@ const mockdata = {
       recipeName: 'Cheese Oat Biscuits',
       time: 45,
       difficulty: 1,
+      amount: 'approx. 22 pieces',
       ingredients: [
         [90, 'g', 'oatmeal'],
         [50, 'g', 'wheat flour (type 550)'],
