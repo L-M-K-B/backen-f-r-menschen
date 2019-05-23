@@ -7,6 +7,7 @@ import GlobalStyles from '../misc/GlobalStyles'
 
 import mockdata from '../mockdata'
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage'
+import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage'
 
 /*const Grid = styled.div`
   display: grid;
@@ -24,8 +25,8 @@ export default function App() {
   return (
     <div>
       <GlobalStyles />
-      <h1>Liste</h1>
       <main>
+        <RecipeDetailedPage recipesList={recipesList} />
         <RecipesOverviewPage recipesList={recipesList} />
       </main>
     </div>
