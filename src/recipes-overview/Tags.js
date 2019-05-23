@@ -8,5 +8,5 @@ const StyledTagList = styled.div`
 `
 
 export default function Tags({ tags }) {
-  return <StyledTagList>{tags.join('  •  ')}</StyledTagList>
+  return <StyledTagList>{tags.join('  ●  ')}</StyledTagList>
 }
