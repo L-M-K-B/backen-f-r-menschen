@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
-//import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { setLocal, getLocal } from '../services'
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { setLocal /*, getLocal*/ } from '../services'
 
 //import styled from 'styled-components'
 import GlobalStyles from '../misc/GlobalStyles'
@@ -23,18 +23,26 @@ export default function App() {
   }, [recipesList])
 
   return (
-    <div>
-      <GlobalStyles />
-      <main>
-        <RecipeDetailedPage recipesList={recipesList} />
-        <RecipesOverviewPage recipesList={recipesList} />
-      </main>
-    </div>
+    <Router>
+      <div>
+        <GlobalStyles />
+        <main>
+          <Route
+            exact
+            path="/"
+            render={() => <RecipesOverviewPage recipesList={recipesList} />}
+          />
+          <Route
+            path="/recipeDetailed/:id"
+            render={props => (
+              <RecipeDetailedPage
+                recipesList={recipesList}
+                id={props.match.params.id}
+              />
+            )}
+          />
+        </main>
+      </div>
+    </Router>
   )
 }
-
-// <Route exact path="/" render={() => <h1>Home</h1>} />
-/* //<Router>
-     
-        
-    //</Router> */

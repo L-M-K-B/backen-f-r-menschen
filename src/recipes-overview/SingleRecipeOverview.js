@@ -1,11 +1,15 @@
 import React from 'react'
 import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
 
 import IconStopwatch from '../images/IconStopwatch.png'
 import IconCookieActive from '../images/IconCookieActive.png'
 
 import Tags from './Tags'
 
+const LinkToSingleRecipe = styled(NavLink)`
+  text-decoration: none;
+`
 const StyledRecipeOverview = styled.div`
   display: flex;
   flex-direction: column;
@@ -36,7 +40,7 @@ const StyledCookie = styled.img`
 `
 
 export default function SingleRecipeOverview({ recipe }) {
-  const { recipeName, time, difficulty, tags, titleImage } = recipe
+  const { id, recipeName, time, difficulty, tags, titleImage } = recipe
 
   function getCookies() {
     const cookies = new Array(difficulty)
@@ -44,21 +48,23 @@ export default function SingleRecipeOverview({ recipe }) {
   }
 
   return (
-    <StyledRecipeOverview>
-      <StyledImage src={titleImage} alt={recipeName} />
-      <StyledName>{recipeName}</StyledName>
-      <StyledTime>
-        <FirstColumn>
-          <StyledStopwatch src={IconStopwatch} />
-        </FirstColumn>
-        <SecondColumn>{time} min</SecondColumn>
-      </StyledTime>
-      <StyledDifficulty>
-        {getCookies(difficulty).map(element => (
-          <StyledCookie src={IconCookieActive} />
-        ))}
-      </StyledDifficulty>
-      <Tags tags={tags} />
-    </StyledRecipeOverview>
+    <LinkToSingleRecipe to={`/recipeDetailed/${id}`}>
+      <StyledRecipeOverview>
+        <StyledImage src={titleImage} alt={recipeName} />
+        <StyledName>{recipeName}</StyledName>
+        <StyledTime>
+          <FirstColumn>
+            <StyledStopwatch src={IconStopwatch} />
+          </FirstColumn>
+          <SecondColumn>{time} min</SecondColumn>
+        </StyledTime>
+        <StyledDifficulty>
+          {getCookies(difficulty).map(element => (
+            <StyledCookie src={IconCookieActive} />
+          ))}
+        </StyledDifficulty>
+        <Tags tags={tags} />
+      </StyledRecipeOverview>
+    </LinkToSingleRecipe>
   )
 }
