@@ -1,0 +1,70 @@
+import styled from 'styled-components'
+import { NavLink } from 'react-router-dom'
+import { orange, oShadow } from '../misc/colors'
+
+export const OverviewContainer = styled.div`
+  height: 235px;
+  margin: 0 0 20px 0;
+  border-radius: 14px;
+  box-shadow: 0 5px 4px 2px ${oShadow};
+`
+export const GridContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  border-radius: 14px;
+  margin: 8px;
+`
+export const LinkToSingleRecipe = styled(NavLink)`
+  grid-column: 1 / span 6;
+  grid-row: 3 / span 5;
+  text-decoration: none;
+`
+export const Favorite = styled.div`
+  grid-column: 11 / span 2;
+  grid-row: 1 / span 2;
+`
+export const Image = styled.img`
+  width: 125px;
+  border-radius: 14px;
+`
+export const Name = styled.p`
+  grid-column: 1 / span 10;
+  grid-row: 1 / span 2;
+  margin: 0;
+  align-self: center;
+  font-family: 'Domine', serif;
+  font-size: 24px;
+`
+export const TimeEfford = styled.div`
+  grid-column: 7 / span 6;
+  grid-row: 3 / span 4;
+`
+export const Label = styled.p`
+  margin: 0;
+`
+export const Time = styled.div`
+  margin: 0 0 15px 0;
+`
+export const WatchMinutes = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+export const Stopwatch = styled.img`
+  margin: 0 5px 0 0;
+  width: 15%;
+`
+export const Difficulty = styled.div`
+  margin: 0 0 15px 0;
+`
+export const Cookie = styled.img`
+  margin: 0 3px 0 0;
+  height: 18%;
+  width: 18%;
+`
+export const StyledTagList = styled.div`
+  grid-column: 1 / span 12;
+  grid-row: 7 / span 1;
+  align-self: end;
+`

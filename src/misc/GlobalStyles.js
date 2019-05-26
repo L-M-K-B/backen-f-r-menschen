@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
+import { font } from './colors'
 
 export default createGlobalStyle`
 
@@ -9,9 +10,9 @@ export default createGlobalStyle`
   }
 
   body {
-    margin: 0;
-    padding: 0;
+    margin: 0 20px;
     font-family: 'Roboto', sans-serif;
+    color: ${font}
   }
 `
 // für Überschriften: font-family: 'Domine', serif;

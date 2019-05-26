@@ -1,10 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
-
-const StyledTagList = styled.div`
-  margin: 10px 0 0;
-  padding: 5px 0 0;
-`
+import { StyledTagList } from './SingleRecipeOverview-style'
 
 export default function Tags({ tags }) {
   return <StyledTagList>{tags.join('  ●  ')}</StyledTagList>
