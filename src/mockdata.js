@@ -1,7 +1,7 @@
 const mockdata = {
   recipesList: [
     {
-      id: 'recipe01',
+      id: 'snicker-doodles',
       recipeName: 'Snicker Doodles',
       time: 38,
       difficulty: 2,
@@ -32,7 +32,7 @@ const mockdata = {
       titleImage: '/images/SnickerDoodles.jpg',
     },
     {
-      id: 'recipe02',
+      id: 'estonian-spring-cake',
       recipeName: 'Estonian Spring Cake',
       time: 150,
       difficulty: 5,
@@ -66,7 +66,7 @@ const mockdata = {
       titleImage: '/images/rhabarber.jpg',
     },
     {
-      id: 'recipe03',
+      id: 'cheese-oat-biscuits',
       recipeName: 'Cheese Oat Biscuits',
       time: 45,
       difficulty: 1,

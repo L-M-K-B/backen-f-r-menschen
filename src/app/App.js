@@ -53,7 +53,7 @@ export default function App() {
           )}
         />
         <Route
-          path="/recipeDetailed/:id"
+          path="/recipe/:id"
           render={props => (
             <>
               <Header
