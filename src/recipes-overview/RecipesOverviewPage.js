@@ -1,11 +1,20 @@
 import React from 'react'
 import ListOfRecipes from './ListOfRecipes'
-import { RecipesOverviewPageStyle } from './RecipesOverviewStyle'
+import { MainArea, ListContainer } from './RecipesOverviewStyle'
+import Header from '../header-footer/Header'
+import Footer from '../header-footer/Footer'
+import IconPieListActive from '../images/IconPieListActive.png'
 
 export default function RecipesOverviewPage({ recipesList }) {
   return (
-    <RecipesOverviewPageStyle>
-      <ListOfRecipes recipesList={recipesList} />
-    </RecipesOverviewPageStyle>
+    <>
+      <Header title="List of Recipes" />
+      <MainArea>
+        <ListContainer>
+          <ListOfRecipes recipesList={recipesList} />
+        </ListContainer>
+      </MainArea>
+      <Footer srcPieList={IconPieListActive} />
+    </>
   )
 }

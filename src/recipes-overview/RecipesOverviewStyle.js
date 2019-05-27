@@ -2,7 +2,12 @@ import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 import { font, oShadow } from '../misc/colors'
 
-export const RecipesOverviewPageStyle = styled.div`
+export const MainArea = styled.main`
+  grid-row: 2;
+  overflow: hidden;
+  overflow-y: scroll;
+`
+export const ListContainer = styled.div`
   margin: 25px 20px 0;
 `
 export const OverviewContainer = styled.div`
