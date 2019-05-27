@@ -10,9 +10,9 @@ export default createGlobalStyle`
   }
 
   body {
-    margin: 0 20px;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
-    color: ${font}
+    color: ${font};
   }
 `
 // für Überschriften: font-family: 'Domine', serif;

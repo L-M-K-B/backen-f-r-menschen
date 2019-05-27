@@ -1,7 +1,10 @@
 import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
-import { orange, oShadow } from '../misc/colors'
+import { Link } from 'react-router-dom'
+import { font, oShadow } from '../misc/colors'
 
+export const RecipesOverviewPageStyle = styled.div`
+  margin: 0 20px;
+`
 export const OverviewContainer = styled.div`
   height: 235px;
   margin: 0 0 20px 0;
@@ -15,10 +18,15 @@ export const GridContainer = styled.div`
   border-radius: 14px;
   margin: 8px;
 `
-export const LinkToSingleRecipe = styled(NavLink)`
+export const LinkToSingleRecipe1 = styled(Link)`
+  grid-column: 1 / span 10;
+  grid-row: 1 / span 2;
+  align-self: center;
+  text-decoration: none;
+`
+export const LinkToSingleRecipe2 = styled(Link)`
   grid-column: 1 / span 6;
   grid-row: 3 / span 5;
-  text-decoration: none;
 `
 export const Favorite = styled.div`
   grid-column: 11 / span 2;
@@ -29,12 +37,10 @@ export const Image = styled.img`
   border-radius: 14px;
 `
 export const Name = styled.p`
-  grid-column: 1 / span 10;
-  grid-row: 1 / span 2;
   margin: 0;
-  align-self: center;
   font-family: 'Domine', serif;
   font-size: 24px;
+  color: ${font};
 `
 export const TimeEfford = styled.div`
   grid-column: 7 / span 6;

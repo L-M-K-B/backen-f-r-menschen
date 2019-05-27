@@ -2,16 +2,24 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { setLocal /*, getLocal*/ } from '../services'
 
-//import styled from 'styled-components'
+import styled from 'styled-components'
 import GlobalStyles from '../misc/GlobalStyles'
 
 import mockdata from '../mockdata'
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage'
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage'
+import Header from '../header-footer/Header'
 
-/*const Grid = styled.div`
+const Grid = styled.div`
   display: grid;
-`*/
+  grid-template-rows: 80px 1fr;
+  height: 100vh;
+`
+const MainArea = styled.main`
+  grid-row: 2;
+  overflow: hidden;
+  overflow-y: scroll;
+`
 
 export default function App() {
   const [recipesList, setRecipesList] = useState(
@@ -22,27 +30,47 @@ export default function App() {
     setLocal('recipesList', recipesList)
   }, [recipesList])
 
+  function getRecipe(id, recipesList) {
+    const index = recipesList.map(recipe => recipe.id).indexOf(id)
+    const recipe = recipesList[index]
+    return recipe
+  }
+
   return (
     <Router>
-      <div>
-        <GlobalStyles />
-        <main>
-          <Route
-            exact
-            path="/"
-            render={() => <RecipesOverviewPage recipesList={recipesList} />}
-          />
-          <Route
-            path="/recipeDetailed/:id"
-            render={props => (
-              <RecipeDetailedPage
-                recipesList={recipesList}
-                id={props.match.params.id}
+      <GlobalStyles />
+      <Grid>
+        <Route
+          exact
+          path="/"
+          render={() => (
+            <>
+              <Header title="List of Recipes" />
+              <MainArea>
+                <RecipesOverviewPage recipesList={recipesList} />
+              </MainArea>
+            </>
+          )}
+        />
+        <Route
+          path="/recipeDetailed/:id"
+          render={props => (
+            <>
+              <Header
+                title={getRecipe(props.match.params.id, recipesList).recipeName}
               />
-            )}
-          />
-        </main>
-      </div>
+              <MainArea>
+                <RecipeDetailedPage
+                  recipe={getRecipe(props.match.params.id, recipesList)}
+                  id={props.match.params.id}
+                />
+              </MainArea>
+            </>
+          )}
+        />
+      </Grid>
     </Router>
   )
 }
+
+//  <MainArea> </MainArea>

@@ -1,6 +1,7 @@
 import React from 'react'
 import {
-  LinkToSingleRecipe,
+  LinkToSingleRecipe1,
+  LinkToSingleRecipe2,
   OverviewContainer,
   GridContainer,
   Favorite,
@@ -13,7 +14,7 @@ import {
   Stopwatch,
   Difficulty,
   Cookie,
-} from './SingleRecipeOverview-style'
+} from './RecipesOverviewStyle'
 
 import IconStopwatch from '../images/IconStopwatch.png'
 import IconCookie from '../images/IconCookie.png'
@@ -33,12 +34,12 @@ export default function SingleRecipeOverview({ recipe }) {
       <GridContainer>
         <Favorite />
 
-        <LinkToSingleRecipe to={`/recipeDetailed/${id}`}>
+        <LinkToSingleRecipe2 to={`/recipeDetailed/${id}`}>
           <Image src={titleImage} alt={recipeName} />
-        </LinkToSingleRecipe>
-
-        <Name>{recipeName}</Name>
-
+        </LinkToSingleRecipe2>
+        <LinkToSingleRecipe1 to={`/recipeDetailed/${id}`}>
+          <Name>{recipeName}</Name>
+        </LinkToSingleRecipe1>
         <TimeEfford>
           <Time>
             <Label>Time: </Label>

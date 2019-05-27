@@ -1,5 +1,5 @@
 import React from 'react'
-import { StyledTagList } from './SingleRecipeOverview-style'
+import { StyledTagList } from './RecipesOverviewStyle'
 
 export default function Tags({ tags }) {
   return <StyledTagList>{tags.join('  ●  ')}</StyledTagList>

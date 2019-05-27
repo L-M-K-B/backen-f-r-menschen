@@ -33,7 +33,6 @@ export default function RecipeStage({ recipe }) {
 
   return (
     <Stage>
-      <p>Im Header steht der Name des Rezepts</p>
       <TitleImage src={titleImage} alt={recipeName} />
       <YieldSection>Amount: {amount}</YieldSection>
       <TimeSection>
