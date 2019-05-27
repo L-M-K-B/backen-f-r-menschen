@@ -4,7 +4,6 @@ import {
   Panel,
   HeadlineContainer,
   Headline,
-  Filling,
 } from './header-footer-style'
 import HeaderPanel from '../images/HeaderPanel.png'
 
@@ -15,7 +14,6 @@ export default function Header({ title }) {
       <HeadlineContainer>
         <Headline>{title}</Headline>
       </HeadlineContainer>
-      <Filling />
     </HeaderContainer>
   )
 }

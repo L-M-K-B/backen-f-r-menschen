@@ -29,10 +29,3 @@ export const Headline = styled.p`
   font-family: 'Domine', serif;
   font-size: 30px;
 `
-export const Filling = styled.div`
-  position: absolute;
-  height: 25px;
-  width: 100%;
-  margin-top: 55px;
-  background-color: transparent;
-`

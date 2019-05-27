@@ -12,7 +12,7 @@ import Header from '../header-footer/Header'
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: 80px 1fr;
+  grid-template-rows: 55px 1fr;
   height: 100vh;
 `
 const MainArea = styled.main`

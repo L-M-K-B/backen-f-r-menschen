@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { font, oShadow } from '../misc/colors'
 
 export const RecipesOverviewPageStyle = styled.div`
-  margin: 0 20px;
+  margin: 25px 20px 0;
 `
 export const OverviewContainer = styled.div`
   height: 235px;
