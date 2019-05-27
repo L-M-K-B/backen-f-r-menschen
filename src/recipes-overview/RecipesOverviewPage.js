@@ -1,11 +1,11 @@
 import React from 'react'
 import ListOfRecipes from './ListOfRecipes'
+import { RecipesOverviewPageStyle } from './RecipesOverviewStyle'
 
 export default function RecipesOverviewPage({ recipesList }) {
   return (
-    <div>
-      <h2>Liste</h2>
+    <RecipesOverviewPageStyle>
       <ListOfRecipes recipesList={recipesList} />
-    </div>
+    </RecipesOverviewPageStyle>
   )
 }

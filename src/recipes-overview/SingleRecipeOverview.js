@@ -1,43 +1,25 @@
 import React from 'react'
-import styled from 'styled-components'
-import { NavLink } from 'react-router-dom'
+import {
+  LinkToSingleRecipe1,
+  LinkToSingleRecipe2,
+  OverviewContainer,
+  GridContainer,
+  Favorite,
+  Image,
+  Name,
+  TimeEfford,
+  Label,
+  Time,
+  WatchMinutes,
+  Stopwatch,
+  Difficulty,
+  Cookie,
+} from './RecipesOverviewStyle'
 
 import IconStopwatch from '../images/IconStopwatch.png'
-import IconCookieActive from '../images/IconCookieActive.png'
+import IconCookie from '../images/IconCookie.png'
 
 import Tags from './Tags'
-
-const LinkToSingleRecipe = styled(NavLink)`
-  text-decoration: none;
-`
-const StyledRecipeOverview = styled.div`
-  display: flex;
-  flex-direction: column;
-  border: 1px solid darkorchid;
-`
-const StyledImage = styled.img`
-  border: 1px solid darkmagenta;
-  border-radius: 40%;
-`
-const StyledName = styled.p`
-  color: darkorchid;
-`
-const StyledTime = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 3fr;
-`
-const FirstColumn = styled.div`
-  grid-column: 1;
-`
-const SecondColumn = styled.div`
-  grid-column: 2;
-`
-const StyledStopwatch = styled.img``
-
-const StyledDifficulty = styled.div``
-const StyledCookie = styled.img`
-  margin: 0 4px 0 0;
-`
 
 export default function SingleRecipeOverview({ recipe }) {
   const { id, recipeName, time, difficulty, tags, titleImage } = recipe
@@ -48,23 +30,34 @@ export default function SingleRecipeOverview({ recipe }) {
   }
 
   return (
-    <LinkToSingleRecipe to={`/recipeDetailed/${id}`}>
-      <StyledRecipeOverview>
-        <StyledImage src={titleImage} alt={recipeName} />
-        <StyledName>{recipeName}</StyledName>
-        <StyledTime>
-          <FirstColumn>
-            <StyledStopwatch src={IconStopwatch} />
-          </FirstColumn>
-          <SecondColumn>{time} min</SecondColumn>
-        </StyledTime>
-        <StyledDifficulty>
-          {getCookies(difficulty).map(element => (
-            <StyledCookie src={IconCookieActive} />
-          ))}
-        </StyledDifficulty>
+    <OverviewContainer>
+      <GridContainer>
+        <Favorite />
+
+        <LinkToSingleRecipe2 to={`/recipeDetailed/${id}`}>
+          <Image src={titleImage} alt={recipeName} />
+        </LinkToSingleRecipe2>
+        <LinkToSingleRecipe1 to={`/recipeDetailed/${id}`}>
+          <Name>{recipeName}</Name>
+        </LinkToSingleRecipe1>
+        <TimeEfford>
+          <Time>
+            <Label>Time: </Label>
+            <WatchMinutes>
+              <Stopwatch src={IconStopwatch} />
+              <Label>{time} min</Label>
+            </WatchMinutes>
+          </Time>
+          <Difficulty>
+            <Label>Level of Effort: </Label>
+            {getCookies(difficulty).map(element => (
+              <Cookie src={IconCookie} />
+            ))}
+          </Difficulty>
+        </TimeEfford>
+
         <Tags tags={tags} />
-      </StyledRecipeOverview>
-    </LinkToSingleRecipe>
+      </GridContainer>
+    </OverviewContainer>
   )
 }

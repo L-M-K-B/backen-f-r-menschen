@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import IconCookieActive from '../images/IconCookieActive.png'
+import IconCookie from '../images/IconCookie.png'
 import IconStopwatch from '../images/IconStopwatch.png'
 import Tags from '../recipes-overview/Tags'
 
@@ -33,7 +33,6 @@ export default function RecipeStage({ recipe }) {
 
   return (
     <Stage>
-      <p>Im Header steht der Name des Rezepts</p>
       <TitleImage src={titleImage} alt={recipeName} />
       <YieldSection>Amount: {amount}</YieldSection>
       <TimeSection>
@@ -45,7 +44,7 @@ export default function RecipeStage({ recipe }) {
       <Difficulty>
         Difficulty:{' '}
         {getCookies(difficulty).map(element => (
-          <Cookie src={IconCookieActive} alt="Icon Cookie" />
+          <Cookie src={IconCookie} alt="Icon Cookie" />
         ))}
       </Difficulty>
       <Tags tags={tags} />
