@@ -1,6 +1,6 @@
 import React from 'react'
 import ListOfRecipes from './ListOfRecipes'
-import { MainArea, ListContainer } from './RecipesOverviewStyle'
+import { MainArea, ListContainer } from './recipesOverviewStyle'
 import Header from '../header-footer/Header'
 import Footer from '../header-footer/Footer'
 import IconPieListActive from '../images/IconPieListActive.png'

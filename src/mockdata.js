@@ -36,7 +36,7 @@ const mockdata = {
       recipeName: 'Estonian Spring Cake',
       time: 150,
       difficulty: 5,
-      amount: '1 round baking pan ∅ 28 cm',
+      amount: '1 round baking pan ∅28cm',
       ingredients: [
         [250, 'g', 'wheat flour (type 550)'],
         [150, 'g', 'butter'],

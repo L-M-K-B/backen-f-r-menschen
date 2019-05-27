@@ -14,7 +14,7 @@ import {
   Stopwatch,
   Difficulty,
   Cookie,
-} from './RecipesOverviewStyle'
+} from './recipesOverviewStyle'
 
 import IconStopwatch from '../images/IconStopwatch.png'
 import IconCookie from '../images/IconCookie.png'

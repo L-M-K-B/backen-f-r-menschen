@@ -8,7 +8,6 @@ import GlobalStyles from '../misc/GlobalStyles'
 import mockdata from '../mockdata'
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage'
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage'
-import Header from '../header-footer/Header'
 
 const Grid = styled.div`
   display: grid;
