@@ -10,13 +10,13 @@ import Footer from '../header-footer/Footer'
 
 import IconPieList from '../images/IconPieList.png'
 
-export default function RecipeDetailedPage({ recipe, id }) {
+export default function RecipeDetailedPage({ recipe, id, onToggleFavorite }) {
   return (
     <>
       <Header title={recipe.recipeName} />
       <MainArea>
         <RecipeContainer>
-          <RecipeStage recipe={recipe} />
+          <RecipeStage recipe={recipe} onToggleFavorite={onToggleFavorite} />
           <IngredientList recipe={recipe} />
           <ShortDescription recipe={recipe} />
           <Notes id={id} />
