@@ -6,6 +6,8 @@ export const MainArea = styled.main`
   grid-row: 2;
   overflow: hidden;
   overflow-y: scroll;
+  margin-bottom: 26px;
+  padding-bottom: 55px;
 `
 export const ListContainer = styled.div`
   margin: 25px 20px 0;

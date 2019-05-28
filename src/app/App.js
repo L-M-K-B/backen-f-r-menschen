@@ -11,7 +11,7 @@ import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage'
 
 const Grid = styled.div`
   display: grid;
-  grid-template-rows: 55px 1fr 65px;
+  grid-template-rows: 55px 1fr;
   height: 100vh;
 `
 

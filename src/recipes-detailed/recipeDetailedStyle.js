@@ -1,10 +1,12 @@
 import styled from 'styled-components'
-import { font, oShadow } from '../misc/colors'
+import { oShadow } from '../misc/colors'
 
 export const MainArea = styled.main`
   grid-row: 2;
   overflow: hidden;
   overflow-y: scroll;
+  margin-bottom: 26px;
+  padding-bottom: 55px;
 `
 export const RecipeContainer = styled.div`
   margin: 30px 20px 0;

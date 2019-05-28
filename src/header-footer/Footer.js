@@ -7,6 +7,9 @@ export default function Footer({ srcPieList }) {
       <NavLink exact to="/">
         <Icon src={srcPieList} />
       </NavLink>
+      <DummyButton>2</DummyButton>
+      <DummyButton>3</DummyButton>
     </NavContainer>
   )
 }
+//  <GradientPanel />
