@@ -13,8 +13,7 @@ export const RecipeContainer = styled.div`
 `
 export const BoxContainer = styled.div`
   margin-bottom: 30px;
-  padding-top: 1px;
-  padding-bottom: 1px;
+  padding: 1px 0;
   border-radius: 14px;
   box-shadow: 0 5px 4px 2px ${oShadow};
 `

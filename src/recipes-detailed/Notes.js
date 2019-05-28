@@ -32,7 +32,6 @@ export default function Notes({ id }) {
         <NotesArea
           id="notes"
           name="notesArea"
-          type="text"
           placeholder="Please insert your notes here ..."
           value={note}
           onChange={handleChange}
