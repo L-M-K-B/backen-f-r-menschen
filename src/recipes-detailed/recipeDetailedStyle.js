@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { oShadow } from '../misc/colors'
+import { font, oShadow, orange, white } from '../misc/colors'
 
 export const MainArea = styled.main`
   grid-row: 2;
@@ -11,17 +11,45 @@ export const MainArea = styled.main`
 export const RecipeContainer = styled.div`
   margin: 30px 20px 0;
 `
-
-// Stage
-export const StageContainer = styled.div`
+export const BoxContainer = styled.div`
   margin-bottom: 30px;
+  padding-top: 1px;
+  padding-bottom: 1px;
   border-radius: 14px;
   box-shadow: 0 5px 4px 2px ${oShadow};
 `
-export const StageInnerContainer = styled.div`
+export const BoxInnerContainer = styled.div`
   border-radius: 14px;
   margin: 8px;
 `
+export const Button = styled.button`
+  position: relative;
+  top: 38px;
+  left: 150px;
+  height: 65px;
+  width: 145px;
+  border: none;
+  border-radius: 14px;
+  background-color: ${orange};
+  color: ${white};
+  font-size: 16px;
+
+  &:active {
+    border: 2px solid ${orange};
+    background-color: ${white};
+    color: ${orange};
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    border: 2px solid ${orange};
+    background-color: ${white};
+    color: ${orange};
+    outline: none;
+  }
+`
+
+// Stage
 export const TitleImage = styled.img`
   width: 100%;
   margin-top: 15px;
@@ -71,4 +99,38 @@ export const DifficultyValue = styled.div`
 `
 export const TagsDiv = styled.div`
   padding: 10px 0 5px 0;
+`
+
+// List of ingredients, Short Description
+export const Headline = styled.p`
+  font-family: 'Domine', serif;
+  font-size: 24px;
+`
+
+// Notes Area
+export const NotesForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  border-radius: 14px;
+  margin: 8px;
+`
+export const NotesLabel = styled.label`
+  margin: 1em 0;
+  font-family: 'Domine', serif;
+  font-size: 24px;
+`
+export const NotesArea = styled.textarea`
+  min-height: 200px;
+  margin: 0 5px 0;
+  padding: 8px;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  color: ${font};
+
+  &:focus {
+    outline: none;
+    border: 1px solid ${orange};
+    border-radius: 14px;
+  }
 `

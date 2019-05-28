@@ -1,7 +1,7 @@
 import React from 'react'
 import {
-  StageContainer,
-  StageInnerContainer,
+  BoxContainer,
+  BoxInnerContainer,
   TitleImage,
   BasicDataGrid,
   YieldKey,
@@ -28,8 +28,8 @@ export default function RecipeStage({ recipe }) {
   }
 
   return (
-    <StageContainer>
-      <StageInnerContainer>
+    <BoxContainer>
+      <BoxInnerContainer>
         <TitleImage src={titleImage} alt={recipeName} />
         <BasicDataGrid>
           <YieldKey>Amount:</YieldKey>
@@ -53,7 +53,7 @@ export default function RecipeStage({ recipe }) {
         <TagsDiv>
           <Tags tags={tags} />
         </TagsDiv>
-      </StageInnerContainer>
-    </StageContainer>
+      </BoxInnerContainer>
+    </BoxContainer>
   )
 }

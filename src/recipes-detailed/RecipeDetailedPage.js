@@ -22,7 +22,7 @@ export default function RecipeDetailedPage({ recipe, id }) {
           <Notes id={id} />
         </RecipeContainer>
       </MainArea>
-      <Footer srcPieList={IconPieList} />
+      <Footer srcIconPieList={IconPieList} />
     </>
   )
 }
