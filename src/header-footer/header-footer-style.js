@@ -64,22 +64,3 @@ export const NavLink = styled(RRDNavlinkLink)`
   }
 `
 export const Icon = styled.img``
-export const DummyButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50px;
-  width: 110px;
-  border: none;
-  border-radius: 14px;
-  box-shadow: 0 4px 4px 0 ${pShadow};
-  background-color: ${white};
-`
-
-/*
- position: relative;
-  bottom: 40px;
-
-position: relative;
-  bottom: 50px;
-*/
