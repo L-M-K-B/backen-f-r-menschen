@@ -14,7 +14,7 @@ import {
   Stopwatch,
   Difficulty,
   Cookie,
-} from './RecipesOverviewStyle'
+} from './recipesOverviewStyle'
 
 import IconStopwatch from '../images/IconStopwatch.png'
 import IconCookie from '../images/IconCookie.png'
@@ -34,10 +34,10 @@ export default function SingleRecipeOverview({ recipe }) {
       <GridContainer>
         <Favorite />
 
-        <LinkToSingleRecipe2 to={`/recipeDetailed/${id}`}>
+        <LinkToSingleRecipe2 to={`/recipe/${id}`}>
           <Image src={titleImage} alt={recipeName} />
         </LinkToSingleRecipe2>
-        <LinkToSingleRecipe1 to={`/recipeDetailed/${id}`}>
+        <LinkToSingleRecipe1 to={`/recipe/${id}`}>
           <Name>{recipeName}</Name>
         </LinkToSingleRecipe1>
         <TimeEfford>

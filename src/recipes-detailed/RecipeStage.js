@@ -1,28 +1,24 @@
 import React from 'react'
-import styled from 'styled-components'
+import {
+  StageContainer,
+  StageInnerContainer,
+  TitleImage,
+  BasicDataGrid,
+  YieldKey,
+  YieldValueDiv,
+  YieldValueP,
+  TimeKey,
+  TimeValueDiv,
+  TimeValueP,
+  DifficultyKey,
+  DifficultyValue,
+  TagsDiv,
+} from './recipeDetailedStyle'
 
 import IconCookie from '../images/IconCookie.png'
 import IconStopwatch from '../images/IconStopwatch.png'
+import IconAmount from '../images/IconAmount.png'
 import Tags from '../recipes-overview/Tags'
-
-const Stage = styled.div`
-  padding: 10px 0;
-  border-bottom: 3px solid teal;
-`
-const TitleImage = styled.img`
-  border: 2px dotted seagreen;
-`
-const YieldSection = styled.section`
-  border: 4px dotted seagreen;
-`
-const TimeSection = styled.section`
-  border: 4px dotted seagreen;
-`
-const Difficulty = styled.div`
-  margin: 0 0 5px;
-  border: 4px dotted seagreen;
-`
-const Cookie = styled.img``
 
 export default function RecipeStage({ recipe }) {
   const { recipeName, time, difficulty, tags, titleImage, amount } = recipe
@@ -32,22 +28,32 @@ export default function RecipeStage({ recipe }) {
   }
 
   return (
-    <Stage>
-      <TitleImage src={titleImage} alt={recipeName} />
-      <YieldSection>Amount: {amount}</YieldSection>
-      <TimeSection>
-        <p>
-          {' '}
-          Time: <img src={IconStopwatch} alt="Icon Stopwatch" /> {time} min
-        </p>
-      </TimeSection>
-      <Difficulty>
-        Difficulty:{' '}
-        {getCookies(difficulty).map(element => (
-          <Cookie src={IconCookie} alt="Icon Cookie" />
-        ))}
-      </Difficulty>
-      <Tags tags={tags} />
-    </Stage>
+    <StageContainer>
+      <StageInnerContainer>
+        <TitleImage src={titleImage} alt={recipeName} />
+        <BasicDataGrid>
+          <YieldKey>Amount:</YieldKey>
+          <YieldValueDiv>
+            <img src={IconAmount} alt="Icon Amount" />
+            <YieldValueP>{amount}</YieldValueP>
+          </YieldValueDiv>
+
+          <TimeKey>Time:</TimeKey>
+          <TimeValueDiv>
+            <img src={IconStopwatch} alt="Icon Stopwatch" />
+            <TimeValueP>{time} min</TimeValueP>
+          </TimeValueDiv>
+          <DifficultyKey>Difficulty:</DifficultyKey>
+          <DifficultyValue>
+            {getCookies(difficulty).map(element => (
+              <img src={IconCookie} alt="Icon Cookie" />
+            ))}
+          </DifficultyValue>
+        </BasicDataGrid>
+        <TagsDiv>
+          <Tags tags={tags} />
+        </TagsDiv>
+      </StageInnerContainer>
+    </StageContainer>
   )
 }

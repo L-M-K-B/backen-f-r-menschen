@@ -8,17 +8,11 @@ import GlobalStyles from '../misc/GlobalStyles'
 import mockdata from '../mockdata'
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage'
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage'
-import Header from '../header-footer/Header'
 
 const Grid = styled.div`
   display: grid;
   grid-template-rows: 55px 1fr;
   height: 100vh;
-`
-const MainArea = styled.main`
-  grid-row: 2;
-  overflow: hidden;
-  overflow-y: scroll;
 `
 
 export default function App() {
@@ -43,29 +37,15 @@ export default function App() {
         <Route
           exact
           path="/"
-          render={() => (
-            <>
-              <Header title="List of Recipes" />
-              <MainArea>
-                <RecipesOverviewPage recipesList={recipesList} />
-              </MainArea>
-            </>
-          )}
+          render={() => <RecipesOverviewPage recipesList={recipesList} />}
         />
         <Route
           path="/recipe/:id"
           render={props => (
-            <>
-              <Header
-                title={getRecipe(props.match.params.id, recipesList).recipeName}
-              />
-              <MainArea>
-                <RecipeDetailedPage
-                  recipe={getRecipe(props.match.params.id, recipesList)}
-                  id={props.match.params.id}
-                />
-              </MainArea>
-            </>
+            <RecipeDetailedPage
+              recipe={getRecipe(props.match.params.id, recipesList)}
+              id={props.match.params.id}
+            />
           )}
         />
       </Grid>

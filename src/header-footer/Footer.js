@@ -1,6 +1,13 @@
 import React from 'react'
-import {} from './header-footer-style'
+import { NavContainer, Icon, NavLink } from './header-footer-style'
 
-export default function Footer() {
-  return <h1>Hierhin kommt der Footer incl. Nav</h1>
+export default function Footer({ srcPieList }) {
+  return (
+    <NavContainer>
+      <NavLink exact to="/">
+        <Icon src={srcPieList} />
+      </NavLink>
+    </NavContainer>
+  )
 }
+//  <GradientPanel />
