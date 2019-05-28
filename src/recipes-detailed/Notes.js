@@ -1,5 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { getLocal, setLocal } from '../services'
+
+import {
+  BoxContainer,
+  NotesForm,
+  NotesLabel,
+  NotesArea,
+  Button,
+} from './recipeDetailedStyle'
 
 export default function Notes({ id }) {
   const [note, setNote] = useState(getLocal(`${id}Notes`) || '')
@@ -18,17 +26,18 @@ export default function Notes({ id }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label htmlFor="notes">Here you may take some personal notes: </label>
-      <textarea
-        id="notes"
-        name="notesArea"
-        type="text"
-        placeholder=""
-        value={note}
-        onChange={handleChange}
-      />
-      <button>Save notes</button>
-    </form>
+    <BoxContainer>
+      <NotesForm onSubmit={handleSubmit}>
+        <NotesLabel htmlFor="notes">Notes: </NotesLabel>
+        <NotesArea
+          id="notes"
+          name="notesArea"
+          placeholder="Please insert your notes here ..."
+          value={note}
+          onChange={handleChange}
+        />
+        <Button>Save my notes</Button>
+      </NotesForm>
+    </BoxContainer>
   )
 }

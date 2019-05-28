@@ -14,7 +14,7 @@ export default function RecipesOverviewPage({ recipesList }) {
           <ListOfRecipes recipesList={recipesList} />
         </ListContainer>
       </MainArea>
-      <Footer srcPieList={IconPieListActive} />
+      <Footer srcIconPieList={IconPieListActive} />
     </>
   )
 }
