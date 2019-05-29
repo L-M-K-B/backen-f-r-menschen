@@ -25,6 +25,7 @@ export const GridContainer = styled.div`
   border-radius: 14px;
   margin: 8px;
 `
+
 export const LinkToSingleRecipe1 = styled(Link)`
   grid-column: 1 / span 10;
   grid-row: 1 / span 2;
@@ -38,6 +39,9 @@ export const LinkToSingleRecipe2 = styled(Link)`
 export const Favorite = styled.div`
   grid-column: 11 / span 2;
   grid-row: 1 / span 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 export const Image = styled.img`
   width: 125px;
@@ -54,7 +58,7 @@ export const TimeEfford = styled.div`
   grid-row: 3 / span 4;
 `
 export const Label = styled.p`
-  margin: 0;
+  margin: 0 0 2px;
 `
 export const Time = styled.div`
   margin: 0 0 15px 0;
@@ -79,5 +83,5 @@ export const Cookie = styled.img`
 export const StyledTagList = styled.div`
   grid-column: 1 / span 12;
   grid-row: 7 / span 1;
-  align-self: end;
+  align-self: center;
 `

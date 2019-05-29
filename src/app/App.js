@@ -24,6 +24,10 @@ export default function App() {
     setLocal('recipesList', recipesList)
   }, [recipesList])
 
+  function handleToggleFavorite(id, favorite) {
+    setLocal(`${id}Favorite`, favorite)
+  }
+
   function getRecipe(id, recipesList) {
     const index = recipesList.map(recipe => recipe.id).indexOf(id)
     const recipe = recipesList[index]
@@ -37,7 +41,12 @@ export default function App() {
         <Route
           exact
           path="/"
-          render={() => <RecipesOverviewPage recipesList={recipesList} />}
+          render={() => (
+            <RecipesOverviewPage
+              recipesList={recipesList}
+              onToggleFavorite={handleToggleFavorite}
+            />
+          )}
         />
         <Route
           path="/recipe/:id"
@@ -45,6 +54,7 @@ export default function App() {
             <RecipeDetailedPage
               recipe={getRecipe(props.match.params.id, recipesList)}
               id={props.match.params.id}
+              onToggleFavorite={handleToggleFavorite}
             />
           )}
         />

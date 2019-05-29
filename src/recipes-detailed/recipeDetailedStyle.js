@@ -49,6 +49,11 @@ export const Button = styled.button`
 `
 
 // Stage
+export const Favorite = styled.div`
+  position: relative;
+  left: 275px;
+  margin: 0;
+`
 export const TitleImage = styled.img`
   width: 100%;
   margin-top: 15px;
