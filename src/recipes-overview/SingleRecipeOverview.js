@@ -37,8 +37,6 @@ export default function SingleRecipeOverview({ recipe, onToggleFavorite }) {
   return (
     <OverviewContainer>
       <GridContainer>
-        <Favorite />
-
         <LinkToSingleRecipe1 to={`/recipe/${id}`}>
           <Name>{recipeName}</Name>
         </LinkToSingleRecipe1>
