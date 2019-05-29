@@ -90,6 +90,15 @@ const mockdata = {
       tags: ['everyday classic', 'hearty'],
       titleImage: '/images/kaesekekse.jpg',
     },
+    {
+      id: 'tarte-au-chocolat',
+      recipeName: 'Tarte au Chocolat',
+      time: 45,
+      difficulty: 3,
+      amount: '1 tarte baking pan ∅20cm',
+      tags: ['glutenfree', 'sweet'],
+      titleImage: '/images/TarteAuChocolat.jpg',
+    },
   ],
-}
-export default mockdata
+};
+export default mockdata;
