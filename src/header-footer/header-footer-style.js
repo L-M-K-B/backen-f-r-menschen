@@ -1,6 +1,6 @@
-import styled from 'styled-components'
-import { NavLink as RRDNavlinkLink } from 'react-router-dom'
-import { pink, pShadow, white } from '../misc/colors'
+import styled from 'styled-components';
+import { NavLink as RRDNavlinkLink } from 'react-router-dom';
+import { pink, pShadow, white } from '../misc/colors';
 
 // Header
 export const HeaderContainer = styled.div`
@@ -9,29 +9,29 @@ export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
-`
+  width: 375px;
+`;
 export const Panel = styled.img`
-  align-items: stretch;
   height: 55px;
+  width: 375px;
   position: absolute;
-`
+`;
 export const HeadlineContainer = styled.div`
   position: relative;
   z-index: 100;
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  width: 90%;
+  width: 335px;
   border-radius: 14px;
   box-shadow: 0 4px 4px 0 ${pShadow};
   background-color: ${white};
-`
+`;
 export const Headline = styled.p`
   margin: 10px;
   font-family: 'Domine', serif;
   font-size: 30px;
-`
+`;
 
 // Footer
 export const NavContainer = styled.div`
@@ -41,13 +41,13 @@ export const NavContainer = styled.div`
   justify-content: space-evenly;
   align-items: top;
   height: 60px;
-  width: 100%;
+  width: 375px;
   background-image: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
     ${white} 50%
   );
-`
+`;
 export const NavLink = styled(RRDNavlinkLink)`
   display: flex;
   justify-content: center;
@@ -62,5 +62,5 @@ export const NavLink = styled(RRDNavlinkLink)`
   &.active {
     background-color: ${pink};
   }
-`
-export const Icon = styled.img``
+`;
+export const Icon = styled.img``;

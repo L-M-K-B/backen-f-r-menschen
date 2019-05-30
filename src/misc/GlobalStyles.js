@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components'
-import { font } from './colors'
+import { createGlobalStyle } from 'styled-components';
+import { font } from './colors';
 
 export default createGlobalStyle`
 
@@ -13,6 +13,8 @@ export default createGlobalStyle`
     margin: 0;
     font-family: 'Roboto', sans-serif;
     color: ${font};
+    display: flex;
+    justify-content: center;
   }
-`
+`;
 // für Überschriften: font-family: 'Domine', serif;
