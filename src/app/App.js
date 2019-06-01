@@ -8,6 +8,7 @@ import GlobalStyles from '../misc/GlobalStyles';
 //import mockdata from '../mockdata';
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage';
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage';
+import AboutPage from '../about/AboutPage';
 
 const Grid = styled.div`
   display: grid;
@@ -65,6 +66,7 @@ export default function App() {
             />
           )}
         />
+        <Route path="/about" component={AboutPage} />
       </Grid>
     </Router>
   );

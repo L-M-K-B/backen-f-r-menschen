@@ -1,9 +1,10 @@
-import React from 'react'
-import ListOfRecipes from './ListOfRecipes'
-import { MainArea, ListContainer } from './recipesOverviewStyle'
-import Header from '../header-footer/Header'
-import Footer from '../header-footer/Footer'
-import IconPieListActive from '../images/IconPieListActive.png'
+import React from 'react';
+import ListOfRecipes from './ListOfRecipes';
+import { MainArea, ListContainer } from './recipesOverviewStyle';
+import Header from '../header-footer/Header';
+import Footer from '../header-footer/Footer';
+import IconPieListActive from '../images/IconPieListActive.png';
+import IconChef from '../images/IconChef.png';
 
 export default function RecipesOverviewPage({ recipesList, onToggleFavorite }) {
   return (
@@ -17,7 +18,7 @@ export default function RecipesOverviewPage({ recipesList, onToggleFavorite }) {
           />
         </ListContainer>
       </MainArea>
-      <Footer srcIconPieList={IconPieListActive} />
+      <Footer srcIconPieList={IconPieListActive} srcIconChef={IconChef} />
     </>
-  )
+  );
 }

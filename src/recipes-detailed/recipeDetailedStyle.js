@@ -51,8 +51,8 @@ export const Button = styled.button`
 
 // Stage
 export const Favorite = styled.div`
-  position: relative;
-  left: 275px;
+  display: flex;
+  justify-content: flex-end;
   margin: 0;
 `;
 export const TitleImage = styled.img`

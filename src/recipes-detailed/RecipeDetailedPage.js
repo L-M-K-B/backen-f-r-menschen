@@ -9,6 +9,7 @@ import Notes from './Notes';
 import Footer from '../header-footer/Footer';
 
 import IconPieList from '../images/IconPieList.png';
+import IconChef from '../images/IconChef.png';
 
 export default function RecipeDetailedPage({ recipe, id, onToggleFavorite }) {
   //console.log(recipe);
@@ -23,7 +24,7 @@ export default function RecipeDetailedPage({ recipe, id, onToggleFavorite }) {
           <Notes id={id} />
         </RecipeContainer>
       </MainArea>
-      <Footer srcIconPieList={IconPieList} />
+      <Footer srcIconPieList={IconPieList} srcIconChef={IconChef} />
     </>
   );
 }
