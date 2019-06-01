@@ -102,6 +102,12 @@ export const DifficultyValue = styled.div`
   grid-column: 2;
   grid-row: 3;
 `;
+export const StyledTagList = styled.div`
+  grid-column: 1 / span 12;
+  grid-row: 7 / span 1;
+  align-self: center;
+`;
+
 export const TagsDiv = styled.div`
   padding: 10px 0 5px 0;
 `;

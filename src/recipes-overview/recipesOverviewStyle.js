@@ -85,4 +85,9 @@ export const StyledTagList = styled.div`
   grid-column: 1 / span 12;
   grid-row: 7 / span 1;
   align-self: center;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 `;
+/*overflow: hidden;
+  overflow-x: scroll; */

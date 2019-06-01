@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { getLocal } from '../services'
+import React, { useState } from 'react';
+import { getLocal } from '../services';
 import {
   BoxContainer,
   BoxInnerContainer,
@@ -15,23 +15,23 @@ import {
   DifficultyKey,
   DifficultyValue,
   TagsDiv,
-} from './recipeDetailedStyle'
+} from './recipeDetailedStyle';
 
-import IconFavorite from '../images/IconFavorite.png'
-import IconFavoriteActive from '../images/IconFavoriteActive.png'
-import IconCookie from '../images/IconCookie.png'
-import IconStopwatch from '../images/IconStopwatch.png'
-import IconAmount from '../images/IconAmount.png'
-import Tags from '../recipes-overview/Tags'
+import IconFavorite from '../images/IconFavorite.png';
+import IconFavoriteActive from '../images/IconFavoriteActive.png';
+import IconCookie from '../images/IconCookie.png';
+import IconStopwatch from '../images/IconStopwatch.png';
+import IconAmount from '../images/IconAmount.png';
+import Tags from './TagsDetail';
 
 export default function RecipeStage({ recipe, onToggleFavorite }) {
-  const { id, recipeName, time, difficulty, tags, titleImage, amount } = recipe
+  const { id, recipeName, time, difficulty, tags, titleImage, amount } = recipe;
 
-  const [favorite, setFavorite] = useState(getLocal(`${id}Favorite`) || false)
+  const [favorite, setFavorite] = useState(getLocal(`${id}Favorite`) || false);
 
   function getCookies() {
-    const cookies = new Array(recipe.difficulty)
-    return cookies.fill('')
+    const cookies = new Array(recipe.difficulty);
+    return cookies.fill('');
   }
 
   return (
@@ -40,8 +40,8 @@ export default function RecipeStage({ recipe, onToggleFavorite }) {
         <TitleImage src={titleImage} alt={recipeName} />
         <Favorite
           onClick={() => {
-            onToggleFavorite(id, !favorite)
-            setFavorite(!favorite)
+            onToggleFavorite(id, !favorite);
+            setFavorite(!favorite);
           }}
         >
           {favorite ? (
@@ -74,5 +74,5 @@ export default function RecipeStage({ recipe, onToggleFavorite }) {
         </TagsDiv>
       </BoxInnerContainer>
     </BoxContainer>
-  )
+  );
 }
