@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { getLocal } from '../services'
+import React, { useState } from 'react';
+import { getLocal } from '../services';
 import {
   LinkToSingleRecipe1,
   LinkToSingleRecipe2,
@@ -15,35 +15,35 @@ import {
   Stopwatch,
   Difficulty,
   Cookie,
-} from './recipesOverviewStyle'
+} from './recipesOverviewStyle';
 
-import IconFavorite from '../images/IconFavorite.png'
-import IconFavoriteActive from '../images/IconFavoriteActive.png'
-import IconStopwatch from '../images/IconStopwatch.png'
-import IconCookie from '../images/IconCookie.png'
+import IconFavorite from '../images/IconFavorite.png';
+import IconFavoriteActive from '../images/IconFavoriteActive.png';
+import IconStopwatch from '../images/IconStopwatch.png';
+import IconCookie from '../images/IconCookie.png';
 
-import Tags from './Tags'
+import Tags from './TagsOverview';
 
 export default function SingleRecipeOverview({ recipe, onToggleFavorite }) {
-  const { id, recipeName, time, difficulty, tags, titleImage } = recipe
+  const { _id, recipeName, time, difficulty, tags, titleImage } = recipe;
 
-  const [favorite, setFavorite] = useState(getLocal(`${id}Favorite`) || false)
+  const [favorite, setFavorite] = useState(getLocal(`${_id}Favorite`) || false);
 
   function getCookies() {
-    const cookies = new Array(difficulty)
-    return cookies.fill('')
+    const cookies = new Array(difficulty);
+    return cookies.fill('');
   }
 
   return (
     <OverviewContainer>
       <GridContainer>
-        <LinkToSingleRecipe1 to={`/recipe/${id}`}>
+        <LinkToSingleRecipe1 to={`/recipe/${_id}`}>
           <Name>{recipeName}</Name>
         </LinkToSingleRecipe1>
         <Favorite
           onClick={() => {
-            onToggleFavorite(id, !favorite)
-            setFavorite(!favorite)
+            onToggleFavorite(_id, !favorite);
+            setFavorite(!favorite);
           }}
         >
           {favorite ? (
@@ -52,7 +52,7 @@ export default function SingleRecipeOverview({ recipe, onToggleFavorite }) {
             <img src={IconFavorite} alt="Icon Favorite Orange" />
           )}
         </Favorite>
-        <LinkToSingleRecipe2 to={`/recipe/${id}`}>
+        <LinkToSingleRecipe2 to={`/recipe/${_id}`}>
           <Image src={titleImage} alt={recipeName} />
         </LinkToSingleRecipe2>
 
@@ -73,8 +73,15 @@ export default function SingleRecipeOverview({ recipe, onToggleFavorite }) {
           </Difficulty>
         </TimeEfford>
 
-        <Tags tags={tags} />
+        <Tags
+          key={tag => {
+            const index = tags.indexOf(tag);
+            console.log('index', index);
+            return index;
+          }}
+          tags={tags}
+        />
       </GridContainer>
     </OverviewContainer>
-  )
+  );
 }

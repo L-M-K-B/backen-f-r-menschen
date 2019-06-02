@@ -1,16 +1,16 @@
-import React from 'react'
-import SingleRecipeOverview from './SingleRecipeOverview'
+import React from 'react';
+import SingleRecipeOverview from './SingleRecipeOverview';
 
 export default function ListOfRecipes({ recipesList, onToggleFavorite }) {
   return (
     <div>
       {recipesList.map(recipe => (
         <SingleRecipeOverview
-          key={recipe.id}
+          key={recipe._id}
           recipe={recipe}
           onToggleFavorite={onToggleFavorite}
         />
       ))}
     </div>
-  )
+  );
 }

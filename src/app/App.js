@@ -1,37 +1,45 @@
-import React, { useState, useEffect } from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
-import { setLocal /*, getLocal*/ } from '../services'
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { setLocal, getLocal, getRecipes } from '../services';
 
-import styled from 'styled-components'
-import GlobalStyles from '../misc/GlobalStyles'
+import styled from 'styled-components';
+import GlobalStyles from '../misc/GlobalStyles';
 
-import mockdata from '../mockdata'
-import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage'
-import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage'
+//import mockdata from '../mockdata';
+import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage';
+import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage';
+import AboutPage from '../about/AboutPage';
 
 const Grid = styled.div`
   display: grid;
   grid-template-rows: 55px 1fr;
   height: 100vh;
-`
+`;
 
 export default function App() {
-  const [recipesList, setRecipesList] = useState(
-    /*getLocal('recipesList') ||*/ mockdata.recipesList || []
-  )
+  const [recipesList, setRecipesList] = useState(getLocal('recipesList') || []);
 
   useEffect(() => {
-    setLocal('recipesList', recipesList)
-  }, [recipesList])
+    getRecipes()
+      .then(data => {
+        setRecipesList(data);
+      })
+      .catch(err => console.log(err));
+  }, []);
+
+  useEffect(() => {
+    setLocal('recipesList', recipesList);
+  }, [recipesList]);
 
   function handleToggleFavorite(id, favorite) {
-    setLocal(`${id}Favorite`, favorite)
+    setLocal(`${id}Favorite`, favorite);
   }
 
   function getRecipe(id, recipesList) {
-    const index = recipesList.map(recipe => recipe.id).indexOf(id)
-    const recipe = recipesList[index]
-    return recipe
+    const indexArray = recipesList.map(recipe => recipe._id);
+    const index = indexArray.indexOf(id);
+    const recipe = recipesList[index];
+    return recipe;
   }
 
   return (
@@ -58,9 +66,10 @@ export default function App() {
             />
           )}
         />
+        <Route path="/about" component={AboutPage} />
       </Grid>
     </Router>
-  )
+  );
 }
 
 //  <MainArea> </MainArea>

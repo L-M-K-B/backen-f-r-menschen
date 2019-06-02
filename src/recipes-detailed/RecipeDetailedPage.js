@@ -1,16 +1,18 @@
-import React from 'react'
-import { MainArea, RecipeContainer } from './recipeDetailedStyle'
+import React from 'react';
+import { MainArea, RecipeContainer } from './recipeDetailedStyle';
 
-import Header from '../header-footer/Header'
-import RecipeStage from './RecipeStage'
-import IngredientList from './IngredientsList'
-import ShortDescription from './ShortDescription'
-import Notes from './Notes'
-import Footer from '../header-footer/Footer'
+import Header from '../header-footer/Header';
+import RecipeStage from './RecipeStage';
+import IngredientList from './IngredientsList';
+import ShortDescription from './ShortDescription';
+import Notes from './Notes';
+import Footer from '../header-footer/Footer';
 
-import IconPieList from '../images/IconPieList.png'
+import IconPieList from '../images/IconPieList.png';
+import IconChef from '../images/IconChef.png';
 
 export default function RecipeDetailedPage({ recipe, id, onToggleFavorite }) {
+  //console.log(recipe);
   return (
     <>
       <Header title={recipe.recipeName} />
@@ -22,7 +24,7 @@ export default function RecipeDetailedPage({ recipe, id, onToggleFavorite }) {
           <Notes id={id} />
         </RecipeContainer>
       </MainArea>
-      <Footer srcIconPieList={IconPieList} />
+      <Footer srcIconPieList={IconPieList} srcIconChef={IconChef} />
     </>
-  )
+  );
 }
