@@ -4,7 +4,6 @@ const recipeSchema = new mongoose.Schema({
   recipeName: {
     type: String,
     required: true,
-    get: value => value.toUpperCase(),
   },
   time: {
     type: Number,
