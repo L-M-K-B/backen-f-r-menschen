@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { getLocal } from '../services';
+import React from 'react';
 import {
   LinkToSingleRecipe1,
   LinkToSingleRecipe2,
@@ -24,10 +23,12 @@ import IconCookie from '../images/IconCookie.png';
 
 import Tags from './TagsOverview';
 
-export default function SingleRecipeOverview({ recipe, onToggleFavorite }) {
+export default function SingleRecipeOverview({
+  recipe,
+  favoriteStatus,
+  onToggleFavorite,
+}) {
   const { _id, recipeName, time, difficulty, tags, titleImage } = recipe;
-
-  const [favorite, setFavorite] = useState(getLocal(`${_id}Favorite`) || false);
 
   function getCookies() {
     const cookies = new Array(difficulty);
@@ -42,11 +43,10 @@ export default function SingleRecipeOverview({ recipe, onToggleFavorite }) {
         </LinkToSingleRecipe1>
         <Favorite
           onClick={() => {
-            onToggleFavorite(_id, !favorite);
-            setFavorite(!favorite);
+            onToggleFavorite(_id, !favoriteStatus);
           }}
         >
-          {favorite ? (
+          {favoriteStatus ? (
             <img src={IconFavoriteActive} alt="Icon Favorite Pink" />
           ) : (
             <img src={IconFavorite} alt="Icon Favorite Orange" />

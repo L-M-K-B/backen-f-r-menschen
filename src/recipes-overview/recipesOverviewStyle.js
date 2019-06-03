@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { font, oShadow } from '../misc/colors';
+import { font, oShadow, pShadow, white } from '../misc/colors';
 
 export const MainArea = styled.main`
   grid-row: 2;
@@ -13,6 +13,18 @@ export const ListContainer = styled.div`
   width: 335px;
   margin: 25px 20px 0;
 `;
+
+// Filtersection
+export const FilterSection = styled.section`
+  background-color: ${pShadow};
+`;
+export const FButton = styled.button`
+  border-radius: 14px;
+  box-shadow: 0 5px 4px 2px ${oShadow};
+  background-color: ${white};
+`;
+
+// SingleRecipeOverview
 export const OverviewContainer = styled.div`
   height: 235px;
   margin: 0 0 20px 0;
@@ -89,5 +101,3 @@ export const StyledTagList = styled.div`
   white-space: nowrap;
   text-overflow: ellipsis;
 `;
-/*overflow: hidden;
-  overflow-x: scroll; */

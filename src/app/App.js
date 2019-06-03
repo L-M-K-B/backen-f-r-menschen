@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { setLocal, getLocal, getRecipes } from '../services';
+import { getIndex } from '../utils';
 
 import styled from 'styled-components';
 import GlobalStyles from '../misc/GlobalStyles';
@@ -18,6 +19,13 @@ const Grid = styled.div`
 
 export default function App() {
   const [recipesList, setRecipesList] = useState(getLocal('recipesList') || []);
+  const [favorites, setFavorites] = useState(
+    getLocal('favoritesList') ||
+      recipesList.map(recipe => ({
+        id: recipe._id,
+        status: false,
+      }))
+  );
 
   useEffect(() => {
     getRecipes()
@@ -31,8 +39,27 @@ export default function App() {
     setLocal('recipesList', recipesList);
   }, [recipesList]);
 
-  function handleToggleFavorite(id, favorite) {
-    setLocal(`${id}Favorite`, favorite);
+  useEffect(() => {
+    /*if (favorites === []) {
+      const favoritesList = recipesList.map(recipe => ({
+        [recipe._id]: false,
+      }));
+      setLocal('favoritesList', favorites);
+      setFavorites(favorites);
+    }*/
+    setLocal('favoritesList', favorites);
+    setFavorites(favorites);
+  }, [favorites /*, recipesList*/]);
+
+  function handleToggleFavorite(id, favoriteStatus) {
+    console.log('1', id, favoriteStatus);
+    const index = getIndex(favorites, id);
+    setFavorites(() => [
+      ...favorites.slice(0, index),
+      { id: id, status: favoriteStatus },
+      ...favorites.slice(index + 1),
+    ]);
+    setLocal('favoritesList', favorites);
   }
 
   function getRecipe(id, recipesList) {
@@ -52,6 +79,7 @@ export default function App() {
           render={() => (
             <RecipesOverviewPage
               recipesList={recipesList}
+              favoritesList={favorites}
               onToggleFavorite={handleToggleFavorite}
             />
           )}

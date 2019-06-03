@@ -25,9 +25,17 @@ import IconAmount from '../images/IconAmount.png';
 import Tags from './TagsDetail';
 
 export default function RecipeStage({ recipe, onToggleFavorite }) {
-  const { id, recipeName, time, difficulty, tags, titleImage, amount } = recipe;
+  const {
+    _id,
+    recipeName,
+    time,
+    difficulty,
+    tags,
+    titleImage,
+    amount,
+  } = recipe;
 
-  const [favorite, setFavorite] = useState(getLocal(`${id}Favorite`) || false);
+  const [favorite, setFavorite] = useState(getLocal(`${_id}Favorite`) || false);
 
   function getCookies() {
     const cookies = new Array(recipe.difficulty);
@@ -40,7 +48,7 @@ export default function RecipeStage({ recipe, onToggleFavorite }) {
         <TitleImage src={titleImage} alt={recipeName} />
         <Favorite
           onClick={() => {
-            onToggleFavorite(id, !favorite);
+            onToggleFavorite(_id, !favorite);
             setFavorite(!favorite);
           }}
         >
