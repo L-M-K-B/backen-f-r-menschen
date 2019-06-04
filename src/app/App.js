@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { setLocal, getLocal, getRecipes } from '../services';
+import { getIndex } from '../utils';
 
 import styled from 'styled-components';
 import GlobalStyles from '../misc/GlobalStyles';
 
-//import mockdata from '../mockdata';
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage';
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage';
 import AboutPage from '../about/AboutPage';
@@ -18,6 +18,7 @@ const Grid = styled.div`
 
 export default function App() {
   const [recipesList, setRecipesList] = useState(getLocal('recipesList') || []);
+  const [favorites, setFavorites] = useState(getLocal('favoritesList') || []);
 
   useEffect(() => {
     getRecipes()
@@ -31,8 +32,23 @@ export default function App() {
     setLocal('recipesList', recipesList);
   }, [recipesList]);
 
-  function handleToggleFavorite(id, favorite) {
-    setLocal(`${id}Favorite`, favorite);
+  useEffect(() => {
+    setLocal('favoritesList', favorites);
+    setFavorites(favorites);
+  }, [favorites]);
+
+  function handleToggleFavorite(id, favoriteStatus) {
+    const index = getIndex(favorites, id);
+    if (index === -1) {
+      setFavorites(() => [...favorites, { id: id, status: favoriteStatus }]);
+    } else {
+      setFavorites(() => [
+        ...favorites.slice(0, index),
+        { id: id, status: favoriteStatus },
+        ...favorites.slice(index + 1),
+      ]);
+      setLocal('favoritesList', favorites);
+    }
   }
 
   function getRecipe(id, recipesList) {
@@ -52,6 +68,7 @@ export default function App() {
           render={() => (
             <RecipesOverviewPage
               recipesList={recipesList}
+              favoritesList={favorites}
               onToggleFavorite={handleToggleFavorite}
             />
           )}
@@ -61,6 +78,7 @@ export default function App() {
           render={props => (
             <RecipeDetailedPage
               recipe={getRecipe(props.match.params.id, recipesList)}
+              favoritesList={favorites}
               id={props.match.params.id}
               onToggleFavorite={handleToggleFavorite}
             />
