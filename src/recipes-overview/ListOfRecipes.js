@@ -15,8 +15,7 @@ export default function ListOfRecipes({
 }) {
   function getFavoriteStatus(id) {
     const index = getIndex(favoritesList, id);
-    console.log('2', index);
-    return favoritesList[index].status;
+    return index === -1 ? false : favoritesList[index].status;
   }
   return (
     <div>

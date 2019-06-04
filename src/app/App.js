@@ -40,26 +40,22 @@ export default function App() {
   }, [recipesList]);
 
   useEffect(() => {
-    /*if (favorites === []) {
-      const favoritesList = recipesList.map(recipe => ({
-        [recipe._id]: false,
-      }));
-      setLocal('favoritesList', favorites);
-      setFavorites(favorites);
-    }*/
     setLocal('favoritesList', favorites);
     setFavorites(favorites);
-  }, [favorites /*, recipesList*/]);
+  }, [favorites]);
 
   function handleToggleFavorite(id, favoriteStatus) {
-    console.log('1', id, favoriteStatus);
     const index = getIndex(favorites, id);
-    setFavorites(() => [
-      ...favorites.slice(0, index),
-      { id: id, status: favoriteStatus },
-      ...favorites.slice(index + 1),
-    ]);
-    setLocal('favoritesList', favorites);
+    if (index === -1) {
+      setFavorites(() => [...favorites, { id: id, status: favoriteStatus }]);
+    } else {
+      setFavorites(() => [
+        ...favorites.slice(0, index),
+        { id: id, status: favoriteStatus },
+        ...favorites.slice(index + 1),
+      ]);
+      setLocal('favoritesList', favorites);
+    }
   }
 
   function getRecipe(id, recipesList) {
@@ -89,6 +85,7 @@ export default function App() {
           render={props => (
             <RecipeDetailedPage
               recipe={getRecipe(props.match.params.id, recipesList)}
+              favoritesList={favorites}
               id={props.match.params.id}
               onToggleFavorite={handleToggleFavorite}
             />
