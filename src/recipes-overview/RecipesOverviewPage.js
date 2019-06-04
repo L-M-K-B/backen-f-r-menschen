@@ -5,7 +5,7 @@ import { MainArea, ListContainer, FilterSection } from './recipesOverviewStyle';
 import ListOfRecipes from './ListOfRecipes';
 import Header from '../header-footer/Header';
 import Footer from '../header-footer/Footer';
-import FilterBtn from './FilterBtn';
+//import FilterBtn from './FilterBtn';
 
 import IconPieListActive from '../images/IconPieListActive.png';
 import IconChef from '../images/IconChef.png';
@@ -38,9 +38,6 @@ export default function RecipesOverviewPage({
       <Header title="List of Recipes" />
       <MainArea>
         <ListContainer>
-          <FilterSection>
-            <FilterBtn />
-          </FilterSection>
           <ListOfRecipes
             recipesList={recipesList}
             favoritesList={favoritesList}
@@ -52,3 +49,6 @@ export default function RecipesOverviewPage({
     </>
   );
 }
+/*  <FilterSection>
+            <FilterBtn />
+          </FilterSection>*/
