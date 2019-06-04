@@ -6,7 +6,6 @@ import { getIndex } from '../utils';
 import styled from 'styled-components';
 import GlobalStyles from '../misc/GlobalStyles';
 
-//import mockdata from '../mockdata';
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage';
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage';
 import AboutPage from '../about/AboutPage';
@@ -19,13 +18,7 @@ const Grid = styled.div`
 
 export default function App() {
   const [recipesList, setRecipesList] = useState(getLocal('recipesList') || []);
-  const [favorites, setFavorites] = useState(
-    getLocal('favoritesList') ||
-      recipesList.map(recipe => ({
-        id: recipe._id,
-        status: false,
-      }))
-  );
+  const [favorites, setFavorites] = useState(getLocal('favoritesList') || []);
 
   useEffect(() => {
     getRecipes()
