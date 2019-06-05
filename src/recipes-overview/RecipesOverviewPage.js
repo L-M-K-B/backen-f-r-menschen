@@ -1,11 +1,14 @@
-import React /*useState, useEffect*/ from 'react';
-//import { getLocal, setLocal } from '../services';
-import { MainArea, ListContainer, FilterSection } from './recipesOverviewStyle';
+import React from 'react';
+import {
+  MainArea,
+  ListContainer,
+  FilterSection,
+  FButton,
+} from './recipesOverviewStyle';
 
 import ListOfRecipes from './ListOfRecipes';
 import Header from '../header-footer/Header';
 import Footer from '../header-footer/Footer';
-//import FilterBtn from './FilterBtn';
 
 import IconPieListActive from '../images/IconPieListActive.png';
 import IconChef from '../images/IconChef.png';
@@ -14,30 +17,26 @@ import IconChef from '../images/IconChef.png';
 export default function RecipesOverviewPage({
   recipesList,
   favoritesList,
+  favFilterStatus,
+  onToggleFavFilterStatus,
   onToggleFavorite,
 }) {
-  /*const favFilterOptions = [
-    { id: 'all', label: 'All' },
-    { id: 'favorite', label: 'Favorites' },
-  ];
-
-  const [favFilter, setFavFilter] = useState(
-    getLocal(favFilterOptions) || 'all'
-  );
-
-  useEffect(() => {
-    setLocal('favFilter', favFilter);
-  }, [favFilter]);
-
-  function handleFavFilter() {
-    setFavFilter();
-  }*/
-
   return (
     <>
       <Header title="List of Recipes" />
       <MainArea>
         <ListContainer>
+          <FilterSection>
+            <FButton
+              onClick={() => {
+                onToggleFavFilterStatus(!favFilterStatus);
+              }}
+            >
+              {favFilterStatus
+                ? 'These are your favorites'
+                : 'This is a general list'}
+            </FButton>
+          </FilterSection>
           <ListOfRecipes
             recipesList={recipesList}
             favoritesList={favoritesList}
@@ -49,6 +48,5 @@ export default function RecipesOverviewPage({
     </>
   );
 }
-/*  <FilterSection>
-            <FilterBtn />
-          </FilterSection>*/
+/*btnLabel={
+ */

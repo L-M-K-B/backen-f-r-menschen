@@ -19,6 +19,8 @@ export const FilterSection = styled.section`
   background-color: ${pShadow};
 `;
 export const FButton = styled.button`
+  height: 50px;
+  width: 200px;
   border-radius: 14px;
   box-shadow: 0 5px 4px 2px ${oShadow};
   background-color: ${white};

@@ -19,6 +19,9 @@ const Grid = styled.div`
 export default function App() {
   const [recipesList, setRecipesList] = useState(getLocal('recipesList') || []);
   const [favorites, setFavorites] = useState(getLocal('favoritesList') || []);
+  const [favFilterStatus, setFavFilterStatus] = useState(
+    getLocal('favFilterStatus') || false
+  );
 
   useEffect(() => {
     getRecipes()
@@ -36,6 +39,14 @@ export default function App() {
     setLocal('favoritesList', favorites);
     setFavorites(favorites);
   }, [favorites]);
+
+  useEffect(() => {
+    setLocal('favFilterStatus', favFilterStatus);
+  }, [favFilterStatus]);
+
+  function handleFavFilterStatus(newfavFilterStatus) {
+    setFavFilterStatus(newfavFilterStatus);
+  }
 
   function handleToggleFavorite(id, favoriteStatus) {
     const index = getIndex(favorites, id);
@@ -69,6 +80,8 @@ export default function App() {
             <RecipesOverviewPage
               recipesList={recipesList}
               favoritesList={favorites}
+              favFilterStatus={favFilterStatus}
+              onToggleFavFilterStatus={handleFavFilterStatus}
               onToggleFavorite={handleToggleFavorite}
             />
           )}

@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { getLocal } from '../services';
+import React from 'react';
 import {
   BoxContainer,
   BoxInnerContainer,
