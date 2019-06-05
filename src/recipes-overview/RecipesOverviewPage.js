@@ -40,6 +40,7 @@ export default function RecipesOverviewPage({
           <ListOfRecipes
             recipesList={recipesList}
             favoritesList={favoritesList}
+            favFilterStatus={favFilterStatus}
             onToggleFavorite={onToggleFavorite}
           />
         </ListContainer>
