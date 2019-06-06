@@ -20,27 +20,12 @@ export default function RecipesOverviewPage({
   recipesList,
   favoritesList,
   favFilterStatus,
+  tagFilter,
+  dropdownTagList,
   onToggleFavFilterStatus,
+  onHandleChange,
   onToggleFavorite,
 }) {
-  //const exampleOptions = ['vegan', 'sweet', 'hearty'];
-  const dropdownTagList = createTagList();
-
-  function createTagList() {
-    const everyTagArray = recipesList.map(recipe => recipe.tags);
-    const everyTagString = everyTagArray.join(',');
-    const everyTag = everyTagString.split(',');
-    return getUniqueTags(everyTag);
-  }
-
-  function getUniqueTags(arr) {
-    const uniqueTags = [];
-    arr.map(element => {
-      !uniqueTags.includes(element) && uniqueTags.push(element);
-    });
-    return uniqueTags;
-  }
-
   return (
     <>
       <Header title="List of Recipes" />
@@ -56,12 +41,17 @@ export default function RecipesOverviewPage({
                 ? 'These are your favorites'
                 : 'This is a general list'}
             </FavFilterButton>
-            <TagDropdown options={dropdownTagList} />
+            <TagDropdown
+              options={dropdownTagList}
+              onChange={onHandleChange}
+              placeholder="Select a tag name"
+            />
           </FilterSection>
           <ListOfRecipes
             recipesList={recipesList}
             favoritesList={favoritesList}
             favFilterStatus={favFilterStatus}
+            tagFilter={tagFilter}
             onToggleFavorite={onToggleFavorite}
           />
         </ListContainer>

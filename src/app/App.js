@@ -22,6 +22,7 @@ export default function App() {
   const [favFilterStatus, setFavFilterStatus] = useState(
     getLocal('favFilterStatus') || false
   );
+  const [tagFilter, setTagFilter] = useState(getLocal('tagFilter') || '');
 
   useEffect(() => {
     getRecipes()
@@ -44,6 +45,10 @@ export default function App() {
     setLocal('favFilterStatus', favFilterStatus);
   }, [favFilterStatus]);
 
+  useEffect(() => {
+    setLocal('tagFilter', tagFilter);
+  }, [tagFilter]);
+
   function handleFavFilterStatus(newfavFilterStatus) {
     setFavFilterStatus(newfavFilterStatus);
   }
@@ -62,9 +67,30 @@ export default function App() {
     }
   }
 
+  const dropdownTagList = createTagList();
+
+  function createTagList() {
+    const everyTag = recipesList
+      .map(recipe => recipe.tags)
+      .join(',')
+      .split(',');
+    return getUniqueTags(everyTag);
+  }
+
+  function getUniqueTags(everyTag) {
+    const uniqueTags = ['No tag selection'];
+    everyTag.map(
+      element => !uniqueTags.includes(element) && uniqueTags.push(element)
+    );
+    return uniqueTags;
+  }
+
+  function handleTagFilterChange(event) {
+    setTagFilter(event.value);
+  }
+
   function getRecipe(id, recipesList) {
-    const indexArray = recipesList.map(recipe => recipe._id);
-    const index = indexArray.indexOf(id);
+    const index = recipesList.map(recipe => recipe._id).indexOf(id);
     const recipe = recipesList[index];
     return recipe;
   }
@@ -81,7 +107,10 @@ export default function App() {
               recipesList={recipesList}
               favoritesList={favorites}
               favFilterStatus={favFilterStatus}
+              tagFilter={tagFilter}
+              dropdownTagList={dropdownTagList}
               onToggleFavFilterStatus={handleFavFilterStatus}
+              onHandleChange={handleTagFilterChange}
               onToggleFavorite={handleToggleFavorite}
             />
           )}

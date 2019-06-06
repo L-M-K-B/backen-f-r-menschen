@@ -6,6 +6,7 @@ export default function ListOfRecipes({
   recipesList,
   favoritesList,
   favFilterStatus,
+  tagFilter,
   onToggleFavorite,
 }) {
   function filterFavRecipes() {
@@ -15,11 +16,11 @@ export default function ListOfRecipes({
           return favorite.id;
         }
       });
-      const filteredRecipes = recipesList.filter(
+      const filteredFavRecipes = recipesList.filter(
         recipe => actualFavorites.includes(recipe._id) === true
       );
-      if (filteredRecipes.length > 0) {
-        return filteredRecipes.map(recipe => (
+      if (filteredFavRecipes.length > 0) {
+        return filteredFavRecipes.map(recipe => (
           <SingleRecipeOverview
             key={recipe._id}
             recipe={recipe}
@@ -31,14 +32,31 @@ export default function ListOfRecipes({
         return <p>You do not have any favorites yet.</p>;
       }
     } else {
-      return recipesList.map(recipe => (
-        <SingleRecipeOverview
-          key={recipe._id}
-          recipe={recipe}
-          favoriteStatus={getFavoriteStatus(recipe._id)}
-          onToggleFavorite={onToggleFavorite}
-        />
-      ));
+      if (tagFilter !== 'No tag selection') {
+        const filteredTagRecipes = [];
+        recipesList.map(recipe => {
+          if (recipe.tags.includes(tagFilter) === true) {
+            filteredTagRecipes.push(recipe);
+          }
+        });
+        return filteredTagRecipes.map(recipe => (
+          <SingleRecipeOverview
+            key={recipe._id}
+            recipe={recipe}
+            favoriteStatus={getFavoriteStatus(recipe._id)}
+            onToggleFavorite={onToggleFavorite}
+          />
+        ));
+      } else {
+        return recipesList.map(recipe => (
+          <SingleRecipeOverview
+            key={recipe._id}
+            recipe={recipe}
+            favoriteStatus={getFavoriteStatus(recipe._id)}
+            onToggleFavorite={onToggleFavorite}
+          />
+        ));
+      }
     }
   }
 
