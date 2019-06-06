@@ -15,11 +15,9 @@ export default function ListOfRecipes({
           return favorite.id;
         }
       });
-
       const filteredRecipes = recipesList.filter(
         recipe => actualFavorites.includes(recipe._id) === true
       );
-      console.log(filteredRecipes);
       if (filteredRecipes.length > 0) {
         return filteredRecipes.map(recipe => (
           <SingleRecipeOverview

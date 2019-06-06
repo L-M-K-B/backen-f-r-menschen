@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import Dropdown from 'react-dropdown';
 import { font, oShadow, pShadow, white } from '../misc/colors';
 
 export const MainArea = styled.main`
@@ -18,11 +19,16 @@ export const ListContainer = styled.div`
 export const FilterSection = styled.section`
   background-color: ${pShadow};
 `;
-export const FButton = styled.button`
+export const FavFilterButton = styled.button`
   height: 50px;
-  width: 200px;
+  width: 150px;
   border-radius: 14px;
   box-shadow: 0 5px 4px 2px ${oShadow};
+  background-color: ${white};
+`;
+export const TagDropdown = styled(Dropdown)`
+  width: 150px;
+  margin-top: 20px;
   background-color: ${white};
 `;
 
