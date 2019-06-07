@@ -17,12 +17,11 @@ export default function ListOfRecipes({
     tagFilter
   );
 
-  function getFavoriteStatus(id) {
-    const index = getIndex(favoritesList, id);
-    return index === -1 ? false : favoritesList[index].status;
-  }
+  const availabilityOfFavorites = favoritesList.some(
+    favorite => favorite.status === true
+  );
 
-  return filteredRecipeList.length > 0 ? (
+  const listRendering = (
     <div>
       {filteredRecipeList.map(recipe => (
         <SingleRecipeOverview
@@ -33,17 +32,28 @@ export default function ListOfRecipes({
         />
       ))}
     </div>
-  ) : (
-    <div>
-      <p>You do not have suitable favorites.</p>
-      {/*recipesList.map(recipe => (
-        <SingleRecipeOverview
-          key={recipe._id}
-          recipe={recipe}
-          favoriteStatus={getFavoriteStatus(recipe._id)}
-          onToggleFavorite={onToggleFavorite}
-        />
-      ))*/}
-    </div>
   );
+
+  function getFavoriteStatus(id) {
+    const index = getIndex(favoritesList, id);
+    return index === -1 ? false : favoritesList[index].status;
+  }
+
+  function getReturn() {
+    if (filteredRecipeList.length > 0 && favFilterStatus === false) {
+      return listRendering;
+    } else if (
+      filteredRecipeList.length > 0 &&
+      availabilityOfFavorites === false &&
+      favFilterStatus === true
+    ) {
+      return <p>You do not have any favorites yet.</p>;
+    } else if (favFilterStatus === true && tagFilter === 'No tag selection') {
+      return listRendering;
+    } else {
+      return <p>You do not have suitable favorites.</p>;
+    }
+  }
+
+  return getReturn();
 }
