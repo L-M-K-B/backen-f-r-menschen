@@ -19,6 +19,9 @@ const Grid = styled.div`
 export default function App() {
   const [recipesList, setRecipesList] = useState(getLocal('recipesList') || []);
   const [favorites, setFavorites] = useState(getLocal('favoritesList') || []);
+  const [filterSection, setFilterSection] = useState(
+    getLocal('filterSection') || false
+  );
   const [favFilterStatus, setFavFilterStatus] = useState(
     getLocal('favFilterStatus') || false
   );
@@ -42,6 +45,10 @@ export default function App() {
   }, [favorites]);
 
   useEffect(() => {
+    setLocal('filterSection', filterSection);
+  }, [filterSection]);
+
+  useEffect(() => {
     setLocal('favFilterStatus', favFilterStatus);
   }, [favFilterStatus]);
 
@@ -49,7 +56,12 @@ export default function App() {
     setLocal('tagFilter', tagFilter);
   }, [tagFilter]);
 
+  function handleToggleFilterSection(newFilterSectionStatus) {
+    setFilterSection(newFilterSectionStatus);
+  }
+
   function handleFavFilterStatus(newfavFilterStatus) {
+    // needs event.stopPropagation() as clicking the button toggles the filter section as well
     setFavFilterStatus(newfavFilterStatus);
   }
 
@@ -106,9 +118,11 @@ export default function App() {
             <RecipesOverviewPage
               recipesList={recipesList}
               favoritesList={favorites}
+              filterSection={filterSection}
               favFilterStatus={favFilterStatus}
               tagFilter={tagFilter}
               dropdownTagList={dropdownTagList}
+              onToggleFilterSection={handleToggleFilterSection}
               onToggleFavFilterStatus={handleFavFilterStatus}
               onHandleChange={handleTagFilterChange}
               onToggleFavorite={handleToggleFavorite}

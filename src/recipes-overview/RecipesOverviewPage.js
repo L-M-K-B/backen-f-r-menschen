@@ -19,9 +19,11 @@ import IconChef from '../images/IconChef.png';
 export default function RecipesOverviewPage({
   recipesList,
   favoritesList,
+  filterSection,
   favFilterStatus,
   tagFilter,
   dropdownTagList,
+  onToggleFilterSection,
   onToggleFavFilterStatus,
   onHandleChange,
   onToggleFavorite,
@@ -31,22 +33,28 @@ export default function RecipesOverviewPage({
       <Header title="List of Recipes" />
       <MainArea>
         <ListContainer>
-          <FilterSection>
-            <FavFilterButton
-              onClick={() => {
-                onToggleFavFilterStatus(!favFilterStatus);
-              }}
-            >
-              {favFilterStatus
-                ? 'These are your favorites'
-                : 'This is a general list'}
-            </FavFilterButton>
-            <TagDropdown
-              options={dropdownTagList}
-              onChange={onHandleChange}
-              placeholder="Select a tag name"
-            />
-          </FilterSection>
+          <div
+            onClick={() => {
+              onToggleFilterSection(!filterSection);
+            }}
+          >
+            <FilterSection>
+              <FavFilterButton
+                onClick={() => {
+                  onToggleFavFilterStatus(!favFilterStatus);
+                }}
+              >
+                {favFilterStatus
+                  ? 'These are your favorites'
+                  : 'This is a general list'}
+              </FavFilterButton>
+              <TagDropdown
+                options={dropdownTagList}
+                onChange={onHandleChange}
+                placeholder="Select a tag name"
+              />
+            </FilterSection>
+          </div>
           <ListOfRecipes
             recipesList={recipesList}
             favoritesList={favoritesList}
