@@ -93,7 +93,7 @@ export default function App() {
   }
 
   function getUniqueTags(everyTag) {
-    const uniqueTags = ['no tag selection'];
+    const uniqueTags = ['no tag selected'];
     everyTag.map(
       element => !uniqueTags.includes(element) && uniqueTags.push(element)
     );

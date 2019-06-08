@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Dropdown from 'react-dropdown';
-import { font, oShadow, white } from '../misc/colors';
+import { font, pink, oShadow, pShadow, white } from '../misc/colors';
 
 export const MainArea = styled.main`
   grid-row: 2;
@@ -18,37 +18,53 @@ export const ListContainer = styled.div`
 // FilterArea
 export const FilterAreaContainer = styled.div`
   border-radius: 14px;
-  margin-bottom: 20px;
-  box-shadow: 0 5px 4px 2px ${oShadow};
+  margin: 30px 0 30px;
+  box-shadow: 0 4px 4px 0px ${pShadow};
 `;
 export const FilterAreaHeader = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  height: 35px;
+  height: 40px;
   width: 335px;
 `;
 export const Arrow = styled.img`
   height: 15px;
-  margin-right: 10px;
+  margin-right: 15px;
 `;
 export const FilterAreaOpen = styled.div`
   display: flex;
+  justify-content: space-evenly;
 `;
 export const FavFilterButton = styled.button`
-  height: 50px;
-  width: 150px;
+  height: 40px;
+  width: 130px;
+  margin: 10px 0;
+  border: 2px solid ${pink};
   border-radius: 14px;
-  box-shadow: 0 5px 4px 2px ${oShadow};
   background-color: ${white};
+  font-size: 14px;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+  }
 `;
+
 export const TagDropdown = styled(Dropdown)`
-  width: 150px;
-  margin-top: 20px;
+  width: 130px;
+  max-height: 100px;
+  overflow-y: scroll;
+  margin: 10px 0;
   padding: 10px;
+  border: 2px solid ${pink};
   border-radius: 14px;
   background-color: ${white};
-  font-size: 16px;
+  font-size: 14px;
+  text-align: center;
 `;
 
 // SingleRecipeOverview

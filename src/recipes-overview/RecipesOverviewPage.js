@@ -30,6 +30,7 @@ export default function RecipesOverviewPage({
           <FilterAreaComponent
             filterSection={filterSection}
             favFilterStatus={favFilterStatus}
+            tagFilter={tagFilter}
             dropdownTagList={dropdownTagList}
             onToggleFilterSection={onToggleFilterSection}
             onToggleFavFilterStatus={onToggleFavFilterStatus}

@@ -11,11 +11,11 @@ import {
 
 import ArrowDown from '../images/ArrowDown.svg';
 import ArrowUp from '../images/ArrowUp.svg';
-//import IconFavoriteActive from '../images/IconFavoriteActive.png';
 
 export default function FilterArea({
   filterSection,
   favFilterStatus,
+  tagFilter,
   dropdownTagList,
   onToggleFilterSection,
   onToggleFavFilterStatus,
@@ -30,12 +30,11 @@ export default function FilterArea({
               onToggleFavFilterStatus(!favFilterStatus);
             }}
           >
-            {favFilterStatus
-              ? 'These are your favorites'
-              : 'This is a general list'}
+            {favFilterStatus ? 'All recipes' : 'Favorites only'}
           </FavFilterButton>
           <TagDropdown
             options={dropdownTagList}
+            value={tagFilter}
             onChange={onHandleChange}
             placeholder="Select a tag ..."
           />

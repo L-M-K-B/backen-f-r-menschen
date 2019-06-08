@@ -40,18 +40,12 @@ export default function ListOfRecipes({
   }
 
   function getReturn() {
-    if (filteredRecipeList.length > 0 && favFilterStatus === false) {
-      return listRendering;
-    } else if (
-      filteredRecipeList.length > 0 &&
-      availabilityOfFavorites === false &&
-      favFilterStatus === true
-    ) {
+    if (availabilityOfFavorites === false && favFilterStatus === true) {
       return <p>You do not have any favorites yet.</p>;
-    } else if (favFilterStatus === true && tagFilter === 'no tag selection') {
-      return listRendering;
-    } else {
+    } else if (filteredRecipeList.length <= 0) {
       return <p>You do not have suitable favorites.</p>;
+    } else {
+      return listRendering;
     }
   }
 
