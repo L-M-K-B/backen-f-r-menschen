@@ -26,6 +26,12 @@ export default function App() {
     getLocal('favFilterStatus') || false
   );
   const [tagFilter, setTagFilter] = useState(getLocal('tagFilter') || '');
+  const [projectContainer, setProjectContainer] = useState(
+    getLocal('projectContainer') || false
+  );
+  const [conversionContainer, setConversionContainer] = useState(
+    getLocal('conversionContainer') || false
+  );
 
   useEffect(() => {
     getRecipes()
@@ -34,36 +40,33 @@ export default function App() {
       })
       .catch(err => console.log(err));
   }, []);
-
   useEffect(() => {
     setLocal('recipesList', recipesList);
   }, [recipesList]);
-
   useEffect(() => {
     setLocal('favoritesList', favorites);
     setFavorites(favorites);
   }, [favorites]);
-
   useEffect(() => {
     setLocal('filterSection', filterSection);
   }, [filterSection]);
-
   useEffect(() => {
     setLocal('favFilterStatus', favFilterStatus);
   }, [favFilterStatus]);
-
   useEffect(() => {
     setLocal('tagFilter', tagFilter);
   }, [tagFilter]);
+  useEffect(() => {
+    setLocal('projectContainer', projectContainer);
+  }, [projectContainer]);
+  useEffect(() => {
+    setLocal('conversionContainer', conversionContainer);
+  }, [conversionContainer]);
 
   function handleToggleFilterSection(newFilterSectionStatus) {
     setFilterSection(newFilterSectionStatus);
   }
 
-  // needs event.stopPropagation() as clicking the button toggles the filter section as well
-  // adding event.stopPropagation caused serious troubles (button could be used only once, afterwards status did not change anymore)
-  // sending the event to this function only (without using it) causes the same damage
-  // event.stopPropagation();
   function handleFavFilterStatus(newfavFilterStatus) {
     setFavFilterStatus(newfavFilterStatus);
   }
@@ -110,6 +113,14 @@ export default function App() {
     return recipe;
   }
 
+  function handleToggleProjectContainer(newStatus) {
+    setProjectContainer(newStatus);
+  }
+
+  function handleToggleConversionContainer(newStatus) {
+    setConversionContainer(newStatus);
+  }
+
   return (
     <Router>
       <GlobalStyles />
@@ -143,7 +154,17 @@ export default function App() {
             />
           )}
         />
-        <Route path="/about" component={AboutPage} />
+        <Route
+          path="/about"
+          render={() => (
+            <AboutPage
+              onToggleProjectContainer={handleToggleProjectContainer}
+              projectContainer={projectContainer}
+              onToggleConversionContainer={handleToggleConversionContainer}
+              conversionContainer={conversionContainer}
+            />
+          )}
+        />
       </Grid>
     </Router>
   );
