@@ -16,11 +16,11 @@ import {
   TagsDiv,
 } from './recipeDetailedStyle';
 
-import IconFavorite from '../images/IconFavorite.png';
-import IconFavoriteActive from '../images/IconFavoriteActive.png';
-import IconCookie from '../images/IconCookie.png';
-import IconStopwatch from '../images/IconStopwatch.png';
-import IconAmount from '../images/IconAmount.png';
+import IconFavorite from '../images/IconFavorite.svg';
+import IconFavoriteActive from '../images/IconFavoriteActive.svg';
+import IconCookie from '../images/IconCookie.svg';
+import IconStopwatch from '../images/IconStopwatch.svg';
+import IconAmount from '../images/IconAmount.svg';
 import Tags from './TagsDetail';
 
 export default function RecipeStage({

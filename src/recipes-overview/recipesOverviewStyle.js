@@ -16,8 +16,22 @@ export const ListContainer = styled.div`
 `;
 
 // Filtersection
-export const FilterSection = styled.section`
+export const FilterArea = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  height: 40px;
+  width: 335px;
   background-color: ${pShadow};
+`;
+export const ArrowDown = styled.p`
+  position: relative;
+  right: 15px;
+  bottom: 13px;
+  margin: 0;
+  font-size: 40px;
+`;
+export const FilterAreaOpen = styled.div`
+  background-color: ${oShadow};
 `;
 export const FavFilterButton = styled.button`
   height: 50px;
@@ -29,7 +43,10 @@ export const FavFilterButton = styled.button`
 export const TagDropdown = styled(Dropdown)`
   width: 150px;
   margin-top: 20px;
+  padding: 10px;
+  border-radius: 14px;
   background-color: ${white};
+  font-size: 16px;
 `;
 
 // SingleRecipeOverview

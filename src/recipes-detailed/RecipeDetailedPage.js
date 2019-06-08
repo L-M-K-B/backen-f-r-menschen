@@ -9,8 +9,8 @@ import ShortDescription from './ShortDescription';
 import Notes from './Notes';
 import Footer from '../header-footer/Footer';
 
-import IconPieList from '../images/IconPieList.png';
-import IconChef from '../images/IconChef.png';
+import IconPieList from '../images/IconPieList.svg';
+import IconChef from '../images/IconChef.svg';
 
 export default function RecipeDetailedPage({
   recipe,

@@ -48,7 +48,7 @@ export default function ListOfRecipes({
       favFilterStatus === true
     ) {
       return <p>You do not have any favorites yet.</p>;
-    } else if (favFilterStatus === true && tagFilter === 'No tag selection') {
+    } else if (favFilterStatus === true && tagFilter === 'no tag selection') {
       return listRendering;
     } else {
       return <p>You do not have suitable favorites.</p>;

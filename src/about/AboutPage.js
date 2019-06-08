@@ -6,8 +6,8 @@ import Project from './Project';
 import Convert from './Convert';
 import Footer from '../header-footer/Footer';
 
-import IconPieList from '../images/IconPieList.png';
-import IconChefActive from '../images/IconChefActive.png';
+import IconPieList from '../images/IconPieList.svg';
+import IconChefActive from '../images/IconChefActive.svg';
 
 export default function AboutPage() {
   return (

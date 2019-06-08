@@ -15,7 +15,7 @@ function filterFavRecipes(recipesList, favoritesList, favFilterStatus) {
 }
 
 function filterTagRecipes(recipesList, favRecipesList, tagFilter) {
-  if (tagFilter !== 'No tag selection' && tagFilter !== '') {
+  if (tagFilter !== 'no tag selection' && tagFilter !== '') {
     const filteredTagRecipes = [];
     favRecipesList.map(recipe => {
       if (recipe.tags.includes(tagFilter) === true) {

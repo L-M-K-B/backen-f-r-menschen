@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 import {
   HeaderContainer,
   Panel,
   HeadlineContainer,
   Headline,
-} from './header-footer-style'
-import HeaderPanel from '../images/HeaderPanel.png'
+} from './header-footer-style';
+import HeaderPanel from '../images/HeaderPanel.svg';
 
 export default function Header({ title }) {
   return (
@@ -15,5 +15,5 @@ export default function Header({ title }) {
         <Headline>{title}</Headline>
       </HeadlineContainer>
     </HeaderContainer>
-  )
+  );
 }
