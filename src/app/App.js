@@ -60,11 +60,11 @@ export default function App() {
     setFilterSection(newFilterSectionStatus);
   }
 
-  function handleFavFilterStatus(newfavFilterStatus /*, event*/) {
-    // needs event.stopPropagation() as clicking the button toggles the filter section as well
-    // adding event.stopPropagation caused serious troubles (button could be used only once, afterwards status did not change anymore)
-    // sending the event to this function only (without using it) causes the same damage
-    // event.stopPropagation();
+  // needs event.stopPropagation() as clicking the button toggles the filter section as well
+  // adding event.stopPropagation caused serious troubles (button could be used only once, afterwards status did not change anymore)
+  // sending the event to this function only (without using it) causes the same damage
+  // event.stopPropagation();
+  function handleFavFilterStatus(newfavFilterStatus) {
     setFavFilterStatus(newfavFilterStatus);
   }
 

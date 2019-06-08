@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Dropdown from 'react-dropdown';
-import { font, oShadow, pShadow, white } from '../misc/colors';
+import { font, oShadow, white } from '../misc/colors';
 
 export const MainArea = styled.main`
   grid-row: 2;
@@ -15,23 +15,25 @@ export const ListContainer = styled.div`
   margin: 25px 20px 0;
 `;
 
-// Filtersection
-export const FilterArea = styled.div`
+// FilterArea
+export const FilterAreaContainer = styled.div`
+  border-radius: 14px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 4px 2px ${oShadow};
+`;
+export const FilterAreaHeader = styled.div`
   display: flex;
   justify-content: flex-end;
-  height: 40px;
+  align-items: center;
+  height: 35px;
   width: 335px;
-  background-color: ${pShadow};
 `;
-export const ArrowDown = styled.p`
-  position: relative;
-  right: 15px;
-  bottom: 13px;
-  margin: 0;
-  font-size: 40px;
+export const Arrow = styled.img`
+  height: 15px;
+  margin-right: 10px;
 `;
 export const FilterAreaOpen = styled.div`
-  background-color: ${oShadow};
+  display: flex;
 `;
 export const FavFilterButton = styled.button`
   height: 50px;

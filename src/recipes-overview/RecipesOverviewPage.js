@@ -1,22 +1,14 @@
 import React from 'react';
 
-import {
-  MainArea,
-  ListContainer,
-  FilterArea,
-  FilterAreaOpen,
-  FavFilterButton,
-  TagDropdown,
-  ArrowDown,
-} from './recipesOverviewStyle';
+import { MainArea, ListContainer } from './recipesOverviewStyle';
 
+import FilterAreaComponent from './FilterArea';
 import ListOfRecipes from './ListOfRecipes';
 import Header from '../header-footer/Header';
 import Footer from '../header-footer/Footer';
 
 import IconPieListActive from '../images/IconPieListActive.svg';
 import IconChef from '../images/IconChef.svg';
-//import IconFavoriteActive from '../images/IconFavoriteActive.png';
 
 export default function RecipesOverviewPage({
   recipesList,
@@ -35,30 +27,14 @@ export default function RecipesOverviewPage({
       <Header title="List of Recipes" />
       <MainArea>
         <ListContainer>
-          <FilterArea
-            onClick={() => {
-              onToggleFilterSection(!filterSection);
-            }}
-          >
-            <ArrowDown>￬</ArrowDown>
-          </FilterArea>
-          <FilterAreaOpen>
-            <FavFilterButton
-              onClick={() => {
-                onToggleFavFilterStatus(!favFilterStatus);
-              }}
-            >
-              {favFilterStatus
-                ? 'These are your favorites'
-                : 'This is a general list'}
-            </FavFilterButton>
-            <TagDropdown
-              options={dropdownTagList}
-              onChange={onHandleChange}
-              placeholder="Select a tag ..."
-            />
-          </FilterAreaOpen>
-
+          <FilterAreaComponent
+            filterSection={filterSection}
+            favFilterStatus={favFilterStatus}
+            dropdownTagList={dropdownTagList}
+            onToggleFilterSection={onToggleFilterSection}
+            onToggleFavFilterStatus={onToggleFavFilterStatus}
+            onHandleChange={onHandleChange}
+          />
           <ListOfRecipes
             recipesList={recipesList}
             favoritesList={favoritesList}
