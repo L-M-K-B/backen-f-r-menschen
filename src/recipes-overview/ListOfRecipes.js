@@ -1,25 +1,29 @@
 import React from 'react';
 import { getIndex } from '../utils';
+import { Filters } from './Filters';
 import SingleRecipeOverview from './SingleRecipeOverview';
-
-/*function filterFavorites(filter, recipesList){
-  const rIdList = recipesList.map(recipe => recipe._id);
-  const 
-  return filter==='favorite'? 
-}*/
 
 export default function ListOfRecipes({
   recipesList,
   favoritesList,
+  favFilterStatus,
+  tagFilter,
   onToggleFavorite,
 }) {
-  function getFavoriteStatus(id) {
-    const index = getIndex(favoritesList, id);
-    return index === -1 ? false : favoritesList[index].status;
-  }
-  return (
+  const filteredRecipeList = Filters(
+    recipesList,
+    favoritesList,
+    favFilterStatus,
+    tagFilter
+  );
+
+  const availabilityOfFavorites = favoritesList.some(
+    favorite => favorite.status === true
+  );
+
+  const listRendering = (
     <div>
-      {recipesList.map(recipe => (
+      {filteredRecipeList.map(recipe => (
         <SingleRecipeOverview
           key={recipe._id}
           recipe={recipe}
@@ -29,4 +33,21 @@ export default function ListOfRecipes({
       ))}
     </div>
   );
+
+  function getFavoriteStatus(id) {
+    const index = getIndex(favoritesList, id);
+    return index === -1 ? false : favoritesList[index].status;
+  }
+
+  function getReturn() {
+    if (availabilityOfFavorites === false && favFilterStatus === true) {
+      return <p>You do not have any favorites yet.</p>;
+    } else if (filteredRecipeList.length <= 0) {
+      return <p>You do not have suitable favorites.</p>;
+    } else {
+      return listRendering;
+    }
+  }
+
+  return getReturn();
 }

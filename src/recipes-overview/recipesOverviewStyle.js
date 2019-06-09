@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { font, oShadow, pShadow, white } from '../misc/colors';
+import Dropdown from 'react-dropdown';
+import { font, pink, oShadow, pShadow, white } from '../misc/colors';
 
 export const MainArea = styled.main`
   grid-row: 2;
@@ -14,14 +15,64 @@ export const ListContainer = styled.div`
   margin: 25px 20px 0;
 `;
 
-// Filtersection
-export const FilterSection = styled.section`
-  background-color: ${pShadow};
-`;
-export const FButton = styled.button`
+// FilterArea
+export const FilterAreaContainer = styled.div`
   border-radius: 14px;
-  box-shadow: 0 5px 4px 2px ${oShadow};
+  margin: 30px 0 30px;
+  box-shadow: 0 4px 4px 0px ${pShadow};
+`;
+export const FilterAreaHeader = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+  width: 335px;
+`;
+export const NameContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const FilterIcon = styled.img`
+  height: 50px;
+  margin: 0 10px 0 15px;
+`;
+export const Arrow = styled.img`
+  height: 15px;
+  margin-right: 15px;
+`;
+export const FilterAreaOpen = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+`;
+export const FavFilterButton = styled.button`
+  height: 40px;
+  width: 150px;
+  margin: 10px 0;
+  border: 2px solid ${pink};
+  border-radius: 14px;
   background-color: ${white};
+  font-size: 16px;
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const TagDropdown = styled(Dropdown)`
+  width: 150px;
+  max-height: 100px;
+  overflow-y: scroll;
+  margin: 10px 0;
+  padding: 8px;
+  border: 2px solid ${pink};
+  border-radius: 14px;
+  background-color: ${white};
+  font-size: 16px;
+  text-align: center;
 `;
 
 // SingleRecipeOverview

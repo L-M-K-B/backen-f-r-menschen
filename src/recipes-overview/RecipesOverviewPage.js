@@ -1,54 +1,58 @@
-import React /*useState, useEffect*/ from 'react';
-//import { getLocal, setLocal } from '../services';
-import { MainArea, ListContainer, FilterSection } from './recipesOverviewStyle';
+import React from 'react';
 
+import { MainArea, ListContainer } from './recipesOverviewStyle';
+
+import FilterAreaComponent from './FilterArea';
 import ListOfRecipes from './ListOfRecipes';
 import Header from '../header-footer/Header';
 import Footer from '../header-footer/Footer';
-//import FilterBtn from './FilterBtn';
 
-import IconPieListActive from '../images/IconPieListActive.png';
-import IconChef from '../images/IconChef.png';
-//import IconFavoriteActive from '../images/IconFavoriteActive.png';
+import IconPieListActive from '../images/IconPieListActive.svg';
+import IconChef from '../images/IconChef.svg';
 
 export default function RecipesOverviewPage({
+  history,
   recipesList,
   favoritesList,
+  filterSection,
+  favFilterStatus,
+  tagFilter,
+  dropdownTagList,
+  onToggleFilterSection,
+  onToggleFavFilterStatus,
+  onHandleChange,
   onToggleFavorite,
 }) {
-  /*const favFilterOptions = [
-    { id: 'all', label: 'All' },
-    { id: 'favorite', label: 'Favorites' },
-  ];
-
-  const [favFilter, setFavFilter] = useState(
-    getLocal(favFilterOptions) || 'all'
-  );
-
-  useEffect(() => {
-    setLocal('favFilter', favFilter);
-  }, [favFilter]);
-
-  function handleFavFilter() {
-    setFavFilter();
-  }*/
-
   return (
     <>
       <Header title="List of Recipes" />
       <MainArea>
         <ListContainer>
+          <FilterAreaComponent
+            filterSection={filterSection}
+            favFilterStatus={favFilterStatus}
+            tagFilter={tagFilter}
+            dropdownTagList={dropdownTagList}
+            onToggleFilterSection={onToggleFilterSection}
+            onToggleFavFilterStatus={onToggleFavFilterStatus}
+            onHandleChange={onHandleChange}
+          />
           <ListOfRecipes
             recipesList={recipesList}
             favoritesList={favoritesList}
+            favFilterStatus={favFilterStatus}
+            tagFilter={tagFilter}
             onToggleFavorite={onToggleFavorite}
           />
         </ListContainer>
       </MainArea>
-      <Footer srcIconPieList={IconPieListActive} srcIconChef={IconChef} />
+      <Footer
+        history={history}
+        srcIconPieList={IconPieListActive}
+        srcIconChef={IconChef}
+      />
     </>
   );
 }
-/*  <FilterSection>
-            <FilterBtn />
-          </FilterSection>*/
+/*btnLabel={
+ */

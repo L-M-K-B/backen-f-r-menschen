@@ -16,10 +16,10 @@ import {
   Cookie,
 } from './recipesOverviewStyle';
 
-import IconFavorite from '../images/IconFavorite.png';
-import IconFavoriteActive from '../images/IconFavoriteActive.png';
-import IconStopwatch from '../images/IconStopwatch.png';
-import IconCookie from '../images/IconCookie.png';
+import IconFavorite from '../images/IconFavorite.svg';
+import IconFavoriteActive from '../images/IconFavoriteActive.svg';
+import IconStopwatch from '../images/IconStopwatch.svg';
+import IconCookie from '../images/IconCookie.svg';
 
 import Tags from './TagsOverview';
 
