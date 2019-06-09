@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="56px" height="38px" viewBox="0 0 56 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="53px" height="39px" viewBox="0 0 53 39" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
     <title>Icon Pie-List</title>
     <desc>Created with Sketch.</desc>
     <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Icon-Pie-List" transform="translate(-1.000000, -1.000000)">
+            <g id="ArrowDown" transform="translate(5.500000, 33.500000) scale(1, -1) rotate(90.000000) translate(-5.500000, -33.500000) translate(0.500000, 30.500000)" stroke="#4B0420" stroke-linecap="round" stroke-width="2">
+                <path d="M0,0 C0.853926042,0.309834513 1.6922086,0.906324098 2.51484766,1.78946876 C3.10251044,2.42035448 3.88925933,3.34078331 4.48278567,4.50276918 C4.64099955,4.81251499 4.81340433,5.31159193 5,6" id="Line-11"></path>
+                <path d="M5,0 C5.85392604,0.309834513 6.6922086,0.906324098 7.51484766,1.78946876 C8.10251044,2.42035448 8.88925933,3.34078331 9.48278567,4.50276918 C9.64099955,4.81251499 9.81340433,5.31159193 10,6" id="Line-11" transform="translate(7.500000, 3.000000) scale(-1, 1) translate(-7.500000, -3.000000) "></path>
+                <path d="M0,0 C0.422765001,0.0798689867 0.922170943,0.263815201 1.49821783,0.551838642 C2.07426471,0.839862083 2.9081921,1.32258254 4,2" id="Line-12"></path>
+                <path d="M6,0 C6.422765,0.0798689867 6.92217094,0.263815201 7.49821783,0.551838642 C8.07426471,0.839862083 8.9081921,1.32258254 10,2" id="Line-12" transform="translate(8.000000, 1.000000) scale(-1, 1) translate(-8.000000, -1.000000) "></path>
+            </g>
             <g id="Icon-Pie" transform="translate(15.000000, 2.000000)" fill="#FFFFFF">
                 <rect id="Rectangle" stroke="#FFFFFF" x="9.5" y="14.5" width="20" height="7"></rect>
                 <rect id="Rectangle" stroke="#FFFFFF" x="4.5" y="10.5" width="29" height="4"></rect>
@@ -46,9 +52,7 @@
                 <path d="M19,14.520055 C20.3,14.1988592 21.275,13.037809 22.0127778,11.555563 M22.25,11 C22.5763823,12.3898794 23.3891839,13.4620707 24.2739425,14.1879734 C24.94288,14.7368051 25.5,14.7368051 26.4054852,14.9169086 C26.7534033,14.9861104 27.263926,15.0628267 27.6806665,14.9169086 C30.4376756,14.5088876 31.7555546,12.7797514 32,11.555563" id="Shape" stroke="#4B0420" stroke-width="2" stroke-linecap="round" transform="translate(25.500000, 13.000000) scale(-1, 1) translate(-25.500000, -13.000000) "></path>
             </g>
             <path d="M48,33.5 L2.5,33.5" id="Line" stroke="#4B0420" stroke-width="2" stroke-linecap="round"></path>
-            <path d="M2.5,33.5 L9.5,29" id="Line-10" stroke="#4B0420" stroke-width="2" stroke-linecap="round"></path>
-            <path d="M2.5,37.5 L9.5,33" id="Line-10" stroke="#4B0420" stroke-width="2" stroke-linecap="round" transform="translate(6.000000, 35.500000) scale(1, -1) translate(-6.000000, -35.500000) "></path>
-            <path d="M48,33.5 L52,21" id="Line-11" stroke="#4B0420" stroke-width="2" stroke-linecap="round"></path>
+            <path d="M48,33.5 L52.7139442,19.2599603" id="Line-11" stroke="#4B0420" stroke-width="2" stroke-linecap="round"></path>
         </g>
     </g>
 </svg>
