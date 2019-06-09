@@ -18,7 +18,7 @@ export const ListContainer = styled.div`
 // FilterArea
 export const FilterAreaContainer = styled.div`
   border-radius: 14px;
-  margin: 30px 0 30px;
+  margin: 30px 0 20px;
   box-shadow: 0 4px 4px 0px ${pShadow};
 `;
 export const FilterAreaHeader = styled.div`
