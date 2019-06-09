@@ -128,8 +128,9 @@ export default function App() {
         <Route
           exact
           path="/"
-          render={() => (
+          render={props => (
             <RecipesOverviewPage
+              history={props.history}
               recipesList={recipesList}
               favoritesList={favorites}
               filterSection={filterSection}
@@ -147,6 +148,7 @@ export default function App() {
           path="/recipe/:id"
           render={props => (
             <RecipeDetailedPage
+              history={props.history}
               recipe={getRecipe(props.match.params.id, recipesList)}
               favoritesList={favorites}
               id={props.match.params.id}
@@ -156,8 +158,9 @@ export default function App() {
         />
         <Route
           path="/about"
-          render={() => (
+          render={props => (
             <AboutPage
+              history={props.history}
               onToggleProjectContainer={handleToggleProjectContainer}
               projectContainer={projectContainer}
               onToggleConversionContainer={handleToggleConversionContainer}

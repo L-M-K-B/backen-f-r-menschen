@@ -13,6 +13,7 @@ import IconPieList from '../images/IconPieList.svg';
 import IconChef from '../images/IconChef.svg';
 
 export default function RecipeDetailedPage({
+  history,
   recipe,
   favoritesList,
   id,
@@ -38,7 +39,11 @@ export default function RecipeDetailedPage({
           <Notes id={id} />
         </RecipeContainer>
       </MainArea>
-      <Footer srcIconPieList={IconPieList} srcIconChef={IconChef} />
+      <Footer
+        history={history}
+        srcIconPieList={IconPieList}
+        srcIconChef={IconChef}
+      />
     </>
   );
 }

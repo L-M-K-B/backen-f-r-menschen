@@ -10,6 +10,7 @@ import IconPieList from '../images/IconPieList.svg';
 import IconChefActive from '../images/IconChefActive.svg';
 
 export default function AboutPage({
+  history,
   onToggleProjectContainer,
   projectContainer,
   onToggleConversionContainer,
@@ -30,7 +31,11 @@ export default function AboutPage({
           />
         </AboutContainer>
       </MainArea>
-      <Footer srcIconPieList={IconPieList} srcIconChef={IconChefActive} />
+      <Footer
+        history={history}
+        srcIconPieList={IconPieList}
+        srcIconChef={IconChefActive}
+      />
     </>
   );
 }

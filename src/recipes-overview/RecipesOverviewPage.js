@@ -11,6 +11,7 @@ import IconPieListActive from '../images/IconPieListActive.svg';
 import IconChef from '../images/IconChef.svg';
 
 export default function RecipesOverviewPage({
+  history,
   recipesList,
   favoritesList,
   filterSection,
@@ -45,7 +46,11 @@ export default function RecipesOverviewPage({
           />
         </ListContainer>
       </MainArea>
-      <Footer srcIconPieList={IconPieListActive} srcIconChef={IconChef} />
+      <Footer
+        history={history}
+        srcIconPieList={IconPieListActive}
+        srcIconChef={IconChef}
+      />
     </>
   );
 }
