@@ -7,8 +7,12 @@ import {
   FavFilterButton,
   TagDropdown,
   Arrow,
+  FilterIcon,
+  Name,
+  NameContainer,
 } from './recipesOverviewStyle';
 
+import IconFilter from '../images/IconFilter.svg';
 import ArrowDown from '../images/ArrowDown.svg';
 import ArrowUp from '../images/ArrowUp.svg';
 
@@ -49,6 +53,10 @@ export default function FilterArea({
           onToggleFilterSection(!filterSection);
         }}
       >
+        <NameContainer>
+          <FilterIcon src={IconFilter} alt="icon filter" />
+          <Name>Filters</Name>
+        </NameContainer>
         {filterSection ? (
           <Arrow src={ArrowUp} alt="icon arrow up" />
         ) : (

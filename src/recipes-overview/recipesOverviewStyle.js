@@ -23,10 +23,18 @@ export const FilterAreaContainer = styled.div`
 `;
 export const FilterAreaHeader = styled.div`
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  height: 40px;
+  height: 60px;
   width: 335px;
+`;
+export const NameContainer = styled.div`
+  display: flex;
+  align-items: center;
+`;
+export const FilterIcon = styled.img`
+  height: 50px;
+  margin: 0 10px 0 15px;
 `;
 export const Arrow = styled.img`
   height: 15px;
@@ -38,12 +46,12 @@ export const FilterAreaOpen = styled.div`
 `;
 export const FavFilterButton = styled.button`
   height: 40px;
-  width: 130px;
+  width: 150px;
   margin: 10px 0;
   border: 2px solid ${pink};
   border-radius: 14px;
   background-color: ${white};
-  font-size: 14px;
+  font-size: 16px;
 
   &:active {
     transform: scale(0.95);
@@ -55,15 +63,15 @@ export const FavFilterButton = styled.button`
 `;
 
 export const TagDropdown = styled(Dropdown)`
-  width: 130px;
+  width: 150px;
   max-height: 100px;
   overflow-y: scroll;
   margin: 10px 0;
-  padding: 10px;
+  padding: 8px;
   border: 2px solid ${pink};
   border-radius: 14px;
   background-color: ${white};
-  font-size: 14px;
+  font-size: 16px;
   text-align: center;
 `;
 
