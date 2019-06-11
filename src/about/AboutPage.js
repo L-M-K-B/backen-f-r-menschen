@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainArea, AboutContainer } from './aboutStyle';
+import { GridStyle, MainArea, AboutContainer } from './aboutStyle';
 
 import Header from '../header-footer/Header';
 import Project from './Project';
@@ -17,7 +17,7 @@ export default function AboutPage({
   conversionContainer,
 }) {
   return (
-    <>
+    <GridStyle>
       <Header title="About ..." />
       <MainArea>
         <AboutContainer>
@@ -36,6 +36,6 @@ export default function AboutPage({
         srcIconPieList={IconPieList}
         srcIconChef={IconChefActive}
       />
-    </>
+    </GridStyle>
   );
 }

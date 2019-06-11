@@ -1,6 +1,12 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { font, oShadow, orange, white } from '../misc/colors';
 
+export const GridDetail = styled.div`
+  display: grid;
+  grid-template-rows: 55px 1fr;
+  height: 100vh;
+`;
 export const MainArea = styled.main`
   grid-row: 2;
   overflow: hidden;
@@ -21,32 +27,6 @@ export const BoxContainer = styled.div`
 export const BoxInnerContainer = styled.div`
   border-radius: 14px;
   margin: 8px;
-`;
-export const Button = styled.button`
-  position: relative;
-  top: 38px;
-  left: 150px;
-  height: 65px;
-  width: 145px;
-  border: none;
-  border-radius: 14px;
-  background-color: ${orange};
-  color: ${white};
-  font-size: 16px;
-
-  &:active {
-    border: 2px solid ${orange};
-    background-color: ${white};
-    color: ${orange};
-    transform: scale(0.95);
-  }
-
-  &:focus {
-    border: 2px solid ${orange};
-    background-color: ${white};
-    color: ${orange};
-    outline: none;
-  }
 `;
 
 // Stage
@@ -117,6 +97,25 @@ export const Headline = styled.p`
   font-family: 'Domine', serif;
   font-size: 24px;
 `;
+export const LinkButton = styled(Link)`
+  position: relative;
+  top: 30px;
+  left: 150px;
+  text-decoration: none;
+`;
+export const ButtonLabel = styled.p`
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 57px;
+  width: 130px;
+  border: none;
+  border-radius: 14px;
+  background-color: ${orange};
+  color: ${white};
+  font-size: 16px;
+  text-align: center;
+`;
 
 // Notes Area
 export const NotesForm = styled.form`
@@ -143,5 +142,31 @@ export const NotesArea = styled.textarea`
     outline: none;
     border: 1px solid ${orange};
     border-radius: 14px;
+  }
+`;
+export const Button = styled.button`
+  position: relative;
+  top: 30px;
+  left: 150px;
+  height: 57px;
+  width: 130px;
+  border: none;
+  border-radius: 14px;
+  background-color: ${orange};
+  color: ${white};
+  font-size: 16px;
+
+  &:active {
+    border: 2px solid ${orange};
+    background-color: ${white};
+    color: ${orange};
+    transform: scale(0.95);
+  }
+
+  &:focus {
+    border: 2px solid ${orange};
+    background-color: ${white};
+    color: ${orange};
+    outline: none;
   }
 `;

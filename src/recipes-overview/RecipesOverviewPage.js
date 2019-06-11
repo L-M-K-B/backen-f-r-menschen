@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { MainArea, ListContainer } from './recipesOverviewStyle';
+import { GridOverview, MainArea, ListContainer } from './recipesOverviewStyle';
 
 import FilterAreaComponent from './FilterArea';
 import ListOfRecipes from './ListOfRecipes';
@@ -24,7 +24,7 @@ export default function RecipesOverviewPage({
   onToggleFavorite,
 }) {
   return (
-    <>
+    <GridOverview>
       <Header title="List of Recipes" />
       <MainArea>
         <ListContainer>
@@ -51,8 +51,6 @@ export default function RecipesOverviewPage({
         srcIconPieList={IconPieListActive}
         srcIconChef={IconChef}
       />
-    </>
+    </GridOverview>
   );
 }
-/*btnLabel={
- */

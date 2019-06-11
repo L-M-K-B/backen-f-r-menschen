@@ -1,6 +1,11 @@
 import styled from 'styled-components';
-import { oShadow, pShadow } from '../misc/colors';
+import { oShadow } from '../misc/colors';
 
+export const GridStyle = styled.div`
+  display: grid;
+  grid-template-rows: 55px 1fr;
+  height: 100vh;
+`;
 export const MainArea = styled.main`
   grid-row: 2;
   overflow: hidden;

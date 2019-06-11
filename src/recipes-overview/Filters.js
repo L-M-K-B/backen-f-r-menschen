@@ -14,7 +14,7 @@ function filterFavRecipes(recipesList, favoritesList, favFilterStatus) {
   }
 }
 
-function filterTagRecipes(recipesList, favRecipesList, tagFilter) {
+function filterTagRecipes(favRecipesList, tagFilter) {
   if (tagFilter !== 'no tag selected' && tagFilter !== '') {
     const filteredTagRecipes = [];
     favRecipesList.map(recipe => {
@@ -24,7 +24,7 @@ function filterTagRecipes(recipesList, favRecipesList, tagFilter) {
     });
     return filteredTagRecipes;
   } else {
-    return favRecipesList.length > 0 ? favRecipesList : recipesList;
+    return favRecipesList;
   }
 }
 
@@ -39,10 +39,6 @@ export function Filters(
     favoritesList,
     favFilterStatus
   );
-  const tagRecipesList = filterTagRecipes(
-    recipesList,
-    favRecipesList,
-    tagFilter
-  );
+  const tagRecipesList = filterTagRecipes(favRecipesList, tagFilter);
   return tagRecipesList;
 }
