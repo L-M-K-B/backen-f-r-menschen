@@ -20,4 +20,5 @@ export const ContentContainer = styled.div`
 export const Explanation = styled.p`
   margin: 25px 0;
   font-size: 20px;
+  text-align: center;
 `;
