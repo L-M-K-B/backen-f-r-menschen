@@ -77,7 +77,7 @@ export const NumberPart1 = styled.p`
   text-align: center;
 `;
 export const NumberPart2 = styled.p`
-  margin: 0 5px;
+  margin: 0 8px;
   font-family: 'Domine', serif;
   font-size: 16px;
   text-align: center;

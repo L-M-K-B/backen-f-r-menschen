@@ -42,13 +42,23 @@ const mockdata = {
       detailedDescription: [
         {
           number: 1,
-          image: '/images/SnickerDoodles01.jpg',
-          explanation: 'Melt the vegan margarine in a small saucepan.',
+          image: '/images/joanna-kosinska-340756-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
         },
         {
           number: 2,
-          image: '/images/SnickerDoodles02.jpg',
-          explanation: 'Put it in a mixing bowl and add the cane sugar',
+          image: '/images/pawel-czerwinski-746610-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
+        },
+        {
+          number: 3,
+          image: '/images/scott-webb-51466-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
+        },
+        {
+          number: 4,
+          image: '/images/sharon-mccutcheon-528581-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
         },
       ],
     },
@@ -57,13 +67,23 @@ const mockdata = {
       detailedDescription: [
         {
           number: 1,
-          image: '/images/SnickerDoodles01.jpg',
-          explanation: 'Melt the vegan margarine in a small saucepan.',
+          image: '/images/joanna-kosinska-340756-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
         },
         {
           number: 2,
-          image: '/images/SnickerDoodles02.jpg',
-          explanation: 'Put it in a mixing bowl and add the cane sugar',
+          image: '/images/pawel-czerwinski-746610-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
+        },
+        {
+          number: 3,
+          image: '/images/scott-webb-51466-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
+        },
+        {
+          number: 4,
+          image: '/images/sharon-mccutcheon-528581-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
         },
       ],
     },
@@ -72,13 +92,23 @@ const mockdata = {
       detailedDescription: [
         {
           number: 1,
-          image: '/images/SnickerDoodles01.jpg',
-          explanation: 'Melt the vegan margarine in a small saucepan.',
+          image: '/images/joanna-kosinska-340756-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
         },
         {
           number: 2,
-          image: '/images/SnickerDoodles02.jpg',
-          explanation: 'Put it in a mixing bowl and add the cane sugar',
+          image: '/images/pawel-czerwinski-746610-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
+        },
+        {
+          number: 3,
+          image: '/images/scott-webb-51466-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
+        },
+        {
+          number: 4,
+          image: '/images/sharon-mccutcheon-528581-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
         },
       ],
     },
@@ -87,13 +117,23 @@ const mockdata = {
       detailedDescription: [
         {
           number: 1,
-          image: '/images/SnickerDoodles01.jpg',
-          explanation: 'Melt the vegan margarine in a small saucepan.',
+          image: '/images/joanna-kosinska-340756-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
         },
         {
           number: 2,
-          image: '/images/SnickerDoodles02.jpg',
-          explanation: 'Put it in a mixing bowl and add the cane sugar',
+          image: '/images/pawel-czerwinski-746610-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
+        },
+        {
+          number: 3,
+          image: '/images/scott-webb-51466-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
+        },
+        {
+          number: 4,
+          image: '/images/sharon-mccutcheon-528581-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
         },
       ],
     },
@@ -102,13 +142,23 @@ const mockdata = {
       detailedDescription: [
         {
           number: 1,
-          image: '/images/SnickerDoodles01.jpg',
-          explanation: 'Melt the vegan margarine in a small saucepan.',
+          image: '/images/joanna-kosinska-340756-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
         },
         {
           number: 2,
-          image: '/images/SnickerDoodles02.jpg',
-          explanation: 'Put it in a mixing bowl and add the cane sugar',
+          image: '/images/pawel-czerwinski-746610-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
+        },
+        {
+          number: 3,
+          image: '/images/scott-webb-51466-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
+        },
+        {
+          number: 4,
+          image: '/images/sharon-mccutcheon-528581-unsplash.jpg',
+          explanation: 'When in doubt just add sprinkles.',
         },
       ],
     },

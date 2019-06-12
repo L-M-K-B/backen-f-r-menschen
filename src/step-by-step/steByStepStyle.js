@@ -8,10 +8,6 @@ export const GridStep = styled.div`
   width: 375px;
   height: 100vh;
 `;
-export const TestP = styled.p`
-  grid-row: 2;
-  margin: 0;
-`;
 export const MainArea = styled.main`
   grid-row: 2;
   margin-bottom: 26px;
@@ -19,11 +15,9 @@ export const MainArea = styled.main`
 `;
 export const ContentContainer = styled.div`
   width: 335px;
-  margin: 30px 20px 0;
+  margin: 50px 20px 0;
 `;
-export const stepImage = styled.div`
-  width: 335px;
-`;
-export const SliderDiv = styled.div`
-  width: 335px;
+export const Explanation = styled.p`
+  margin: 25px 0;
+  font-size: 20px;
 `;

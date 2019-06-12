@@ -13,8 +13,8 @@ $control-button-width: 15%;
 $control-button-height: 100%;
 $control-button-opacity: none;
 $control-button-hover-opacity: none;
-$control-button-background: transparent;
-//
+$control-button-background: rgba(255, 217, 232, 0.25);
+
 $loader-bar-color: transparent;
 $loader-bar-height: 6px;
 
@@ -113,6 +113,7 @@ $content-background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
+    border-radius: 14px;
     > img,
     > video {
       object-fit: cover;
@@ -122,10 +123,10 @@ $content-background-color: transparent;
       top: 0;
       left: 0;
     }
-    &--enter {
+    /* &--enter {
     }
     &--exit {
-    }
+    }*/
   }
   &__controls {
     button {
