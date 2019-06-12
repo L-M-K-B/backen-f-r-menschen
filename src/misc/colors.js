@@ -6,4 +6,5 @@ export const oShadow = 'rgba(248, 172, 8, 0.2)';
 export const pink = '#DD2C71';
 export const pShadow = 'rgba(221, 44, 113, 0.23)';
 // pShadow: x=0, y=4, blur=4, spread=0
+export const wShadow = 'rgba(255, 217, 232, 0.25)';
 export const white = '#FFFFFF';

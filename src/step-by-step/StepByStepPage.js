@@ -24,8 +24,8 @@ export default function StepByStepPage({ history, recipe }) {
       <MainArea>
         <ContentContainer>
           <TestP>Testtext</TestP>
-          <AwesomeSlider>
-          {detailedDescription.map(step => (
+          <AwesomeSlider bullets={true} organicArrows={true}>
+            {detailedDescription.map(step => (
               <div data-src={step.image} />
             ))}
           </AwesomeSlider>

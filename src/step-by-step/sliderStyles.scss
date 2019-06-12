@@ -4,28 +4,24 @@ $transition-bezier: cubic-bezier(0.5, 0.075, 0.25, 0.95);
 $slider-height-percentage: 60%;
 $slider-transition-duration: 575ms;
 
-$organic-arrow-color: #7FFF00;
-//#6a6a6a
+$organic-arrow-color: #6a6a6a;
 $organic-arrow-thickness: 4px;
 $organic-arrow-height: 40px;
 $organic-arrow-border-radius: 0;
-$control-button-width: 10%;
-$control-button-height: 25%;
-$control-button-opacity: 0.5;
-$control-button-hover-opacity: 0.75;
-$control-button-background: #FF8C00;
-// transparent
 
-//loader-bar appears only on occasion
-// color adjusted
-$loader-bar-color: #DD2C71;
+$control-button-width: 15%;
+$control-button-height: 100%;
+$control-button-opacity: none;
+$control-button-hover-opacity: none;
+$control-button-background: transparent;
+//
+$loader-bar-color: transparent;
 $loader-bar-height: 6px;
-// bullets: color adjusted
-$control-bullet-color: #F8AC08;
-$control-bullet-active-color: #F8AC08;
-$content-background-color: #2f2f2f;
 
-//What purpose does this have?
+$control-bullet-color: transparent;
+$control-bullet-active-color: transparent;
+$content-background-color: transparent;
+
 %fill-parent {
   display: block;
   position: absolute;
@@ -33,26 +29,21 @@ $content-background-color: #2f2f2f;
   height: 100%;
   top: 0;
   left: 0;
-  background-color: #FF8C00;
 }
-
-//What purpose does this have?
-/*%clear-spacing {
+%clear-spacing {
   padding: 0;
   margin: 0;
-}*/
-
+}
 %clear-focus {
   outline-color: 0;
   outline-style: none;
   outline-width: 0;
 }
-/*
 %clear-selection {
   user-select: none;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-tap-highlight-color: transparent;
-}*/
+}
 
 .#{$root-element} {
   --organic-arrow-thickness: #{$organic-arrow-thickness};
@@ -84,18 +75,14 @@ $content-background-color: #2f2f2f;
     display: block;
     overflow: hidden;
     position: relative;
-    height: 100%;
-    width: 100%;
+    height: 335px;
+    width: 335px;
   }
   &__container {
     display: block;
     width: 100%;
     height: 0;
     padding-bottom: var(--slider-height-percentage);
-
-    @media all and (max-width: 500px) {
-      padding-bottom: calc(var(--slider-height-percentage) * 1.25);
-    }
 
     figure {
       @extend %fill-parent;
@@ -129,8 +116,8 @@ $content-background-color: #2f2f2f;
     > img,
     > video {
       object-fit: cover;
-      width: 100%;
-      height: 100%;
+      width: 335px;
+      height: 335px;
       position: absolute;
       top: 0;
       left: 0;
@@ -159,25 +146,22 @@ $content-background-color: #2f2f2f;
       .#{$root-element}__controls__arrow-right {
         opacity: var(--control-button-opacity);
       }
-      &:hover {
-        .#{$root-element}__controls__arrow-left,
-        .#{$root-element}__controls__arrow-right {
-          opacity: var(--control-button-opacity-hover);
-        }
+      -webkit-tap-highlight-color: transparent;
+      &:active {
+        background-color: var(--control-button-background);
       }
     }
     &--active {
       .#{$root-element}__controls__arrow-left {
         opacity: var(--control-button-opacity-hover);
         transform: translate3d(-100%, 0, 0);
+        background-color: var(--control-button-background);
       }
       .#{$root-element}__controls__arrow-right {
         opacity: var(--control-button-opacity-hover);
         transform: translate3d(100%, 0, 0);
+        background-color: var(--control-button-background);
       }
-    }
-    @media all and (max-width: 520px) {
-      visibility: hidden;
     }
   }
   &__bar {
@@ -331,6 +315,7 @@ $content-background-color: #2f2f2f;
   &__controls__arrow-right {
     &--active {
       transform: translate3d(100%, 0, 0);
+      background-color: var(--control-button-background);
       &:after {
         transform: rotate(90deg) translate3d(50%, 0, 0) !important;
       }
@@ -340,6 +325,7 @@ $content-background-color: #2f2f2f;
     }
   }
   &__controls__arrow-left {
+    background-color: var(--control-button-background);
     &:before,
     &:after {
       right: auto;
@@ -362,6 +348,7 @@ $content-background-color: #2f2f2f;
       transform: rotate(-45deg);
     }
     &--active {
+      background-color: var(--control-button-background);
       transform: translate3d(-100%, 0, 0);
       &:after {
         transform: rotate(-90deg) translate3d(-50%, 0, 0) !important;
@@ -375,22 +362,22 @@ $content-background-color: #2f2f2f;
     button:hover {
       .#{$root-element}__controls__arrow-left {
         &:before {
-          opacity: 1;
+          opacity: none;
           transform: rotate(30deg);
         }
 
         &:after {
-          opacity: 1;
+          opacity: none;
           transform: rotate(-30deg);
         }
       }
       .#{$root-element}__controls__arrow-right {
         &:before {
-          opacity: 1;
+          opacity: none;
           transform: rotate(-30deg);
         }
         &:after {
-          opacity: 1;
+          opacity: none;
           transform: rotate(30deg);
         }
       }
