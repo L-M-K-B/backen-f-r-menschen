@@ -26,7 +26,7 @@ export default function Convert({
         <>
           <p>
             Some recipes do not contain distinct measurable amounts of
-            ingerdients. In order to make it easier you find suitable
+            ingredients. In order to make it easier you find suitable
             conversions here.
           </p>
           <Grid>

@@ -19,3 +19,9 @@ To make baking even more exiting I am experimenting a lot with ingredients and s
 - Heroku
 - MongoDB
 - Sketch
+
+## Check out the current status of my app
+
+![QR-Code](/public/images/qr-code.png)
+
+[https://scientific-baking.herokuapp.com/](https://scientific-baking.herokuapp.com/)
