@@ -22,6 +22,6 @@ To make baking even more exiting I am experimenting a lot with ingredients and s
 
 ## Check out the current status of my app
 
-![QR-Code](/public/images/qr-code.png =300x)
+<img src="./public/images/qr-code.png" alt="QR-Code" width="300"/>
 
 [https://scientific-baking.herokuapp.com/](https://scientific-baking.herokuapp.com/)
