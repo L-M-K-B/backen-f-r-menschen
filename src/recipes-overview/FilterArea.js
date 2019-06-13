@@ -17,14 +17,32 @@ import ArrowDown from '../images/ArrowDown.svg';
 import ArrowUp from '../images/ArrowUp.svg';
 
 export default function FilterArea({
+  recipesList,
   filterSection,
   favFilterStatus,
   tagFilter,
-  dropdownTagList,
   onToggleFilterSection,
   onToggleFavFilterStatus,
   onHandleChange,
 }) {
+  const dropdownTagList = createTagList();
+
+  function createTagList() {
+    const everyTag = recipesList
+      .map(recipe => recipe.tags)
+      .join(',')
+      .split(',');
+    return getUniqueTags(everyTag);
+  }
+
+  function getUniqueTags(everyTag) {
+    const uniqueTags = ['no tag selected'];
+    everyTag.map(
+      element => !uniqueTags.includes(element) && uniqueTags.push(element)
+    );
+    return uniqueTags;
+  }
+
   function getOpenFilterArea() {
     if (filterSection === true) {
       return (

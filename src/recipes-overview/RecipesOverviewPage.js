@@ -1,5 +1,5 @@
-import React from 'react';
-
+import React, { useState, useEffect } from 'react';
+import { setLocal, getLocal } from '../services';
 import { GridOverview, MainArea, ListContainer } from './recipesOverviewStyle';
 
 import FilterAreaComponent from './FilterArea';
@@ -14,28 +14,49 @@ export default function RecipesOverviewPage({
   history,
   recipesList,
   favoritesList,
-  filterSection,
-  favFilterStatus,
-  tagFilter,
-  dropdownTagList,
-  onToggleFilterSection,
-  onToggleFavFilterStatus,
-  onHandleChange,
   onToggleFavorite,
 }) {
+  const [filterSection, setFilterSection] = useState(
+    getLocal('filterSection') || false
+  );
+  const [favFilterStatus, setFavFilterStatus] = useState(
+    getLocal('favFilterStatus') || false
+  );
+  const [tagFilter, setTagFilter] = useState(getLocal('tagFilter') || '');
+
+  useEffect(() => {
+    setLocal('filterSection', filterSection);
+  }, [filterSection]);
+  useEffect(() => {
+    setLocal('favFilterStatus', favFilterStatus);
+  }, [favFilterStatus]);
+  useEffect(() => {
+    setLocal('tagFilter', tagFilter);
+  }, [tagFilter]);
+
+  function handleToggleFilterSection(newFilterSectionStatus) {
+    setFilterSection(newFilterSectionStatus);
+  }
+  function handleFavFilterStatus(newfavFilterStatus) {
+    setFavFilterStatus(newfavFilterStatus);
+  }
+  function handleTagFilterChange(event) {
+    setTagFilter(event.value);
+  }
+
   return (
     <GridOverview>
       <Header title="List of Recipes" />
       <MainArea>
         <ListContainer>
           <FilterAreaComponent
+            recipesList={recipesList}
             filterSection={filterSection}
             favFilterStatus={favFilterStatus}
             tagFilter={tagFilter}
-            dropdownTagList={dropdownTagList}
-            onToggleFilterSection={onToggleFilterSection}
-            onToggleFavFilterStatus={onToggleFavFilterStatus}
-            onHandleChange={onHandleChange}
+            onToggleFilterSection={handleToggleFilterSection}
+            onToggleFavFilterStatus={handleFavFilterStatus}
+            onHandleChange={handleTagFilterChange}
           />
           <ListOfRecipes
             recipesList={recipesList}
