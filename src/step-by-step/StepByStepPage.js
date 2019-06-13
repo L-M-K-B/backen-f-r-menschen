@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import { setLocal, getLocal } from '../services';
+import React, { useState } from 'react';
 import {
   GridStep,
   MainArea,
@@ -23,24 +22,21 @@ import IconPieList from '../images/IconPieList.svg';
 import IconChef from '../images/IconChef.svg';
 
 export default function StepByStepPage({ history, recipe }) {
-  const [current, setCurrent] = useState(getLocal('current') || 1);
-  useEffect(() => {
-    setLocal('current', current);
-  }, [current]);
+  const [currentStep, setCurrentStep] = useState(1);
 
   const { detailedDescription } = recipe;
 
-  const prevNo = current <= 1 ? ' - ' : current - 1;
+  const prevNo = currentStep <= 1 ? ' - ' : currentStep - 1;
   const maxNo = detailedDescription[detailedDescription.length - 1].number;
-  const nextNo = current >= maxNo ? ' - ' : current + 1;
+  const nextNo = currentStep >= maxNo ? ' - ' : currentStep + 1;
 
   function handleTransitionStart(event) {
     const currentNo = event.nextIndex + 1;
-    setCurrent(currentNo);
+    setCurrentStep(currentNo);
   }
 
   function getExplanation() {
-    const index = current - 1;
+    const index = currentStep - 1;
     return detailedDescription[index].explanation;
   }
 
@@ -49,7 +45,7 @@ export default function StepByStepPage({ history, recipe }) {
       <HeaderLarge
         maxNo={maxNo}
         prevNo={prevNo}
-        currentNo={current}
+        currentNo={currentStep}
         nextNo={nextNo}
       />
       <MainArea>
