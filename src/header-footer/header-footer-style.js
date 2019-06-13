@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { NavLink as RRDNavlinkLink } from 'react-router-dom';
-import { pink, pShadow, white } from '../misc/colors';
+import { lightFont, pink, pShadow, white } from '../misc/colors';
 
 // Header
 export const HeaderContainer = styled.div`
@@ -31,6 +31,56 @@ export const Headline = styled.p`
   margin: 10px;
   font-family: 'Domine', serif;
   font-size: 30px;
+`;
+
+//HeaderLarge
+export const HeaderContainerLarge = styled.div`
+  grid-row: 1;
+  position: fixed;
+  display: flex;
+  justify-content: space-evenly;
+  height: 89px;
+  width: 375px;
+  background-color: ${pShadow};
+`;
+export const PanelLarge = styled.img`
+  width: 375px;
+  position: absolute;
+`;
+export const CurrentContainer = styled.div`
+  height: 97px;
+  width: 65px;
+  margin-top: 12px;
+  z-index: 100;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 14px;
+  box-shadow: 0 4px 4px 0 ${pShadow};
+  background-color: ${white};
+`;
+export const PrevNextContainer = styled.div`
+  z-index: 100;
+  width: 65px;
+  margin: 0 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: ${lightFont};
+`;
+export const NumberPart1 = styled.p`
+  margin: 0 5px;
+  font-family: 'Domine', serif;
+  font-size: 24px;
+  text-align: center;
+`;
+export const NumberPart2 = styled.p`
+  margin: 0 8px;
+  font-family: 'Domine', serif;
+  font-size: 16px;
+  text-align: center;
 `;
 
 // Footer

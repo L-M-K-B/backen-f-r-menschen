@@ -1,5 +1,5 @@
 import React from 'react';
-import { MainArea, RecipeContainer } from './recipeDetailedStyle';
+import { GridDetail, MainArea, RecipeContainer } from './recipeDetailedStyle';
 import { getIndex } from '../utils';
 
 import Header from '../header-footer/Header';
@@ -25,7 +25,7 @@ export default function RecipeDetailedPage({
   }
 
   return (
-    <>
+    <GridDetail>
       <Header title={recipe.recipeName} />
       <MainArea>
         <RecipeContainer>
@@ -44,6 +44,6 @@ export default function RecipeDetailedPage({
         srcIconPieList={IconPieList}
         srcIconChef={IconChef}
       />
-    </>
+    </GridDetail>
   );
 }

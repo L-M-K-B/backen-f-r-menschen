@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import Dropdown from 'react-dropdown';
 import { font, pink, oShadow, pShadow, white } from '../misc/colors';
 
+export const GridOverview = styled.div`
+  display: grid;
+  grid-template-rows: 55px 1fr;
+  height: 100vh;
+`;
 export const MainArea = styled.main`
   grid-row: 2;
   overflow: hidden;

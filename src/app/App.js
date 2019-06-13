@@ -3,18 +3,13 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { setLocal, getLocal, getRecipes } from '../services';
 import { getIndex } from '../utils';
 
-import styled from 'styled-components';
 import GlobalStyles from '../misc/GlobalStyles';
 
+import mockdata from '../mockdata';
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage';
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage';
 import AboutPage from '../about/AboutPage';
-
-const Grid = styled.div`
-  display: grid;
-  grid-template-rows: 55px 1fr;
-  height: 100vh;
-`;
+import StepByStepPage from '../step-by-step/StepByStepPage';
 
 export default function App() {
   const [recipesList, setRecipesList] = useState(getLocal('recipesList') || []);
@@ -124,51 +119,58 @@ export default function App() {
   return (
     <Router>
       <GlobalStyles />
-      <Grid>
-        <Route
-          exact
-          path="/"
-          render={props => (
-            <RecipesOverviewPage
-              history={props.history}
-              recipesList={recipesList}
-              favoritesList={favorites}
-              filterSection={filterSection}
-              favFilterStatus={favFilterStatus}
-              tagFilter={tagFilter}
-              dropdownTagList={dropdownTagList}
-              onToggleFilterSection={handleToggleFilterSection}
-              onToggleFavFilterStatus={handleFavFilterStatus}
-              onHandleChange={handleTagFilterChange}
-              onToggleFavorite={handleToggleFavorite}
-            />
-          )}
-        />
-        <Route
-          path="/recipe/:id"
-          render={props => (
-            <RecipeDetailedPage
-              history={props.history}
-              recipe={getRecipe(props.match.params.id, recipesList)}
-              favoritesList={favorites}
-              id={props.match.params.id}
-              onToggleFavorite={handleToggleFavorite}
-            />
-          )}
-        />
-        <Route
-          path="/about"
-          render={props => (
-            <AboutPage
-              history={props.history}
-              onToggleProjectContainer={handleToggleProjectContainer}
-              projectContainer={projectContainer}
-              onToggleConversionContainer={handleToggleConversionContainer}
-              conversionContainer={conversionContainer}
-            />
-          )}
-        />
-      </Grid>
+      <Route
+        exact
+        path="/"
+        render={props => (
+          <RecipesOverviewPage
+            history={props.history}
+            recipesList={recipesList}
+            favoritesList={favorites}
+            filterSection={filterSection}
+            favFilterStatus={favFilterStatus}
+            tagFilter={tagFilter}
+            dropdownTagList={dropdownTagList}
+            onToggleFilterSection={handleToggleFilterSection}
+            onToggleFavFilterStatus={handleFavFilterStatus}
+            onHandleChange={handleTagFilterChange}
+            onToggleFavorite={handleToggleFavorite}
+          />
+        )}
+      />
+      <Route
+        path="/recipe/:id"
+        render={props => (
+          <RecipeDetailedPage
+            history={props.history}
+            recipe={getRecipe(props.match.params.id, recipesList)}
+            favoritesList={favorites}
+            id={props.match.params.id}
+            onToggleFavorite={handleToggleFavorite}
+          />
+        )}
+      />
+      <Route
+        path="/about"
+        render={props => (
+          <AboutPage
+            history={props.history}
+            onToggleProjectContainer={handleToggleProjectContainer}
+            projectContainer={projectContainer}
+            onToggleConversionContainer={handleToggleConversionContainer}
+            conversionContainer={conversionContainer}
+          />
+        )}
+      />
+      <Route
+        path="/step-by-step/:id"
+        render={props => (
+          <StepByStepPage
+            history={props.history}
+            recipe={getRecipe(props.match.params.id, mockdata.recipesList)}
+          />
+        )}
+      />
     </Router>
   );
 }
