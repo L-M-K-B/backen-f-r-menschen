@@ -14,19 +14,6 @@ import StepByStepPage from '../step-by-step/StepByStepPage';
 export default function App() {
   const [recipesList, setRecipesList] = useState(getLocal('recipesList') || []);
   const [favorites, setFavorites] = useState(getLocal('favoritesList') || []);
-  const [filterSection, setFilterSection] = useState(
-    getLocal('filterSection') || false
-  );
-  const [favFilterStatus, setFavFilterStatus] = useState(
-    getLocal('favFilterStatus') || false
-  );
-  const [tagFilter, setTagFilter] = useState(getLocal('tagFilter') || '');
-  const [projectContainer, setProjectContainer] = useState(
-    getLocal('projectContainer') || false
-  );
-  const [conversionContainer, setConversionContainer] = useState(
-    getLocal('conversionContainer') || false
-  );
 
   useEffect(() => {
     getRecipes()
@@ -42,29 +29,6 @@ export default function App() {
     setLocal('favoritesList', favorites);
     setFavorites(favorites);
   }, [favorites]);
-  useEffect(() => {
-    setLocal('filterSection', filterSection);
-  }, [filterSection]);
-  useEffect(() => {
-    setLocal('favFilterStatus', favFilterStatus);
-  }, [favFilterStatus]);
-  useEffect(() => {
-    setLocal('tagFilter', tagFilter);
-  }, [tagFilter]);
-  useEffect(() => {
-    setLocal('projectContainer', projectContainer);
-  }, [projectContainer]);
-  useEffect(() => {
-    setLocal('conversionContainer', conversionContainer);
-  }, [conversionContainer]);
-
-  function handleToggleFilterSection(newFilterSectionStatus) {
-    setFilterSection(newFilterSectionStatus);
-  }
-
-  function handleFavFilterStatus(newfavFilterStatus) {
-    setFavFilterStatus(newfavFilterStatus);
-  }
 
   function handleToggleFavorite(id, favoriteStatus) {
     const index = getIndex(favorites, id);
@@ -80,40 +44,10 @@ export default function App() {
     }
   }
 
-  const dropdownTagList = createTagList();
-
-  function createTagList() {
-    const everyTag = recipesList
-      .map(recipe => recipe.tags)
-      .join(',')
-      .split(',');
-    return getUniqueTags(everyTag);
-  }
-
-  function getUniqueTags(everyTag) {
-    const uniqueTags = ['no tag selected'];
-    everyTag.map(
-      element => !uniqueTags.includes(element) && uniqueTags.push(element)
-    );
-    return uniqueTags;
-  }
-
-  function handleTagFilterChange(event) {
-    setTagFilter(event.value);
-  }
-
   function getRecipe(id, recipesList) {
     const index = recipesList.map(recipe => recipe._id).indexOf(id);
     const recipe = recipesList[index];
     return recipe;
-  }
-
-  function handleToggleProjectContainer(newStatus) {
-    setProjectContainer(newStatus);
-  }
-
-  function handleToggleConversionContainer(newStatus) {
-    setConversionContainer(newStatus);
   }
 
   return (
@@ -127,13 +61,6 @@ export default function App() {
             history={props.history}
             recipesList={recipesList}
             favoritesList={favorites}
-            filterSection={filterSection}
-            favFilterStatus={favFilterStatus}
-            tagFilter={tagFilter}
-            dropdownTagList={dropdownTagList}
-            onToggleFilterSection={handleToggleFilterSection}
-            onToggleFavFilterStatus={handleFavFilterStatus}
-            onHandleChange={handleTagFilterChange}
             onToggleFavorite={handleToggleFavorite}
           />
         )}
@@ -152,15 +79,7 @@ export default function App() {
       />
       <Route
         path="/about"
-        render={props => (
-          <AboutPage
-            history={props.history}
-            onToggleProjectContainer={handleToggleProjectContainer}
-            projectContainer={projectContainer}
-            onToggleConversionContainer={handleToggleConversionContainer}
-            conversionContainer={conversionContainer}
-          />
-        )}
+        render={props => <AboutPage history={props.history} />}
       />
       <Route
         path="/step-by-step/:id"

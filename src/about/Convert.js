@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BoxContainer,
   BoxInnerContainer,
@@ -16,10 +16,12 @@ import {
 import ArrowDown from '../images/ArrowDown.svg';
 import ArrowUp from '../images/ArrowUp.svg';
 
-export default function Convert({
-  onToggleConversionContainer,
-  conversionContainer,
-}) {
+export default function Convert() {
+  const [conversionContainer, setConversionContainer] = useState(false);
+
+  function handleToggleConversionContainer(conversionContainer) {
+    setConversionContainer(conversionContainer);
+  }
   function getConversionContent() {
     if (conversionContainer === true) {
       return (
@@ -74,7 +76,7 @@ export default function Convert({
     <BoxContainer>
       <BoxInnerContainer>
         <HeadlineContainer
-          onClick={() => onToggleConversionContainer(!conversionContainer)}
+          onClick={() => handleToggleConversionContainer(!conversionContainer)}
         >
           <Headline>... conversion of measuring units</Headline>
           {conversionContainer ? (
