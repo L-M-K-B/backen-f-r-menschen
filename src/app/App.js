@@ -21,12 +21,6 @@ export default function App() {
     getLocal('favFilterStatus') || false
   );
   const [tagFilter, setTagFilter] = useState(getLocal('tagFilter') || '');
-  const [projectContainer, setProjectContainer] = useState(
-    getLocal('projectContainer') || false
-  );
-  const [conversionContainer, setConversionContainer] = useState(
-    getLocal('conversionContainer') || false
-  );
 
   useEffect(() => {
     getRecipes()
@@ -51,12 +45,6 @@ export default function App() {
   useEffect(() => {
     setLocal('tagFilter', tagFilter);
   }, [tagFilter]);
-  useEffect(() => {
-    setLocal('projectContainer', projectContainer);
-  }, [projectContainer]);
-  useEffect(() => {
-    setLocal('conversionContainer', conversionContainer);
-  }, [conversionContainer]);
 
   function handleToggleFilterSection(newFilterSectionStatus) {
     setFilterSection(newFilterSectionStatus);
@@ -108,14 +96,6 @@ export default function App() {
     return recipe;
   }
 
-  function handleToggleProjectContainer(newStatus) {
-    setProjectContainer(newStatus);
-  }
-
-  function handleToggleConversionContainer(newStatus) {
-    setConversionContainer(newStatus);
-  }
-
   return (
     <Router>
       <GlobalStyles />
@@ -152,15 +132,7 @@ export default function App() {
       />
       <Route
         path="/about"
-        render={props => (
-          <AboutPage
-            history={props.history}
-            onToggleProjectContainer={handleToggleProjectContainer}
-            projectContainer={projectContainer}
-            onToggleConversionContainer={handleToggleConversionContainer}
-            conversionContainer={conversionContainer}
-          />
-        )}
+        render={props => <AboutPage history={props.history} />}
       />
       <Route
         path="/step-by-step/:id"

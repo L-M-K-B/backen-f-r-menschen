@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   BoxContainer,
   BoxInnerContainer,
@@ -10,10 +10,12 @@ import {
 import ArrowDown from '../images/ArrowDown.svg';
 import ArrowUp from '../images/ArrowUp.svg';
 
-export default function Project({
-  onToggleProjectContainer,
-  projectContainer,
-}) {
+export default function Project() {
+  const [projectContainer, setProjectContainer] = useState(false);
+
+  function handleToggleProjectContainer(projectContainer) {
+    setProjectContainer(projectContainer);
+  }
   function getProjectContent() {
     if (projectContainer === true) {
       return (
@@ -46,7 +48,7 @@ export default function Project({
     <BoxContainer>
       <BoxInnerContainer>
         <HeadlineContainer
-          onClick={() => onToggleProjectContainer(!projectContainer)}
+          onClick={() => handleToggleProjectContainer(!projectContainer)}
         >
           <Headline>... this project</Headline>
           {projectContainer ? (

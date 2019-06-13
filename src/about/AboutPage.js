@@ -9,26 +9,14 @@ import Footer from '../header-footer/Footer';
 import IconPieList from '../images/IconPieList.svg';
 import IconChefActive from '../images/IconChefActive.svg';
 
-export default function AboutPage({
-  history,
-  onToggleProjectContainer,
-  projectContainer,
-  onToggleConversionContainer,
-  conversionContainer,
-}) {
+export default function AboutPage({ history }) {
   return (
     <GridStyle>
       <Header title="About ..." />
       <MainArea>
         <AboutContainer>
-          <Project
-            onToggleProjectContainer={onToggleProjectContainer}
-            projectContainer={projectContainer}
-          />
-          <Convert
-            onToggleConversionContainer={onToggleConversionContainer}
-            conversionContainer={conversionContainer}
-          />
+          <Project />
+          <Convert />
         </AboutContainer>
       </MainArea>
       <Footer
