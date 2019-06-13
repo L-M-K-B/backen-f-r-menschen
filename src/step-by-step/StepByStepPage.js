@@ -5,6 +5,11 @@ import {
   MainArea,
   ContentContainer,
   Explanation,
+  ArrowBox,
+  ArrowLeftBox,
+  ArrowRightBox,
+  IconArrowLeft,
+  IconArrowRight,
 } from './steByStepStyle';
 import AwesomeSlider from 'react-awesome-slider';
 import './sliderStyles.scss';
@@ -12,6 +17,8 @@ import './sliderStyles.scss';
 import HeaderLarge from '../header-footer/HeaderLarge';
 import Footer from '../header-footer/Footer';
 
+import ArrowLeft from '../images/ArrowLeft.svg';
+import ArrowRight from '../images/ArrowRight.svg';
 import IconPieList from '../images/IconPieList.svg';
 import IconChef from '../images/IconChef.svg';
 
@@ -56,6 +63,14 @@ export default function StepByStepPage({ history, recipe }) {
               <div data-src={step.image} />
             ))}
           </AwesomeSlider>
+          <ArrowBox>
+            <ArrowLeftBox>
+              <IconArrowLeft src={ArrowLeft} />
+            </ArrowLeftBox>
+            <ArrowRightBox>
+              <IconArrowRight src={ArrowRight} />
+            </ArrowRightBox>
+          </ArrowBox>
           <Explanation>{getExplanation()}</Explanation>
         </ContentContainer>
         <Footer

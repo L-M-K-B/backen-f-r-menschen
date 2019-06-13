@@ -137,7 +137,10 @@ export const NotesArea = styled.textarea`
   border-radius: 14px;
   font-size: 16px;
   color: ${font};
-
+  &::placeholder {
+    color: ${font};
+    font-size: 16px;
+  }
   &:focus {
     outline: none;
     border: 1px solid ${orange};
