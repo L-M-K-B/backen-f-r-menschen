@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
+import { Arrow, HeadlineContainer } from './aboutStyle';
 import {
   BoxContainer,
   BoxInnerContainer,
-  Headline,
-  Arrow,
-  HeadlineContainer,
-} from './aboutStyle';
+  BoxHeadline,
+} from '../misc/styleComponents';
 
 import ArrowDown from '../images/ArrowDown.svg';
 import ArrowUp from '../images/ArrowUp.svg';
@@ -50,7 +49,7 @@ export default function Project() {
         <HeadlineContainer
           onClick={() => handleToggleProjectContainer(!projectContainer)}
         >
-          <Headline>... this project</Headline>
+          <BoxHeadline>... this project</BoxHeadline>
           {projectContainer ? (
             <Arrow src={ArrowUp} alt="icon arrow up" />
           ) : (

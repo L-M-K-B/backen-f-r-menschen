@@ -1,7 +1,6 @@
 import React from 'react';
 import {
   NavContainer,
-  Icon,
   NavLink,
   NavBtn,
   IconArrowBack,
@@ -24,10 +23,10 @@ export default function Footer({ history, srcIconPieList, srcIconChef }) {
         <IconArrowBack src={ArrowBack} />
       </NavBtn>
       <NavLink exact to="/">
-        <Icon src={srcIconPieList} />
+        <img src={srcIconPieList} alt="" />
       </NavLink>
       <NavLink to="/about">
-        <Icon src={srcIconChef} />
+        <img src={srcIconChef} alt="" />
       </NavLink>
     </NavContainer>
   );

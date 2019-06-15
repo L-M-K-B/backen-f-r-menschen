@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import {
-  GridStep,
-  MainArea,
-  ContentContainer,
   Explanation,
   ArrowBox,
   ArrowLeftBox,
@@ -10,6 +7,11 @@ import {
   IconArrowLeft,
   IconArrowRight,
 } from './steByStepStyle';
+import {
+  GridHeaderLarge,
+  MainArea,
+  ContentContainer,
+} from '../misc/styleComponents';
 import AwesomeSlider from 'react-awesome-slider';
 import './sliderStyles.scss';
 
@@ -41,7 +43,7 @@ export default function StepByStepPage({ history, recipe }) {
   }
 
   return (
-    <GridStep>
+    <GridHeaderLarge>
       <HeaderLarge
         maxNo={maxNo}
         prevNo={prevNo}
@@ -75,6 +77,6 @@ export default function StepByStepPage({ history, recipe }) {
           srcIconChef={IconChef}
         />
       </MainArea>
-    </GridStep>
+    </GridHeaderLarge>
   );
 }

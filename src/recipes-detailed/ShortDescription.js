@@ -1,18 +1,17 @@
 import React from 'react';
+import { LinkButton, ButtonLabel } from './recipeDetailedStyle';
 import {
   BoxContainer,
   BoxInnerContainer,
-  Headline,
-  LinkButton,
-  ButtonLabel,
-} from './recipeDetailedStyle';
+  BoxHeadline,
+} from '../misc/styleComponents';
 
 export default function ShortDescription({ recipe }) {
   const { shortDescription, _id } = recipe;
   return (
     <BoxContainer>
       <BoxInnerContainer>
-        <Headline>Description:</Headline>
+        <BoxHeadline>Description:</BoxHeadline>
         {shortDescription.map(paragraph => (
           <p>{paragraph}</p>
         ))}

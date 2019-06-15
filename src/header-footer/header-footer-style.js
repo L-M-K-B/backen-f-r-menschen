@@ -1,5 +1,16 @@
 import styled from 'styled-components';
 import { NavLink as RRDNavlinkLink } from 'react-router-dom';
+import {
+  AppWidthS,
+  AppWidthM,
+  AppWidthL,
+  BoxWidthS,
+  BoxWidthM,
+  borderRadius,
+  pinkBoxShadow,
+  navButtonWidth,
+  navButtonHeight,
+} from '../misc/styleVariables';
 import { lightFont, pink, pShadow, white } from '../misc/colors';
 
 // Header
@@ -9,11 +20,20 @@ export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 375px;
+
+  @media (max-width: 374px) {
+    min-width: ${AppWidthS};
+  }
+  @media (min-width: 375px) and (max-width: 499px) {
+    width: ${AppWidthM};
+  }
+  @media (min-width: 500px) {
+    width: ${AppWidthL};
+  }
 `;
+// Position stimmt nicht, nimmt nicht die ganze Breite ein, obwohl es könnte (ist momentan maximal 375px breit -> wo ist diese Begrenzung)
 export const Panel = styled.img`
   height: 55px;
-  width: 375px;
   position: absolute;
 `;
 export const HeadlineContainer = styled.div`
@@ -22,15 +42,23 @@ export const HeadlineContainer = styled.div`
   margin-top: 20px;
   display: flex;
   justify-content: center;
-  width: 335px;
-  border-radius: 14px;
-  box-shadow: 0 4px 4px 0 ${pShadow};
+  border-radius: ${borderRadius};
+  box-shadow: ${pinkBoxShadow} ${pShadow};
   background-color: ${white};
+
+  @media (max-width: 374px) {
+    width: ${BoxWidthS};
+    padding: 5px 5px;
+  }
+  @media (min-width: 375px) {
+    width: ${BoxWidthM};
+    padding: 10px 20px;
+  }
 `;
 export const Headline = styled.p`
-  margin: 10px;
   font-family: 'Domine', serif;
-  font-size: 30px;
+  font-size: 24px;
+  margin: 5px;
 `;
 
 //HeaderLarge
@@ -40,11 +68,21 @@ export const HeaderContainerLarge = styled.div`
   display: flex;
   justify-content: space-evenly;
   height: 89px;
-  width: 375px;
-  background-color: ${pShadow};
+
+  @media (max-width: 374px) {
+    min-width: ${AppWidthS};
+  }
+  @media (min-width: 375px) and (max-width: 499px) {
+    width: ${AppWidthM};
+  }
+  @media (min-width: 500px) {
+    width: ${AppWidthL};
+  }
 `;
+
+// Position stimmt nicht, nimmt nicht die ganze Breite ein, obwohl es könnte (ist momentan maximal 375px breit -> wo ist diese Begrenzung)
 export const PanelLarge = styled.img`
-  width: 375px;
+  height: 89px;
   position: absolute;
 `;
 export const CurrentContainer = styled.div`
@@ -52,19 +90,18 @@ export const CurrentContainer = styled.div`
   width: 65px;
   margin-top: 12px;
   z-index: 100;
-  justify-self: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 14px;
-  box-shadow: 0 4px 4px 0 ${pShadow};
+  border-radius: ${borderRadius};
+  box-shadow: ${pinkBoxShadow} ${pShadow};
   background-color: ${white};
 `;
 export const PrevNextContainer = styled.div`
   z-index: 100;
   width: 65px;
-  margin: 0 55px;
+  margin: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,22 +128,31 @@ export const NavContainer = styled.div`
   justify-content: space-evenly;
   align-items: top;
   height: 60px;
-  width: 375px;
   background-image: linear-gradient(
     180deg,
     rgba(255, 255, 255, 0) 0%,
     ${white} 50%
   );
+
+  @media (max-width: 374px) {
+    min-width: ${AppWidthS};
+  }
+  @media (min-width: 375px) and (max-width: 499px) {
+    width: ${AppWidthM};
+  }
+  @media (min-width: 500px) {
+    width: ${AppWidthL};
+  }
 `;
 export const NavLink = styled(RRDNavlinkLink)`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 110px;
+  height: ${navButtonHeight};
+  width: ${navButtonWidth};
   border: none;
-  border-radius: 14px;
-  box-shadow: 0 4px 4px 0 ${pShadow};
+  border-radius: ${borderRadius};
+  box-shadow: ${pinkBoxShadow} ${pShadow};
   background-color: ${white};
   text-decoration: none;
   &.active {
@@ -117,15 +163,14 @@ export const NavBtn = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50px;
-  width: 110px;
+  height: ${navButtonHeight};
+  width: ${navButtonWidth};
   border: none;
-  border-radius: 14px;
-  box-shadow: 0 4px 4px 0 ${pShadow};
+  border-radius: ${borderRadius};
+  box-shadow: ${pinkBoxShadow} ${pShadow};
   background-color: ${white};
   }
 `;
-export const Icon = styled.img``;
 export const IconArrowBack = styled.img`
   height: 20px;
 `;

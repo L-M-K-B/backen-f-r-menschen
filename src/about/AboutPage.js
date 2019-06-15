@@ -1,5 +1,9 @@
 import React from 'react';
-import { GridStyle, MainArea, AboutContainer } from './aboutStyle';
+import {
+  GridHeaderSmall,
+  MainArea,
+  ContentContainer,
+} from '../misc/styleComponents';
 
 import Header from '../header-footer/Header';
 import Project from './Project';
@@ -11,19 +15,19 @@ import IconChefActive from '../images/IconChefActive.svg';
 
 export default function AboutPage({ history }) {
   return (
-    <GridStyle>
+    <GridHeaderSmall>
       <Header title="About ..." />
       <MainArea>
-        <AboutContainer>
+        <ContentContainer>
           <Project />
           <Convert />
-        </AboutContainer>
+        </ContentContainer>
       </MainArea>
       <Footer
         history={history}
         srcIconPieList={IconPieList}
         srcIconChef={IconChefActive}
       />
-    </GridStyle>
+    </GridHeaderSmall>
   );
 }

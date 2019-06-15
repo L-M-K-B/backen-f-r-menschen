@@ -12,21 +12,21 @@ import HeaderPanelLarge from '../images/HeaderPanelLarge.svg';
 export default function HeaderLarge({ maxNo, prevNo, currentNo, nextNo }) {
   return (
     <>
-      <PanelLarge src={HeaderPanelLarge} />
       <HeaderContainerLarge>
+        <PanelLarge src={HeaderPanelLarge} />
         <PrevNextContainer>
           <NumberPart1>{prevNo}</NumberPart1>
           <NumberPart2>from {maxNo}</NumberPart2>
         </PrevNextContainer>
+        <CurrentContainer>
+          <NumberPart1>{currentNo}</NumberPart1>
+          <NumberPart2>from {maxNo}</NumberPart2>
+        </CurrentContainer>
         <PrevNextContainer>
           <NumberPart1>{nextNo}</NumberPart1>
           <NumberPart2>from {maxNo}</NumberPart2>
         </PrevNextContainer>
       </HeaderContainerLarge>
-      <CurrentContainer>
-        <NumberPart1>{currentNo}</NumberPart1>
-        <NumberPart2>from {maxNo}</NumberPart2>
-      </CurrentContainer>
     </>
   );
 }

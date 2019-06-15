@@ -1,33 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { font, oShadow, orange, white } from '../misc/colors';
-
-export const GridDetail = styled.div`
-  display: grid;
-  grid-template-rows: 55px 1fr;
-  height: 100vh;
-`;
-export const MainArea = styled.main`
-  grid-row: 2;
-  overflow: hidden;
-  overflow-y: scroll;
-  margin-bottom: 26px;
-  padding-bottom: 55px;
-`;
-export const RecipeContainer = styled.div`
-  width: 335px;
-  margin: 30px 20px 0;
-`;
-export const BoxContainer = styled.div`
-  margin-bottom: 30px;
-  padding: 1px 0;
-  border-radius: 14px;
-  box-shadow: 0 5px 4px 2px ${oShadow};
-`;
-export const BoxInnerContainer = styled.div`
-  border-radius: 14px;
-  margin: 8px;
-`;
+import { borderRadius, defaultFontSize } from '../misc/styleVariables';
+import { font, orange, white } from '../misc/colors';
 
 // Stage
 export const Favorite = styled.div`
@@ -38,54 +12,87 @@ export const Favorite = styled.div`
 export const TitleImage = styled.img`
   width: 100%;
   margin-top: 15px;
+  border-radius: ${borderRadius};
 `;
 export const BasicDataGrid = styled.div`
-  display: grid;
-  grid-template-columns: 25% 75%;
-  grid-template-rows: repeat(3, 58px);
-  align-items: center;
+  @media (max-width: 374px) {
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (min-width: 375px) {
+    display: grid;
+    grid-template-columns: 25% 75%;
+    grid-template-rows: repeat(3, 58px);
+    align-items: center;
+  }
 `;
 export const YieldKey = styled.p`
-  grid-column: 1;
-  grid-row: 1;
   margin: 0;
+  @media (min-width: 375px) {
+    grid-column: 1;
+    grid-row: 1;
+  }
 `;
 export const YieldValueDiv = styled.div`
-  grid-column: 2;
-  grid-row: 1;
   display: flex;
   align-items: center;
+
+  @media (max-width: 374px) {
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: 375px) {
+    grid-column: 2;
+    grid-row: 1;
+  }
 `;
 export const YieldValueP = styled.p`
   margin: 0 0 0 5px;
 `;
 export const TimeKey = styled.p`
-  grid-column: 1;
-  grid-row: 2;
   margin: 0;
+
+  @media (min-width: 375px) {
+    grid-column: 1;
+    grid-row: 2;
+  }
 `;
 export const TimeValueDiv = styled.div`
-  grid-column: 2;
-  grid-row: 2;
   display: flex;
   align-items: center;
+
+  @media (max-width: 374px) {
+    margin-bottom: 15px;
+  }
+  @media (min-width: 375px) {
+    grid-column: 2;
+    grid-row: 2;
+  }
 `;
 export const TimeValueP = styled.p`
   margin: 0 0 0 5px;
 `;
 export const DifficultyKey = styled.p`
-  grid-column: 1;
-  grid-row: 3;
   margin: 0;
+  @media (min-width: 375px) {
+    grid-column: 1;
+    grid-row: 3;
+  }
 `;
 export const DifficultyValue = styled.div`
-  grid-column: 2;
-  grid-row: 3;
+  @media (min-width: 375px) {
+    grid-column: 2;
+    grid-row: 3;
+  }
 `;
 export const StyledTagList = styled.div`
-  grid-column: 1 / span 12;
-  grid-row: 7 / span 1;
   align-self: center;
+
+  @media (min-width: 375px) {
+    grid-column: 1 / span 12;
+    grid-row: 7 / span 1;
+  }
 `;
 
 export const TagsDiv = styled.div`
@@ -93,15 +100,14 @@ export const TagsDiv = styled.div`
 `;
 
 // List of ingredients, Short Description
-export const Headline = styled.p`
-  font-family: 'Domine', serif;
-  font-size: 24px;
-`;
 export const LinkButton = styled(Link)`
   position: relative;
   top: 30px;
-  left: 150px;
   text-decoration: none;
+
+  @media (min-width: 375px) {
+    left: 150px;
+  }
 `;
 export const ButtonLabel = styled.p`
   display: flex;
@@ -110,10 +116,10 @@ export const ButtonLabel = styled.p`
   height: 57px;
   width: 130px;
   border: none;
-  border-radius: 14px;
+  border-radius: ${borderRadius};
   background-color: ${orange};
   color: ${white};
-  font-size: 16px;
+  font-size: ${defaultFontSize};
   text-align: center;
 `;
 
@@ -121,7 +127,7 @@ export const ButtonLabel = styled.p`
 export const NotesForm = styled.form`
   display: flex;
   flex-direction: column;
-  border-radius: 14px;
+  border-radius: ${borderRadius};
   margin: 8px;
 `;
 export const NotesLabel = styled.label`
@@ -134,30 +140,34 @@ export const NotesArea = styled.textarea`
   margin: 0 5px 0;
   padding: 8px;
   border: none;
-  border-radius: 14px;
-  font-size: 16px;
+  border-radius: ${borderRadius};
+  font-size: ${defaultFontSize};
   color: ${font};
   &::placeholder {
     color: ${font};
-    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+    font-size: ${defaultFontSize};
   }
   &:focus {
     outline: none;
     border: 1px solid ${orange};
-    border-radius: 14px;
+    border-radius: ${borderRadius};
   }
 `;
 export const Button = styled.button`
   position: relative;
   top: 30px;
-  left: 150px;
   height: 57px;
   width: 130px;
   border: none;
-  border-radius: 14px;
+  border-radius: ${borderRadius};
   background-color: ${orange};
   color: ${white};
-  font-size: 16px;
+  font-size: ${defaultFontSize};
+
+  @media (min-width: 375px) {
+    left: 150px;
+  }
 
   &:active {
     border: 2px solid ${orange};

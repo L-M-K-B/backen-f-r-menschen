@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { setLocal, getLocal } from '../services';
-import { GridOverview, MainArea, ListContainer } from './recipesOverviewStyle';
+import { ListContainer } from './recipesOverviewStyle';
+import {
+  GridHeaderSmall,
+  MainArea,
+  ContentContainer,
+} from '../misc/styleComponents';
 
 import FilterAreaComponent from './FilterArea';
 import ListOfRecipes from './ListOfRecipes';
@@ -45,10 +50,10 @@ export default function RecipesOverviewPage({
   }
 
   return (
-    <GridOverview>
+    <GridHeaderSmall>
       <Header title="List of Recipes" />
       <MainArea>
-        <ListContainer>
+        <ContentContainer>
           <FilterAreaComponent
             recipesList={recipesList}
             filterSection={filterSection}
@@ -65,13 +70,13 @@ export default function RecipesOverviewPage({
             tagFilter={tagFilter}
             onToggleFavorite={onToggleFavorite}
           />
-        </ListContainer>
+        </ContentContainer>
       </MainArea>
       <Footer
         history={history}
         srcIconPieList={IconPieListActive}
         srcIconChef={IconChef}
       />
-    </GridOverview>
+    </GridHeaderSmall>
   );
 }
