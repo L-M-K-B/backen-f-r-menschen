@@ -42,12 +42,12 @@ export default function RecipeDetailedPage({
           <ShortDescription recipe={recipe} />
           <Notes id={id} />
         </ContentContainer>
+        <Footer
+          history={history}
+          srcIconPieList={IconPieList}
+          srcIconChef={IconChef}
+        />
       </MainArea>
-      <Footer
-        history={history}
-        srcIconPieList={IconPieList}
-        srcIconChef={IconChef}
-      />
     </GridHeaderSmall>
   );
 }

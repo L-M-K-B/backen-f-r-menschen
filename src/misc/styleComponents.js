@@ -46,13 +46,14 @@ export const ContentContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 15px;
   @media (max-width: 374px) {
     width: ${BoxWidthS};
-    margin: 25px 5px 0;
+    margin: 15px 5px 120px;
   }
   @media (min-width: 375px) {
     width: ${BoxWidthM};
-    margin: 25px 20px 0;
+    margin: 15px 20px 120px;
     display: flex;
     flex-direction: column;
     align-items: center;

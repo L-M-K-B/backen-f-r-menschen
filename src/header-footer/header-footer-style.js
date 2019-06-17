@@ -31,7 +31,6 @@ export const HeaderContainer = styled.div`
     width: ${AppWidthL};
   }
 `;
-// Position stimmt nicht, nimmt nicht die ganze Breite ein, obwohl es könnte (ist momentan maximal 375px breit -> wo ist diese Begrenzung)
 export const Panel = styled.img`
   height: 55px;
   position: absolute;
@@ -79,8 +78,6 @@ export const HeaderContainerLarge = styled.div`
     width: ${AppWidthL};
   }
 `;
-
-// Position stimmt nicht, nimmt nicht die ganze Breite ein, obwohl es könnte (ist momentan maximal 375px breit -> wo ist diese Begrenzung)
 export const PanelLarge = styled.img`
   height: 89px;
   position: absolute;

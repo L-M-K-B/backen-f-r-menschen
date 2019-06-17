@@ -13,7 +13,7 @@ import { font, pink, oShadow, pShadow, white } from '../misc/colors';
 export const FilterAreaContainer = styled.div`
   width: 100%;
   border-radius: ${borderRadius};
-  margin: 30px 0 20px;
+  margin: 10px 0 30px;
   box-shadow: ${pinkBoxShadow} ${pShadow};
 `;
 export const FilterAreaHeader = styled.div`
