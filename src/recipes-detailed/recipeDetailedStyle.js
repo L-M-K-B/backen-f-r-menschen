@@ -1,7 +1,12 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { borderRadius, defaultFontSize } from '../misc/styleVariables';
-import { font, orange, white } from '../misc/colors';
+import {
+  font,
+  orange,
+  white,
+  borderRadius,
+  defaultFontSize,
+} from '../common/styleVariables';
 
 // Stage
 export const Favorite = styled.div`

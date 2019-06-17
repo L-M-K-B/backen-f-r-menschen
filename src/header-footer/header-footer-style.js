@@ -1,6 +1,10 @@
 import styled from 'styled-components';
 import { NavLink as RRDNavlinkLink } from 'react-router-dom';
 import {
+  lightFont,
+  pink,
+  pShadow,
+  white,
   AppWidthS,
   AppWidthM,
   AppWidthL,
@@ -10,8 +14,7 @@ import {
   pinkBoxShadow,
   navButtonWidth,
   navButtonHeight,
-} from '../misc/styleVariables';
-import { lightFont, pink, pShadow, white } from '../misc/colors';
+} from '../common/styleVariables';
 
 // Header
 export const HeaderContainer = styled.div`

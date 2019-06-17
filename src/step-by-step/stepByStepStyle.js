@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { borderRadius } from '../misc/styleVariables';
-import { wShadow } from '../misc/colors';
+import { wShadow, borderRadius } from '../common/styleVariables';
 
 export const ContainerArrowExplanation = styled.div`
   display: flex;

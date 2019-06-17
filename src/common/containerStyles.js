@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import {
+  oShadow,
   AppWidthS,
   AppWidthM,
   AppWidthL,
@@ -7,8 +8,7 @@ import {
   BoxWidthM,
   borderRadius,
   orangeBoxShadow,
-} from '../misc/styleVariables';
-import { oShadow } from '../misc/colors';
+} from './styleVariables';
 
 export const MainArea = styled.main`
   grid-row: 2;

@@ -2,12 +2,16 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import Dropdown from 'react-dropdown';
 import {
+  font,
+  pink,
+  oShadow,
+  pShadow,
+  white,
   pinkBoxShadow,
   orangeBoxShadow,
   borderRadius,
   defaultFontSize,
-} from '../misc/styleVariables';
-import { font, pink, oShadow, pShadow, white } from '../misc/colors';
+} from '../common/styleVariables';
 
 // FilterArea
 export const FilterAreaContainer = styled.div`

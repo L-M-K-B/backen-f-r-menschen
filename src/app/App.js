@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { setLocal, getLocal, getRecipes } from '../services';
 import { getIndex } from '../utils';
 
-import GlobalStyles from '../misc/GlobalStyles';
+import GlobalStyles from '../common/GlobalStyles';
 
 //import mockdata from '../mockdata';
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage';
