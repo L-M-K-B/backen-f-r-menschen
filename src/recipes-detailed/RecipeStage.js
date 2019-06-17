@@ -13,7 +13,7 @@ import {
   DifficultyValue,
   TagsDiv,
 } from './recipeDetailedStyle';
-import { BoxContainer, BoxInnerContainer } from '../misc/styleComponents';
+import { BoxContainer, BoxInnerContainer } from '../common/containerStyles';
 
 import IconFavorite from '../images/IconFavorite.svg';
 import IconFavoriteActive from '../images/IconFavoriteActive.svg';

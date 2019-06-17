@@ -17,6 +17,7 @@ import { lightFont, pink, pShadow, white } from '../misc/colors';
 export const HeaderContainer = styled.div`
   grid-row: 1;
   position: fixed;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,23 +48,28 @@ export const HeadlineContainer = styled.div`
 
   @media (max-width: 374px) {
     width: ${BoxWidthS};
-    padding: 5px 5px;
   }
   @media (min-width: 375px) {
     width: ${BoxWidthM};
-    padding: 10px 20px;
   }
 `;
 export const Headline = styled.p`
   font-family: 'Domine', serif;
   font-size: 24px;
-  margin: 5px;
+
+  @media (max-width: 374px) {
+    margin: 10px;
+  }
+  @media (min-width: 375px) {
+    margin: 15px 25px;
+  }
 `;
 
 //HeaderLarge
 export const HeaderContainerLarge = styled.div`
   grid-row: 1;
   position: fixed;
+  z-index: 100;
   display: flex;
   justify-content: space-evenly;
   height: 89px;
@@ -119,7 +125,7 @@ export const NumberPart2 = styled.p`
 
 // Footer
 export const NavContainer = styled.div`
-  position: absolute;
+  position: fixed;
   bottom: 0;
   display: flex;
   justify-content: space-evenly;

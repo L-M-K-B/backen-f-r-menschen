@@ -3,7 +3,7 @@ import {
   BoxContainer,
   BoxInnerContainer,
   BoxHeadline,
-} from '../misc/styleComponents';
+} from '../common/containerStyles';
 
 import SingleIngredient from './SingleIngredient';
 

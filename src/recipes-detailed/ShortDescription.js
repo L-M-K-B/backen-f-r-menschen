@@ -4,7 +4,7 @@ import {
   BoxContainer,
   BoxInnerContainer,
   BoxHeadline,
-} from '../misc/styleComponents';
+} from '../common/containerStyles';
 
 export default function ShortDescription({ recipe }) {
   const { shortDescription, _id } = recipe;

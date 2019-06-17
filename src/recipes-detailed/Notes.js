@@ -7,7 +7,7 @@ import {
   NotesArea,
   Button,
 } from './recipeDetailedStyle';
-import { BoxContainer } from '../misc/styleComponents';
+import { BoxContainer } from '../common/containerStyles';
 
 export default function Notes({ id }) {
   const [note, setNote] = useState(getLocal(`${id}Notes`) || '');

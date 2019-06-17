@@ -10,26 +10,12 @@ import {
 } from '../misc/styleVariables';
 import { oShadow } from '../misc/colors';
 
-export const GridHeaderSmall = styled.div`
-  display: grid;
-  grid-template-rows: 55px 1fr;
-  height: 100vh;
-  width: 100vw;
-`;
-
-export const GridHeaderLarge = styled.div`
-  display: grid;
-  grid-template-rows: 89px 1fr;
-  width: 100vw;
-  height: 100vh;
-`;
-
 export const MainArea = styled.main`
   grid-row: 2;
-  overflow: hidden;
-  overflow-y: scroll;
+  overflow: auto;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
   @media (max-width: 374px) {
     min-width: ${AppWidthS};
@@ -43,20 +29,16 @@ export const MainArea = styled.main`
 `;
 
 export const ContentContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 15px;
+  padding-top: 20px;
+  padding-bottom: 65px;
+
   @media (max-width: 374px) {
     width: ${BoxWidthS};
-    margin: 15px 5px 120px;
+    margin: 15px 5px 0;
   }
   @media (min-width: 375px) {
     width: ${BoxWidthM};
-    margin: 15px 20px 120px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin: 15px 20px 0;
   }
 `;
 

@@ -1,17 +1,15 @@
 import React, { useState } from 'react';
 import {
+  ContainerArrowExplanation,
   Explanation,
   ArrowBox,
   ArrowLeftBox,
   ArrowRightBox,
   IconArrowLeft,
   IconArrowRight,
-} from './steByStepStyle';
-import {
-  GridHeaderLarge,
-  MainArea,
-  ContentContainer,
-} from '../misc/styleComponents';
+} from './stepByStepStyle';
+import { MainArea, ContentContainer } from '../common/containerStyles';
+import { GridHeaderLarge } from '../common/grid';
 import AwesomeSlider from 'react-awesome-slider';
 import './sliderStyles.scss';
 
@@ -61,15 +59,17 @@ export default function StepByStepPage({ history, recipe }) {
               <div data-src={step.image} />
             ))}
           </AwesomeSlider>
-          <ArrowBox>
-            <ArrowLeftBox>
-              <IconArrowLeft src={ArrowLeft} />
-            </ArrowLeftBox>
-            <ArrowRightBox>
-              <IconArrowRight src={ArrowRight} />
-            </ArrowRightBox>
-          </ArrowBox>
-          <Explanation>{getExplanation()}</Explanation>
+          <ContainerArrowExplanation>
+            <ArrowBox>
+              <ArrowLeftBox>
+                <IconArrowLeft src={ArrowLeft} />
+              </ArrowLeftBox>
+              <ArrowRightBox>
+                <IconArrowRight src={ArrowRight} />
+              </ArrowRightBox>
+            </ArrowBox>
+            <Explanation>{getExplanation()}</Explanation>
+          </ContainerArrowExplanation>
         </ContentContainer>
         <Footer
           history={history}

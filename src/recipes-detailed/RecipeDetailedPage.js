@@ -1,9 +1,6 @@
 import React from 'react';
-import {
-  GridHeaderSmall,
-  MainArea,
-  ContentContainer,
-} from '../misc/styleComponents';
+import { MainArea, ContentContainer } from '../common/containerStyles';
+import { GridHeaderSmall } from '../common/grid';
 import { getIndex } from '../utils';
 
 import Header from '../header-footer/Header';

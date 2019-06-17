@@ -13,7 +13,7 @@ import {
   BoxContainer,
   BoxInnerContainer,
   BoxHeadline,
-} from '../misc/styleComponents';
+} from '../common/containerStyles';
 
 import ArrowDown from '../images/ArrowDown.svg';
 import ArrowUp from '../images/ArrowUp.svg';

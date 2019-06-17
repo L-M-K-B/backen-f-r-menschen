@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { setLocal, getLocal } from '../services';
-import { ListContainer } from './recipesOverviewStyle';
-import {
-  GridHeaderSmall,
-  MainArea,
-  ContentContainer,
-} from '../misc/styleComponents';
+import { MainArea, ContentContainer } from '../common/containerStyles';
+import { GridHeaderSmall } from '../common/grid';
 
 import FilterAreaComponent from './FilterArea';
 import ListOfRecipes from './ListOfRecipes';

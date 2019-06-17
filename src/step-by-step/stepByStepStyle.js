@@ -2,6 +2,12 @@ import styled from 'styled-components';
 import { borderRadius } from '../misc/styleVariables';
 import { wShadow } from '../misc/colors';
 
+export const ContainerArrowExplanation = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
 export const Explanation = styled.p`
   position: relative;
   top: -20px;
