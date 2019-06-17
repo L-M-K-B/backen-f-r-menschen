@@ -2,21 +2,21 @@
  * You should not need to change this
  */
 
-const express = require('express')
-const path = require('path')
-const mongoose = require('mongoose')
-const dotenv = require('dotenv')
-const fs = require('fs')
-dotenv.config()
+const express = require('express');
+const path = require('path');
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const fs = require('fs');
+dotenv.config();
 
 try {
-  const localConfig = dotenv.parse(fs.readFileSync('.env.local'))
+  const localConfig = dotenv.parse(fs.readFileSync('.env.local'));
   process.env = {
     ...process.env,
     ...localConfig,
-  }
+  };
 } catch (error) {
-  console.log('no .env.local found')
+  console.log('no .env.local found');
 }
 
 module.exports = function() {
@@ -25,19 +25,19 @@ module.exports = function() {
       useNewUrlParser: true,
     })
     .then(() => console.log('Connected to MongoDB'))
-    .catch(err => console.error(err))
+    .catch(err => console.error(err));
 
-  const app = express()
-  app.use(express.json())
-  app.use(express.static(path.join(__dirname, 'build')))
+  const app = express();
+  app.use(express.json());
+  app.use(express.static(path.join(__dirname, 'build')));
 
   app.listen(process.env.PORT || 4000, err => {
-    err ? console.log(err) : console.log('Server ready')
-  })
+    err ? console.log(err) : console.log('Server ready');
+  });
 
-  app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'))
-  })
+  app.get(['/', 'recipe/:id', 'about', 'step-by-step/:id'], function(req, res) {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  });
 
-  return app
-}
+  return app;
+};

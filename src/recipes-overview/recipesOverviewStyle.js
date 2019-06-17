@@ -157,7 +157,7 @@ export const Time = styled.div`
     margin: 0 10px 15px 0;
   }
   @media (min-width: 375px) {
-    margin: 0 0 15px 0;
+    margin-bottom: 15px;
   }
 `;
 export const WatchMinutes = styled.div`

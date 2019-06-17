@@ -15,7 +15,7 @@ export const AppWidthS = '100vw';
 export const AppWidthM = '100vw';
 export const AppWidthL = '500px';
 
-export const BoxWidthS = '95%';
+export const BoxWidthS = '90%';
 export const BoxWidthM = '335px';
 
 export const borderRadius = '14px';

@@ -26,13 +26,13 @@ export default function StepByStepPage({ history, recipe }) {
 
   const { detailedDescription } = recipe;
 
-  const prevNo = currentStep <= 1 ? ' - ' : currentStep - 1;
-  const maxNo = detailedDescription[detailedDescription.length - 1].number;
-  const nextNo = currentStep >= maxNo ? ' - ' : currentStep + 1;
+  const prevNumber = currentStep <= 1 ? ' - ' : currentStep - 1;
+  const maxNumber = detailedDescription[detailedDescription.length - 1].number;
+  const nextNumber = currentStep >= maxNumber ? ' - ' : currentStep + 1;
 
   function handleTransitionStart(event) {
-    const currentNo = event.nextIndex + 1;
-    setCurrentStep(currentNo);
+    const currentNumber = event.nextIndex + 1;
+    setCurrentStep(currentNumber);
   }
 
   function getExplanation() {
@@ -43,10 +43,10 @@ export default function StepByStepPage({ history, recipe }) {
   return (
     <GridHeaderLarge>
       <HeaderLarge
-        maxNo={maxNo}
-        prevNo={prevNo}
-        currentNo={currentStep}
-        nextNo={nextNo}
+        maxNumber={maxNumber}
+        prevNumber={prevNumber}
+        currentNumber={currentStep}
+        nextNumber={nextNumber}
       />
       <MainArea>
         <ContentContainer>
