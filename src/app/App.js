@@ -5,7 +5,6 @@ import { getIndex } from '../utils';
 
 import GlobalStyles from '../common/GlobalStyles';
 
-//import mockdata from '../mockdata';
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage';
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage';
 import AboutPage from '../about/AboutPage';
