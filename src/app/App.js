@@ -3,9 +3,8 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { setLocal, getLocal, getRecipes } from '../services';
 import { getIndex } from '../utils';
 
-import GlobalStyles from '../misc/GlobalStyles';
+import GlobalStyles from '../common/GlobalStyles';
 
-import mockdata from '../mockdata';
 import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage';
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage';
 import AboutPage from '../about/AboutPage';
@@ -86,12 +85,10 @@ export default function App() {
         render={props => (
           <StepByStepPage
             history={props.history}
-            recipe={getRecipe(props.match.params.id, mockdata.recipesList)}
+            recipe={getRecipe(props.match.params.id, recipesList)}
           />
         )}
       />
     </Router>
   );
 }
-
-//  <MainArea> </MainArea>

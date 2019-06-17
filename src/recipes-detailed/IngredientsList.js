@@ -1,17 +1,18 @@
-import React from 'react'
+import React from 'react';
 import {
   BoxContainer,
   BoxInnerContainer,
-  Headline,
-} from './recipeDetailedStyle'
-import SingleIngredient from './SingleIngredient'
+  BoxHeadline,
+} from '../common/containerStyles';
+
+import SingleIngredient from './SingleIngredient';
 
 export default function IngredientList({ recipe }) {
-  const { ingredients } = recipe
+  const { ingredients } = recipe;
   return (
     <BoxContainer>
       <BoxInnerContainer>
-        <Headline>List of Ingredients:</Headline>
+        <BoxHeadline>List of Ingredients:</BoxHeadline>
         {ingredients.map(ingredient => (
           <SingleIngredient
             key={ingredient[0] + ingredient[2]}
@@ -20,5 +21,5 @@ export default function IngredientList({ recipe }) {
         ))}
       </BoxInnerContainer>
     </BoxContainer>
-  )
+  );
 }

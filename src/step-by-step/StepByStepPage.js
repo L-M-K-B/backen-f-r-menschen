@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import {
-  GridStep,
-  MainArea,
-  ContentContainer,
+  ContainerArrowExplanation,
   Explanation,
   ArrowBox,
   ArrowLeftBox,
   ArrowRightBox,
   IconArrowLeft,
   IconArrowRight,
-} from './steByStepStyle';
+} from './stepByStepStyle';
+import { MainArea, ContentContainer } from '../common/containerStyles';
+import { GridHeaderLarge } from '../common/grid';
 import AwesomeSlider from 'react-awesome-slider';
 import './sliderStyles.scss';
 
@@ -26,13 +26,13 @@ export default function StepByStepPage({ history, recipe }) {
 
   const { detailedDescription } = recipe;
 
-  const prevNo = currentStep <= 1 ? ' - ' : currentStep - 1;
-  const maxNo = detailedDescription[detailedDescription.length - 1].number;
-  const nextNo = currentStep >= maxNo ? ' - ' : currentStep + 1;
+  const prevNumber = currentStep <= 1 ? ' - ' : currentStep - 1;
+  const maxNumber = detailedDescription[detailedDescription.length - 1].number;
+  const nextNumber = currentStep >= maxNumber ? ' - ' : currentStep + 1;
 
   function handleTransitionStart(event) {
-    const currentNo = event.nextIndex + 1;
-    setCurrentStep(currentNo);
+    const currentNumber = event.nextIndex + 1;
+    setCurrentStep(currentNumber);
   }
 
   function getExplanation() {
@@ -41,12 +41,12 @@ export default function StepByStepPage({ history, recipe }) {
   }
 
   return (
-    <GridStep>
+    <GridHeaderLarge>
       <HeaderLarge
-        maxNo={maxNo}
-        prevNo={prevNo}
-        currentNo={currentStep}
-        nextNo={nextNo}
+        maxNumber={maxNumber}
+        prevNumber={prevNumber}
+        currentNumber={currentStep}
+        nextNumber={nextNumber}
       />
       <MainArea>
         <ContentContainer>
@@ -59,15 +59,17 @@ export default function StepByStepPage({ history, recipe }) {
               <div data-src={step.image} />
             ))}
           </AwesomeSlider>
-          <ArrowBox>
-            <ArrowLeftBox>
-              <IconArrowLeft src={ArrowLeft} />
-            </ArrowLeftBox>
-            <ArrowRightBox>
-              <IconArrowRight src={ArrowRight} />
-            </ArrowRightBox>
-          </ArrowBox>
-          <Explanation>{getExplanation()}</Explanation>
+          <ContainerArrowExplanation>
+            <ArrowBox>
+              <ArrowLeftBox>
+                <IconArrowLeft src={ArrowLeft} />
+              </ArrowLeftBox>
+              <ArrowRightBox>
+                <IconArrowRight src={ArrowRight} />
+              </ArrowRightBox>
+            </ArrowBox>
+            <Explanation>{getExplanation()}</Explanation>
+          </ContainerArrowExplanation>
         </ContentContainer>
         <Footer
           history={history}
@@ -75,6 +77,6 @@ export default function StepByStepPage({ history, recipe }) {
           srcIconChef={IconChef}
         />
       </MainArea>
-    </GridStep>
+    </GridHeaderLarge>
   );
 }

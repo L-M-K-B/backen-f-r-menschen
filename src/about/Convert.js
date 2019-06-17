@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
 import {
-  BoxContainer,
-  BoxInnerContainer,
-  Headline,
   Arrow,
   HeadlineContainer,
   Grid,
@@ -12,6 +9,11 @@ import {
   HeaderElement,
   Element,
 } from './aboutStyle';
+import {
+  BoxContainer,
+  BoxInnerContainer,
+  BoxHeadline,
+} from '../common/containerStyles';
 
 import ArrowDown from '../images/ArrowDown.svg';
 import ArrowUp from '../images/ArrowUp.svg';
@@ -78,7 +80,7 @@ export default function Convert() {
         <HeadlineContainer
           onClick={() => handleToggleConversionContainer(!conversionContainer)}
         >
-          <Headline>... conversion of measuring units</Headline>
+          <BoxHeadline>... conversion of measuring units</BoxHeadline>
           {conversionContainer ? (
             <Arrow src={ArrowUp} alt="icon arrow up" />
           ) : (

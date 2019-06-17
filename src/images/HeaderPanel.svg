@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="375px" height="55px" viewBox="0 0 375 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="500px" height="55px" viewBox="0 0 500 55" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 54.1 (76490) - https://sketchapp.com -->
     <title>Test Area 2</title>
     <desc>Created with Sketch.</desc>
     <defs>
-        <linearGradient x1="39.7604202%" y1="34.3872406%" x2="100%" y2="67.3642817%" id="linearGradient-1">
+        <linearGradient x1="39.7604202%" y1="34.2601238%" x2="100%" y2="67.505659%" id="linearGradient-1">
             <stop stop-color="#E03A65" offset="0%"></stop>
             <stop stop-color="#F18C23" offset="100%"></stop>
         </linearGradient>
@@ -12,21 +12,24 @@
             <stop stop-color="#F8AC08" offset="0%"></stop>
             <stop stop-color="#DD2C71" offset="100%"></stop>
         </linearGradient>
-        <linearGradient x1="50%" y1="23.7220472%" x2="58.1709411%" y2="38.2764542%" id="linearGradient-3">
+        <linearGradient x1="50%" y1="27.6831145%" x2="58.1709411%" y2="40.0436297%" id="linearGradient-3">
             <stop stop-color="#F9C049" offset="0%"></stop>
+            <stop stop-color="#F18C23" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="39.7604202%" y1="35.426827%" x2="100%" y2="66.2080689%" id="linearGradient-4">
+            <stop stop-color="#E03A65" offset="0%"></stop>
             <stop stop-color="#F18C23" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="Wire-Frames" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="Test-Area-2" transform="translate(-51.000000, -9.000000)">
-            <g id="HeaderPanelLarge" transform="translate(-0.463448, -0.676950)" fill="#FFFFFF" fill-opacity="0.117378715" stroke="url(#linearGradient-1)" stroke-width="0.5">
-                <path d="M473.449609,202.122754 C453.409827,172.399425 426.563096,146.066448 399.894065,121.444557 C368.5151,92.4742713 336.410404,66.9451508 301.665999,56.7889684 C278.357041,49.9754963 263.362777,57.4288902 237.449609,60.3094959" id="Path" transform="translate(355.449609, 128.061377) rotate(-214.000000) translate(-355.449609, -128.061377) "></path>
+            <g id="HeaderPanelLarge" transform="translate(5.000000, -16.000000)" fill="#FFFFFF" fill-opacity="0.117378715" stroke="url(#linearGradient-1)" stroke-width="0.5">
+                <path d="M569.650553,226.844701 C547.148256,193.333335 517.002562,163.644397 487.056404,135.884612 C451.821549,103.222259 415.771785,74.4396241 376.75794,62.9891047 C350.584746,55.3073015 333.747966,63.7105803 304.650553,66.9582997" id="Path" transform="translate(437.150553, 143.344701) rotate(-214.000000) translate(-437.150553, -143.344701) "></path>
             </g>
-            <g id="HeaderPanelSmall" transform="translate(0.000000, -124.000000)">
-                <rect id="Rectangle" fill="url(#linearGradient-2)" x="50.9255404" y="132.767657" width="375" height="55"></rect>
-                <path d="M205.737812,255.187767 C175.033836,207.123632 118.875102,137.274794 73.6317127,123.316806 C57.2241337,118.254922 40.2407274,129.11498 22,131.255048" id="Path" stroke="url(#linearGradient-3)" stroke-width="0.5" fill-opacity="0.155567089" fill="#FFFFFF" transform="translate(113.868906, 188.586988) rotate(-34.000000) translate(-113.868906, -188.586988) "></path>
-                <path d="M473.449609,198.122754 C453.409827,168.399425 426.563096,142.066448 399.894065,117.444557 C368.5151,88.4742713 336.410404,62.9451508 301.665999,52.7889684 C278.357041,45.9754963 263.362777,53.4288902 237.449609,56.3094959" id="Path" stroke="url(#linearGradient-1)" stroke-width="0.5" fill-opacity="0.117378715" fill="#FFFFFF" transform="translate(355.449609, 124.061377) rotate(-214.000000) translate(-355.449609, -124.061377) "></path>
-                <rect id="Rectangle" stroke="#FFFFFF" stroke-width="4" x="48.9255404" y="130.767657" width="379" height="59"></rect>
+            <g id="HeaderPanelSmall" transform="translate(-2.000000, -150.000000)">
+                <rect id="Rectangle" fill="url(#linearGradient-2)" x="52.9255404" y="158.767657" width="500" height="55"></rect>
+                <path d="M259.100707,300.22569 C219.830432,243.574181 148.003613,161.245807 90.1374815,144.794018 C69.152247,138.827753 47.4305314,151.628122 24.1007067,154.150544" id="Path" stroke="url(#linearGradient-3)" stroke-width="0.5" fill-opacity="0.155567089" fill="#FFFFFF" transform="translate(141.600707, 221.725690) rotate(-34.000000) translate(-141.600707, -221.725690) "></path>
+                <path d="M594.985348,235.939766 C571.039507,201.625732 538.959938,171.225682 507.092706,142.800992 C469.597502,109.356307 431.235111,79.8842676 389.718492,68.1594843 C361.866262,60.2936858 343.949388,68.8982408 312.985348,72.2237499" id="Path" stroke="url(#linearGradient-4)" stroke-width="0.5" fill-opacity="0.117378715" fill="#FFFFFF" transform="translate(453.985348, 150.439766) rotate(-214.000000) translate(-453.985348, -150.439766) "></path>
             </g>
         </g>
     </g>

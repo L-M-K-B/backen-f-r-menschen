@@ -66,17 +66,26 @@ $content-background-color: transparent;
 }
 
 .#{$root-element} {
-  display: block;
+  display: flex;
+  justify-content: center;
   position: relative;
   width: 100%;
   max-width: 100%;
+  margin-top: 15px;
 
   &__wrapper {
     display: block;
     overflow: hidden;
     position: relative;
-    height: 335px;
-    width: 335px;
+
+    @media (max-width: 374px) {
+      height: 200px;
+      width: 200px;
+    }
+    @media (min-width: 375px) {
+      height: 335px;
+      width: 335px;
+    }
   }
   &__container {
     display: block;
@@ -117,11 +126,17 @@ $content-background-color: transparent;
     > img,
     > video {
       object-fit: cover;
-      width: 335px;
-      height: 335px;
       position: absolute;
       top: 0;
       left: 0;
+      @media (max-width: 374px) {
+        height: 200px;
+        width: 200px;
+      }
+      @media (min-width: 375px) {
+        height: 335px;
+        width: 335px;
+      }
     }
     /* &--enter {
     }

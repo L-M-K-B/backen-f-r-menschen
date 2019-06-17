@@ -1,44 +1,13 @@
 import styled from 'styled-components';
-import { oShadow } from '../misc/colors';
 
-export const GridStyle = styled.div`
-  display: grid;
-  grid-template-rows: 55px 1fr;
-  height: 100vh;
-`;
-export const MainArea = styled.main`
-  grid-row: 2;
-  overflow: hidden;
-  overflow-y: scroll;
-  margin-bottom: 26px;
-  padding-bottom: 55px;
-`;
-export const AboutContainer = styled.div`
-  width: 335px;
-  margin: 30px 20px 0;
-`;
-export const BoxContainer = styled.div`
-  margin-bottom: 30px;
-  padding: 1px 0;
-  border-radius: 14px;
-  box-shadow: 0 5px 4px 2px ${oShadow};
-`;
-export const BoxInnerContainer = styled.div`
-  border-radius: 14px;
-  margin: 8px;
-`;
 export const HeadlineContainer = styled.div`
   display: flex;
   justify-content: space-between;
-`;
-export const Headline = styled.p`
-  margin: 8px 0;
-  font-family: 'Domine', serif;
-  font-size: 24px;
+  align-items: center;
 `;
 export const Arrow = styled.img`
   height: 15px;
-  margin: 14px 15px 0;
+  margin: 0 15px 0;
 `;
 
 // Convert

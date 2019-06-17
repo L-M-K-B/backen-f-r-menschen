@@ -1,5 +1,6 @@
 import React from 'react';
-import { GridDetail, MainArea, RecipeContainer } from './recipeDetailedStyle';
+import { MainArea, ContentContainer } from '../common/containerStyles';
+import { GridHeaderSmall } from '../common/grid';
 import { getIndex } from '../utils';
 
 import Header from '../header-footer/Header';
@@ -25,10 +26,10 @@ export default function RecipeDetailedPage({
   }
 
   return (
-    <GridDetail>
+    <GridHeaderSmall>
       <Header title={recipe.recipeName} />
       <MainArea>
-        <RecipeContainer>
+        <ContentContainer>
           <RecipeStage
             recipe={recipe}
             favoriteStatus={getFavoriteStatus(recipe._id)}
@@ -37,13 +38,13 @@ export default function RecipeDetailedPage({
           <IngredientList recipe={recipe} />
           <ShortDescription recipe={recipe} />
           <Notes id={id} />
-        </RecipeContainer>
+        </ContentContainer>
+        <Footer
+          history={history}
+          srcIconPieList={IconPieList}
+          srcIconChef={IconChef}
+        />
       </MainArea>
-      <Footer
-        history={history}
-        srcIconPieList={IconPieList}
-        srcIconChef={IconChef}
-      />
-    </GridDetail>
+    </GridHeaderSmall>
   );
 }

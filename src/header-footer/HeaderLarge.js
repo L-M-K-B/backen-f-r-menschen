@@ -9,24 +9,29 @@ import {
 } from './header-footer-style';
 import HeaderPanelLarge from '../images/HeaderPanelLarge.svg';
 
-export default function HeaderLarge({ maxNo, prevNo, currentNo, nextNo }) {
+export default function HeaderLarge({
+  maxNumber,
+  prevNumber,
+  currentNumber,
+  nextNumber,
+}) {
   return (
     <>
-      <PanelLarge src={HeaderPanelLarge} />
       <HeaderContainerLarge>
+        <PanelLarge src={HeaderPanelLarge} />
         <PrevNextContainer>
-          <NumberPart1>{prevNo}</NumberPart1>
-          <NumberPart2>from {maxNo}</NumberPart2>
+          <NumberPart1>{prevNumber}</NumberPart1>
+          <NumberPart2>from {maxNumber}</NumberPart2>
         </PrevNextContainer>
+        <CurrentContainer>
+          <NumberPart1>{currentNumber}</NumberPart1>
+          <NumberPart2>from {maxNumber}</NumberPart2>
+        </CurrentContainer>
         <PrevNextContainer>
-          <NumberPart1>{nextNo}</NumberPart1>
-          <NumberPart2>from {maxNo}</NumberPart2>
+          <NumberPart1>{nextNumber}</NumberPart1>
+          <NumberPart2>from {maxNumber}</NumberPart2>
         </PrevNextContainer>
       </HeaderContainerLarge>
-      <CurrentContainer>
-        <NumberPart1>{currentNo}</NumberPart1>
-        <NumberPart2>from {maxNo}</NumberPart2>
-      </CurrentContainer>
     </>
   );
 }
