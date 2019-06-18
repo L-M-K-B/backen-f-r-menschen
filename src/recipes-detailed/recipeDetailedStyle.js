@@ -17,7 +17,6 @@ export const Favorite = styled.div`
 export const TitleImage = styled.img`
   width: 100%;
   margin-top: 15px;
-  border-radius: ${borderRadius};
 `;
 export const BasicDataGrid = styled.div`
   @media (max-width: 374px) {
@@ -145,7 +144,6 @@ export const NotesArea = styled.textarea`
   margin: 0 5px 0;
   padding: 8px;
   border: none;
-  border-radius: ${borderRadius};
   font-size: ${defaultFontSize};
   color: ${font};
   &::placeholder {
@@ -156,7 +154,6 @@ export const NotesArea = styled.textarea`
   &:focus {
     outline: none;
     border: 1px solid ${orange};
-    border-radius: ${borderRadius};
   }
 `;
 export const Button = styled.button`
