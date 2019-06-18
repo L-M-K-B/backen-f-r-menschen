@@ -15,8 +15,8 @@ $control-button-opacity: none;
 $control-button-hover-opacity: none;
 $control-button-background: transparent;
 
-$loader-bar-color: transparent;
-$loader-bar-height: 6px;
+$loader-bar-color: #4b0420;
+$loader-bar-height: 5px;
 
 $control-bullet-color: transparent;
 $control-bullet-active-color: transparent;
@@ -122,7 +122,6 @@ $content-background-color: transparent;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 14px;
     > img,
     > video {
       object-fit: cover;

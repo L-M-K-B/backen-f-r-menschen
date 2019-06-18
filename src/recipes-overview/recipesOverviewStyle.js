@@ -132,7 +132,6 @@ export const Favorite = styled.div`
 `;
 export const Image = styled.img`
   width: 125px;
-  border-radius: 14px;
 `;
 export const Name = styled.p`
   margin: 0;

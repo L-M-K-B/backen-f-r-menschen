@@ -23,7 +23,7 @@ export const MainArea = styled.main`
   @media (min-width: 375px) and (max-width: 499px) {
     width: ${AppWidthM};
   }
-  @media (min-width: 500px) {
+  @media (min-width: ${AppWidthL}) {
     width: ${AppWidthL};
   }
 `;
