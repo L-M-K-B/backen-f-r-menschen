@@ -9,6 +9,7 @@ import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage';
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage';
 import AboutPage from '../about/AboutPage';
 import StepByStepPage from '../step-by-step/StepByStepPage';
+import Rechner from '../Rechner';
 
 export default function App() {
   const [recipesList, setRecipesList] = useState(getLocal('recipesList') || []);

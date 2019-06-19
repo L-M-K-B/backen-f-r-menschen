@@ -11,6 +11,7 @@
     "start": "run-p react server",
     "react": "craco start",
     "server": "nodemon -w server.js -w models/* server.js",
+    "cypress:open": "cypress open",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
@@ -20,6 +21,7 @@
   "dependencies": {
     "@craco/craco": "5.2.0",
     "babel-plugin-styled-components": "1.10.0",
+    "cypress": "^3.3.1",
     "docz": "1.2.0",
     "docz-theme-default": "1.2.0",
     "dotenv": "8.0.0",
