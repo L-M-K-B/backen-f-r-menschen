@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { IngredientP } from './recipeDetailedStyle';
 
 export default function SingleIngredient({ ingredient }) {
-  return <p>{ingredient.join(' ')}</p>
+  return <IngredientP>{ingredient.join(' ')}</IngredientP>;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { LinkButton, ButtonLabel } from './recipeDetailedStyle';
+import { DescriptionP, LinkButton, ButtonLabel } from './recipeDetailedStyle';
 import {
   BoxContainer,
   BoxInnerContainer,
@@ -13,7 +13,7 @@ export default function ShortDescription({ recipe }) {
       <BoxInnerContainer>
         <BoxHeadline>Description:</BoxHeadline>
         {shortDescription.map(paragraph => (
-          <p>{paragraph}</p>
+          <DescriptionP>{paragraph}</DescriptionP>
         ))}
         <LinkButton to={`/step-by-step/${_id}`}>
           <ButtonLabel>step-by-step description</ButtonLabel>

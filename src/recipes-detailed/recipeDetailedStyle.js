@@ -104,6 +104,15 @@ export const TagsDiv = styled.div`
 `;
 
 // List of ingredients, Short Description
+export const DescriptionP = styled.p`
+  margin: 20px 0;
+  line-height: 1.4em;
+`;
+
+export const IngredientP = styled.p`
+  margin: 20px 0;
+`;
+
 export const LinkButton = styled(Link)`
   position: relative;
   top: 30px;
