@@ -21,15 +21,15 @@ export default function HeaderLarge({
         <PanelLarge src={HeaderPanelLarge} />
         <PrevNextContainer>
           <NumberPart1>{prevNumber}</NumberPart1>
-          <NumberPart2>from {maxNumber}</NumberPart2>
+          <NumberPart2>of {maxNumber}</NumberPart2>
         </PrevNextContainer>
         <CurrentContainer>
           <NumberPart1>{currentNumber}</NumberPart1>
-          <NumberPart2>from {maxNumber}</NumberPart2>
+          <NumberPart2>of {maxNumber}</NumberPart2>
         </CurrentContainer>
         <PrevNextContainer>
           <NumberPart1>{nextNumber}</NumberPart1>
-          <NumberPart2>from {maxNumber}</NumberPart2>
+          <NumberPart2>of {maxNumber}</NumberPart2>
         </PrevNextContainer>
       </HeaderContainerLarge>
     </>

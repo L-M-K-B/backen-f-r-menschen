@@ -106,7 +106,7 @@ export const CurrentContainer = styled.div`
 `;
 export const PrevNextContainer = styled.div`
   z-index: 100;
-  width: 65px;
+  width: 60px;
   margin: 0 10px;
   display: flex;
   flex-direction: column;
@@ -120,7 +120,7 @@ export const NumberPart1 = styled.p`
   text-align: center;
 `;
 export const NumberPart2 = styled.p`
-  margin: 0 8px;
+  margin: 8px 0;
   font-family: 'Domine', serif;
   font-size: 16px;
   text-align: center;
