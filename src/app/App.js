@@ -9,6 +9,7 @@ import RecipesOverviewPage from '../recipes-overview/RecipesOverviewPage';
 import RecipeDetailedPage from '../recipes-detailed/RecipeDetailedPage';
 import AboutPage from '../about/AboutPage';
 import StepByStepPage from '../step-by-step/StepByStepPage';
+import ShoppingListPage from '../shoppinglist/ShoppingListPage';
 
 export default function App() {
   const [recipesList, setRecipesList] = useState(getLocal('recipesList') || []);
@@ -88,6 +89,10 @@ export default function App() {
             recipe={getRecipe(props.match.params.id, recipesList)}
           />
         )}
+      />
+      <Route
+        path="/shoppinglist"
+        render={props => <ShoppingListPage history={props.history} />}
       />
     </Router>
   );
