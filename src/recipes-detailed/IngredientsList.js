@@ -1,5 +1,5 @@
 import React from 'react';
-import { setLocal } from '../services';
+import { setLocal, getLocal } from '../services';
 import {
   BoxContainer,
   BoxInnerContainer,
@@ -13,7 +13,11 @@ export default function IngredientList({ recipe, id }) {
   const { ingredients } = recipe;
 
   function handleClick() {
-    setLocal(`${id}Ingredients`, ingredients);
+    const updatedShopIngredients = {
+      ...getLocal('shopIngredients'),
+      [id]: ingredients,
+    };
+    setLocal('shopIngredients', updatedShopIngredients);
   }
 
   return (

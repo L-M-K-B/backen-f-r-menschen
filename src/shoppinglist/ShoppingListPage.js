@@ -1,4 +1,5 @@
 import React from 'react';
+//import { getLocal } from '../services';
 import { MainArea, ContentContainer } from '../common/containerStyles';
 import { GridHeaderSmall } from '../common/grid';
 
