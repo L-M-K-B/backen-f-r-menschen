@@ -19,11 +19,8 @@ export default function Notes({ id }) {
   function handleSubmit(event) {
     event.preventDefault();
     const notes = event.target.notesArea.value;
-    handleSave(notes, id);
-  }
-  const handleSave = (notes, id) => {
     setLocal(`${id}Notes`, notes);
-  };
+  }
 
   return (
     <BoxContainer>
