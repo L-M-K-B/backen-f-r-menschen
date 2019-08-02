@@ -9,15 +9,13 @@ import { Button } from './recipeDetailedStyle';
 
 import SingleIngredient from './SingleIngredient';
 
-export default function IngredientList({ recipe, id }) {
+export default function IngredientList({ recipe }) {
   const { ingredients } = recipe;
 
   function handleClick() {
-    const updatedShopIngredients = {
-      ...getLocal('shopIngredients'),
-      [id]: ingredients,
-    };
-    setLocal('shopIngredients', updatedShopIngredients);
+    const shopIngredients = getLocal('shopIngredients') || [];
+    ingredients.map(ingredient => shopIngredients.push(ingredient));
+    setLocal('shopIngredients', shopIngredients);
   }
 
   return (

@@ -35,7 +35,7 @@ export default function RecipeDetailedPage({
             favoriteStatus={getFavoriteStatus(recipe._id)}
             onToggleFavorite={onToggleFavorite}
           />
-          <IngredientList recipe={recipe} id={id} />
+          <IngredientList recipe={recipe} />
           <ShortDescription recipe={recipe} />
           <Notes id={id} />
         </ContentContainer>

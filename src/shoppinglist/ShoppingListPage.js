@@ -1,5 +1,5 @@
 import React from 'react';
-//import { getLocal } from '../services';
+import { getLocal } from '../services';
 import { MainArea, ContentContainer } from '../common/containerStyles';
 import { GridHeaderSmall } from '../common/grid';
 
@@ -10,6 +10,9 @@ import IconPieList from '../images/IconPieList.svg';
 import IconChef from '../images/IconChef.svg';
 
 export default function ShoppingListPage(history) {
+  const ingredientsList = getLocal('shopIngredients');
+  console.log(ingredientsList);
+
   return (
     <GridHeaderSmall>
       <Header title="Shopping List" />
