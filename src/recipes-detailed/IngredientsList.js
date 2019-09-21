@@ -14,7 +14,7 @@ export default function IngredientList({ recipe }) {
 
   function handleClick() {
     const shopIngredients = getLocal('shopIngredients') || [];
-    ingredients.map(ingredient => shopIngredients.push(ingredient));
+    ingredients.map(singleI => shopIngredients.push(singleI));
     setLocal('shopIngredients', shopIngredients);
   }
 
