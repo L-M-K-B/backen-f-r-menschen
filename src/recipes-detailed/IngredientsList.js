@@ -1,14 +1,23 @@
 import React from 'react';
+import { setLocal, getLocal } from '../services';
 import {
   BoxContainer,
   BoxInnerContainer,
   BoxHeadline,
 } from '../common/containerStyles';
+import { Button } from './recipeDetailedStyle';
 
 import SingleIngredient from './SingleIngredient';
 
 export default function IngredientList({ recipe }) {
   const { ingredients } = recipe;
+
+  function handleClick() {
+    const shopIngredients = getLocal('shopIngredients') || [];
+    ingredients.map(singleI => shopIngredients.push(singleI));
+    setLocal('shopIngredients', shopIngredients);
+  }
+
   return (
     <BoxContainer>
       <BoxInnerContainer>
@@ -19,6 +28,7 @@ export default function IngredientList({ recipe }) {
             ingredient={ingredient}
           />
         ))}
+        <Button onClick={handleClick}>Add ingredients to shopping list</Button>
       </BoxInnerContainer>
     </BoxContainer>
   );

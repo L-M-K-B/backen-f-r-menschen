@@ -45,7 +45,7 @@ export const ContentContainer = styled.div`
 export const BoxContainer = styled.div`
   width: 100%;
   min-height: 55px;
-  margin-bottom: 30px;
+  margin-bottom: 70px;
   padding-top: 5px;
   border-radius: ${borderRadius};
   box-shadow: ${orangeBoxShadow} ${oShadow};
